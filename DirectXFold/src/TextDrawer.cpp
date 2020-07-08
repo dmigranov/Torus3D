@@ -1,15 +1,15 @@
 #include "pch.h"
 #include "TextDrawer.h"
-
+#include "font.h"
 
 using namespace DirectX;
 using namespace DirectX::SimpleMath;
 
 
-TextDrawer::TextDrawer(ID3D11Device* device, ID3D11DeviceContext *context, const wchar_t *fontFile)
+TextDrawer::TextDrawer(ID3D11Device* device, ID3D11DeviceContext *context)
 {
 	m_spriteBatch = std::make_unique<SpriteBatch>(context);
-	m_font = std::make_unique<SpriteFont>(device, fontFile);
+	m_font = std::make_unique<SpriteFont>(device, myfile_spritefont, sizeof(myfile_spritefont) / sizeof(unsigned char));
 }
 
 void TextDrawer::DrawTextUpRightAlign(const char* output, float x, float y)

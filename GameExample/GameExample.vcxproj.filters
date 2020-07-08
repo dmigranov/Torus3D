@@ -20,9 +20,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <CopyFileToFolders Include="..\DirectXFold\myfile.spritefont" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="..\DirectXFold\res\mesh1.sph">
       <Filter>Resource Files</Filter>
     </None>

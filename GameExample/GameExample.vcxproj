@@ -185,11 +185,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <CopyFileToFolders Include="..\DirectXFold\myfile.spritefont">
-      <FileType>Document</FileType>
-    </CopyFileToFolders>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="..\DirectXFold\res\mesh3.sph">
       <FileType>Document</FileType>
     </None>

@@ -49,6 +49,7 @@
   <ItemGroup>
     <ClInclude Include="inc\Camera.h" />
     <ClInclude Include="inc\Drawer2D.h" />
+    <ClInclude Include="inc\font.h" />
     <ClInclude Include="inc\FPSCounter.h" />
     <ClInclude Include="inc\Game.h" />
     <ClInclude Include="inc\HyperbolicMath.h" />
@@ -67,6 +68,7 @@
     <ClInclude Include="inc\SphericalSphere.h" />
     <ClInclude Include="inc\TextDrawer.h" />
     <ClInclude Include="inc\Texture.h" />
+    <ClInclude Include="resource1.h" />
   </ItemGroup>
   <ItemGroup>
     <FxCompile Include="Data\Shaders\BasicPixelShader.hlsl">
@@ -275,7 +277,6 @@
       <EnableDebuggingInformation Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</EnableDebuggingInformation>
       <DisableOptimizations Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</DisableOptimizations>
     </FxCompile>
-    <CopyFileToFolders Include="myfile.spritefont" />
     <None Include="packages.config" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

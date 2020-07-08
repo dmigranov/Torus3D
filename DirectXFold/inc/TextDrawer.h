@@ -6,7 +6,7 @@
 class TextDrawer
 {
 public:
-	TextDrawer(ID3D11Device* device, ID3D11DeviceContext* context, const wchar_t* fontFile);
+	TextDrawer(ID3D11Device* device, ID3D11DeviceContext* context);
 	void DrawTextUpRightAlign(const char* output, float x, float y);
 	void DrawTextDownLeftAlign(const char* output, float x, float y);
 	void DrawTextDownRightAlign(const char* output, float x, float y);

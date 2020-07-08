@@ -170,6 +170,12 @@
     <ClInclude Include="inc\SphericalEllipsoid.h">
       <Filter>Файлы заголовков\Meshes\Spherical</Filter>
     </ClInclude>
+    <ClInclude Include="resource1.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\font.h">
+      <Filter>Файлы ресурсов</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <FxCompile Include="Data\Shaders\BasicPixelShader.hlsl">
@@ -202,10 +208,5 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <CopyFileToFolders Include="myfile.spritefont">
-      <Filter>Файлы ресурсов</Filter>
-    </CopyFileToFolders>
   </ItemGroup>
 </Project>
