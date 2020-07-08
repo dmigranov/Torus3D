@@ -1,5 +1,7 @@
 # SphEll3D
 
-A library for visualizing scenes in three-dimensional spherical and elliptical spaces. Created using the Direct3D 11 API and the [DirectX Tool Kit](https://github.com/microsoft/DirectXTK) (for handling user input and drawing text; you need to have its headers and link with it to build the library).
+A library for visualizing scenes in three-dimensional spherical and elliptical spaces. Created using the Direct3D 11 API and the [DirectX Tool Kit](https://github.com/microsoft/DirectXTK).
 
-GameExample is an example project.
+You can add meshes to the spaces and apply textures to them. You can also add parent meshes and add updaters so that meshes' positions on the scene will be updated.
+
+GameExample is an example project built with the library.
