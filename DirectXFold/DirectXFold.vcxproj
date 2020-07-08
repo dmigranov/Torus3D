@@ -51,7 +51,6 @@
     <ClInclude Include="inc\Drawer2D.h" />
     <ClInclude Include="inc\FPSCounter.h" />
     <ClInclude Include="inc\Game.h" />
-    <ClInclude Include="inc\GeometryShader.h" />
     <ClInclude Include="inc\HyperbolicMath.h" />
     <ClInclude Include="inc\Mesh.h" />
     <ClInclude Include="inc\SphericalAsteroid.h" />
@@ -277,14 +276,7 @@
       <DisableOptimizations Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</DisableOptimizations>
     </FxCompile>
     <CopyFileToFolders Include="myfile.spritefont" />
-    <None Include="ClassDiagram.cd" />
-    <None Include="ClassDiagram1.cd" />
-    <None Include="ClassDiagram2.cd" />
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Text Include="meshes.txt" />
-    <Text Include="WARNING.txt" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

@@ -155,9 +155,6 @@
     <ClInclude Include="inc\Drawer2D.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="inc\GeometryShader.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
     <ClInclude Include="inc\Texture.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
@@ -205,13 +202,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-    <None Include="ClassDiagram.cd" />
-    <None Include="ClassDiagram1.cd" />
-    <None Include="ClassDiagram2.cd" />
-  </ItemGroup>
-  <ItemGroup>
-    <Text Include="meshes.txt" />
-    <Text Include="WARNING.txt" />
   </ItemGroup>
   <ItemGroup>
     <CopyFileToFolders Include="myfile.spritefont">
