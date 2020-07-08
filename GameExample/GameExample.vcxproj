@@ -170,19 +170,19 @@
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <CopyFileToFolders Include="..\DirectXFold\res\mesh1.sph">
+    <None Include="..\DirectXFold\res\mesh1.sph">
       <FileType>Text</FileType>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
       <DeploymentContent>true</DeploymentContent>
-    </CopyFileToFolders>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <CopyFileToFolders Include="..\DirectXFold\res\mesh2.sph">
+    <None Include="..\DirectXFold\res\mesh2.sph">
       <FileType>Document</FileType>
-    </CopyFileToFolders>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <CopyFileToFolders Include="..\DirectXFold\myfile.spritefont">
@@ -190,9 +190,9 @@
     </CopyFileToFolders>
   </ItemGroup>
   <ItemGroup>
-    <CopyFileToFolders Include="..\DirectXFold\res\mesh3.sph">
+    <None Include="..\DirectXFold\res\mesh3.sph">
       <FileType>Document</FileType>
-    </CopyFileToFolders>
+    </None>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
