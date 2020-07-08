@@ -1,0 +1,12 @@
+﻿################################################################################
+# Данный GITIGNORE-файл был автоматически создан Microsoft(R) Visual Studio.
+################################################################################
+
+/DirectXFold/.vs/DirectXFold/v16
+/DirectXFold/bin
+/DirectXFold/bin64
+/DirectXFold/Debug
+/DirectXFold/x64
+/DirectXFold/packages
+/GameExample/x64
+/GameExample/bin64
