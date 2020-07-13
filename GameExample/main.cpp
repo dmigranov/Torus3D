@@ -29,7 +29,7 @@ int WINAPI wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE, _In_ LPWSTR, _
     }*/
 
     
-    int bodyCount = 8;
+    /*int bodyCount = 8;
     for (int i = 0; i < bodyCount; i++)
     {
         auto mesh = new SphericalSphere(0.15f, 20, 20, earthTexture, SphericalRotationXW(i * XM_PI / bodyCount));
@@ -38,8 +38,10 @@ int WINAPI wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE, _In_ LPWSTR, _
         }));
         game.AddMesh(mesh);
     }
-    
-    
+    */
+    auto mesh = new SphericalSphere(0.15f, 20, 20, earthTexture, SphericalRotationXZ(XM_PI / 4) * SphericalRotationZW(-0.6));
+
+    game.AddMesh(mesh);
 
     return game.StartGame();
 
