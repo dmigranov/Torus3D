@@ -2,6 +2,8 @@
 #include "Camera.h"
 #include "SphericalMath.h"
 
+class Mesh;
+
 class SphericalCamera :
 	public Camera
 {
@@ -20,6 +22,7 @@ public:
 	void Move(DirectX::SimpleMath::Vector3 v) override;
 	void ChangePitchYawRoll(double deltaPitch, double deltaYaw, double deltaRoll) override;
 
+	void SetParent(Mesh* pParentMesh);
 
 private:
 	DirectX::SimpleMath::Vector4 spherePos = DirectX::SimpleMath::Vector4(0, 0, 0, 1);
@@ -31,5 +34,7 @@ private:
 	DirectX::SimpleMath::Matrix R = DirectX::SimpleMath::Matrix::Identity, RInv = DirectX::SimpleMath::Matrix::Identity, RYaw = DirectX::SimpleMath::Matrix::Identity, RPitch = DirectX::SimpleMath::Matrix::Identity, RRoll = DirectX::SimpleMath::Matrix::Identity; // represents camera orientation
 	DirectX::SimpleMath::Quaternion RotationQuaternion;
 	DirectX::XMFLOAT3 GetSphericalFromCartesian(float x4, float x3, float x2, float x1);
+
+	Mesh* m_pParentMesh;
 };
 

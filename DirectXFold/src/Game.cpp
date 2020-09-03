@@ -724,6 +724,12 @@ void Game::SetCameraFovY(float fovY)
     m_camera->SetFovY(fovY);
 }
 
+std::shared_ptr<Camera> Game::GetCamera()
+{
+    return m_camera;
+}
+
+
 void Game::SetBackgroundColor(DirectX::XMVECTORF32 color)
 {
     perApplicationPSConstantBuffer.mistColor = color;

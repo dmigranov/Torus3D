@@ -12,7 +12,7 @@ int WINAPI wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE, _In_ LPWSTR, _
 {
     Game& game = Game::GetInstance();
     game.InitializeEngine(hInstance, nCmdShow, L"Сф. и Элл. Пространства", false, false);
-    game.MoveCamera(Vector3(0, 0, -XM_PI / 4));
+    //game.MoveCamera(Vector3(0, 0, -XM_PI / 4));
     game.SetCameraFovY(XM_PI / 2);
     game.SetBackgroundColor(DirectX::Colors::PowderBlue);
     Texture * earthTexture = game.CreateTexture(L"earth.dds");
@@ -29,6 +29,7 @@ int WINAPI wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE, _In_ LPWSTR, _
     }*/
 
     
+
     /*int bodyCount = 8;
     for (int i = 0; i < bodyCount; i++)
     {
@@ -37,11 +38,18 @@ int WINAPI wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE, _In_ LPWSTR, _
             return in * SphericalRotationXW(-delta/7);
         }));
         game.AddMesh(mesh);
-    }
-    */
-    auto mesh = new SphericalSphere(0.15f, 20, 20, earthTexture, SphericalRotationXZ(XM_PI / 4) * SphericalRotationZW(-0.6));
+    }*/
 
+    auto camera = (std::static_pointer_cast<SphericalCamera>(game.GetCamera()));
+
+    auto mesh = new SphericalSphere(0.7f, 20, 20, earthTexture, SphericalRotationZW(XM_PI/4));
+    camera->SetParent(mesh);
     game.AddMesh(mesh);
+
+
+    
+    //auto mesh = new SphericalSphere(0.15f, 20, 20, earthTexture, SphericalRotationXZ(XM_PI / 4) * SphericalRotationZW(-0.6));
+    //game.AddMesh(mesh);
 
     return game.StartGame();
 

@@ -1,6 +1,8 @@
 #include "pch.h"
 #include "SphericalCamera.h"
 
+#include "Mesh.h"
+
 using namespace DirectX;
 using namespace DirectX::SimpleMath;
 
@@ -28,12 +30,16 @@ const XMMATRIX& SphericalCamera::GetView()
 		
 		Matrix dT = SphericalRotationXW(-dV.x) * SphericalRotationYW(-dV.y) * SphericalRotationZW(-dV.z);
 		//Matrix dT = SphericalRotationYW(dV.y) *  SphericalRotationXW(dV.x)  * SphericalRotationZW(dV.z);
-
+		if (m_pParentMesh != nullptr)
+			//constantBufferTemp.m_world = constantBufferTemp.m_world * parentMesh->GetWorldMatrix();
+			dT = ((Matrix)m_pParentMesh->GetWorldMatrix()).Transpose() * dT;
 		
 		//T = T * R * dT * R.Transpose();	//свободное движение с шутерной камерой
 		T = T * RYaw * dT * RYaw.Transpose();	//движение в одной плоскости
 		
 		m_view = T * R ;
+
+		
 
 		dV = Vector3::Zero;
 	}
@@ -129,6 +135,11 @@ void SphericalCamera::ChangePitchYawRoll(double deltaPitch, double deltaYaw, dou
 	m_viewDirty = true;*/
 
 
+}
+
+void SphericalCamera::SetParent(Mesh* pParentMesh)
+{
+	m_pParentMesh = pParentMesh;
 }
 
 

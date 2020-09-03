@@ -50,6 +50,7 @@ public:
     Texture * CreateTexture(const WCHAR * name);
     void AddMesh(Mesh * mesh);
     void MoveCamera(DirectX::SimpleMath::Vector3);
+    std::shared_ptr<Camera> GetCamera();
     void SetCameraFovY(float fovY);
     void SetBackgroundColor(DirectX::XMVECTORF32);
     DirectX::SimpleMath::Matrix GetCameraTransformMatrix();
