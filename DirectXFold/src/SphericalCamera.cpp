@@ -28,18 +28,28 @@ const XMMATRIX& SphericalCamera::GetView()
 		//T = T * R * SphericalRotationZW(m_position.z) * SphericalRotationYW(m_position.y) * SphericalRotationXW(m_position.x) * R.Invert();
 		//T = T * SphericalRotationZW(m_position.z) * SphericalRotationYW(m_position.y) * SphericalRotationXW(m_position.x) ;		
 		
+
+				/*Matrix cameraTransformation;
+		Matrix dT = SphericalRotationZW(-dV.z) * SphericalRotationYW(-dV.y) * SphericalRotationXW(-dV.x);
+		T = R.Transpose() * dT * R * T;	//движение в одной плоскости
+		cameraTransformation = R.Transpose() * T;
+
+
+		if (m_pParentMesh != nullptr)
+			cameraTransformation = cameraTransformation * ((Matrix)m_pParentMesh->GetWorldMatrix())
+
+		m_view = cameraTransformation.Transpose();
+		*/
+
+
 		Matrix dT = SphericalRotationXW(-dV.x) * SphericalRotationYW(-dV.y) * SphericalRotationZW(-dV.z);
 		//Matrix dT = SphericalRotationYW(dV.y) *  SphericalRotationXW(dV.x)  * SphericalRotationZW(dV.z);
-		if (m_pParentMesh != nullptr)
-			//constantBufferTemp.m_world = constantBufferTemp.m_world * parentMesh->GetWorldMatrix();
-			dT = ((Matrix)m_pParentMesh->GetWorldMatrix()).Transpose() * dT;
-		
+
 		//T = T * R * dT * R.Transpose();	//свободное движение с шутерной камерой
 		T = T * RYaw * dT * RYaw.Transpose();	//движение в одной плоскости
 		
 		m_view = T * R ;
 
-		
 
 		dV = Vector3::Zero;
 	}

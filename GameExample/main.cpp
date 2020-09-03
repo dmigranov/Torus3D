@@ -42,7 +42,7 @@ int WINAPI wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE, _In_ LPWSTR, _
 
     auto camera = (std::static_pointer_cast<SphericalCamera>(game.GetCamera()));
 
-    auto mesh = new SphericalSphere(0.7f, 20, 20, earthTexture, SphericalRotationZW(XM_PI/4));
+    auto mesh = new SphericalSphere(0.94f, 25, 25, earthTexture, SphericalRotationYW(3 * XM_PI / 2));
     camera->SetParent(mesh);
     game.AddMesh(mesh);
 
