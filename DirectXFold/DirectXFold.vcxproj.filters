@@ -108,6 +108,9 @@
     <ClCompile Include="SphericalEllipsoid.cpp">
       <Filter>Исходные файлы\Meshes\Spherical</Filter>
     </ClCompile>
+    <ClCompile Include="src\CameraMesh.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="inc\Game.h">
@@ -175,6 +178,9 @@
     </ClInclude>
     <ClInclude Include="inc\font.h">
       <Filter>Файлы ресурсов</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\CameraMesh.h">
+      <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

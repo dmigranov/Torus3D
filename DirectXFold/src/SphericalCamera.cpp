@@ -2,6 +2,7 @@
 #include "SphericalCamera.h"
 
 #include "Mesh.h"
+#include "CameraMesh.h"
 
 using namespace DirectX;
 using namespace DirectX::SimpleMath;
@@ -145,6 +146,11 @@ void SphericalCamera::ChangePitchYawRoll(double deltaPitch, double deltaYaw, dou
 	m_viewDirty = true;*/
 
 
+}
+
+Mesh* SphericalCamera::GetCameraVirtualMesh()
+{
+	return new CameraMesh(this);
 }
 
 //xyzw

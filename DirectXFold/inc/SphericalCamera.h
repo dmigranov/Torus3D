@@ -22,7 +22,7 @@ public:
 	void Move(DirectX::SimpleMath::Vector3 v) override;
 	void ChangePitchYawRoll(double deltaPitch, double deltaYaw, double deltaRoll) override;
 
-
+	Mesh* GetCameraVirtualMesh();
 private:
 	DirectX::SimpleMath::Vector4 spherePos = DirectX::SimpleMath::Vector4(0, 0, 0, 1);
 	DirectX::SimpleMath::Vector3 dV = DirectX::SimpleMath::Vector3(0, 0, 0);

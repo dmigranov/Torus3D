@@ -23,6 +23,7 @@
     <ClCompile Include="SphericalEllipsoid.cpp" />
     <ClCompile Include="SphericalMath.cpp" />
     <ClCompile Include="src\Camera.cpp" />
+    <ClCompile Include="src\CameraMesh.cpp" />
     <ClCompile Include="src\Drawer2D.cpp" />
     <ClCompile Include="src\FPSCounter.cpp" />
     <ClCompile Include="src\Game.cpp" />
@@ -48,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="inc\Camera.h" />
+    <ClInclude Include="inc\CameraMesh.h" />
     <ClInclude Include="inc\Drawer2D.h" />
     <ClInclude Include="inc\font.h" />
     <ClInclude Include="inc\FPSCounter.h" />
