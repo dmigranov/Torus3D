@@ -316,28 +316,40 @@ int Game::Initialize(HWND window, int width, int height)
             xAngleProtractor = 0;
 
 
+        int count = 300;
+        static int jumpCounter = 0;
+        static bool startedJumpUp = false;
+        auto y = m_camera->GetPosition().y;
+
         if (ks.Space)
         {
-            int count = 200;
-            static int jumpCounter = 0;
-            static bool startedJumpUp = false;
-            if (m_camera->GetPosition().y == 0)
+            if (abs(y) < 0.00000001)
             {
                 startedJumpUp = true;
             }
-            if (startedJumpUp && jumpCounter < count)
-            {
-                m_camera->Move(Vector3(0, 0.25*deltaTime, 0));
-                jumpCounter++;
-            }
-            if (jumpCounter == count)
-            {
-                jumpCounter = 0;
-                startedJumpUp = false;
-            }
-
-
         }
+
+        if (startedJumpUp && jumpCounter < count)
+        {
+            m_camera->Move(Vector3(0, 0.00025, 0));
+
+            jumpCounter++;
+        }
+        if (jumpCounter == count)
+        {
+            startedJumpUp = false;
+        }
+        if (!startedJumpUp && jumpCounter > 0)
+        {
+            m_camera->Move(Vector3(0, -0.00025, 0));
+
+            if(abs(y) < 0.001)
+                m_camera->Move(Vector3(0, -y, 0));
+
+
+            jumpCounter--;
+        }
+
 
     }, m_hwnd);
 
