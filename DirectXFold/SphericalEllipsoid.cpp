@@ -18,7 +18,7 @@ SphericalEllipsoid::SphericalEllipsoid(float a, float b, float c, int sliceCount
 
 	XMFLOAT4 color(0, 0, 0, 0);
     float bInv = sqrtf(1.f - b * b);
-	vertices.push_back({ XMFLOAT4(0.f, c, 0.f, bInv), color, XMFLOAT2(0.f, 0.f) });
+	vertices.push_back({ XMFLOAT4(0.f, b, 0.f, bInv), color, XMFLOAT2(0.f, 0.f) });
 
     for (int i = 1; i <= stackCount - 1; i++) {
         auto phi = i * phiStep;
@@ -43,7 +43,7 @@ SphericalEllipsoid::SphericalEllipsoid(float a, float b, float c, int sliceCount
 
     }
 
-    vertices.push_back({ XMFLOAT4(0.f, -c, 0.f, bInv), color, XMFLOAT2(0.f, 1.f) });
+    vertices.push_back({ XMFLOAT4(0.f, -b, 0.f, bInv), color, XMFLOAT2(0.f, 1.f) });
 
 
     WORD northPoleIndex = 0;
