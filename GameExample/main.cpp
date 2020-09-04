@@ -94,7 +94,9 @@ int WINAPI wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE, _In_ LPWSTR, _
     }
     
     auto cube = new SphericalCube(0.99);
-    cube->SetParent(camera->GetCameraVirtualMesh());
+    cube->AddUpdater(SphericalMesh::MeshUpdater([camera](Matrix, float) {
+        return SphericalRotationZW(0.3) * ((Matrix)camera->GetView()).Transpose();
+    }));
     game.AddMesh(cube);
     return game.StartGame();
 
