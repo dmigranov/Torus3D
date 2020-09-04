@@ -93,11 +93,12 @@ int WINAPI wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE, _In_ LPWSTR, _
         }
     }
     
-    auto cube = new SphericalCube(0.99);
-    cube->AddUpdater(SphericalMesh::MeshUpdater([camera](Matrix, float) {
-        return SphericalRotationZW(0.3) * ((Matrix)camera->GetView()).Transpose();
-    }));
-    game.AddMesh(cube);
+    //auto cube = new SphericalCube(0.99);
+    auto gun = new SphericalEllipsoid(0.05, 0.05, 0.21, 15, 15, asteroidTexture);
+    /*gun->AddUpdater(SphericalMesh::MeshUpdater([camera](Matrix, float) {
+        return SphericalRotationXW(0.2) * SphericalRotationYW(-0.2) * SphericalRotationZW(0.2) * ((Matrix)camera->GetView()).Transpose();
+    }));*/
+    game.AddMesh(gun);
     return game.StartGame();
 
 }
