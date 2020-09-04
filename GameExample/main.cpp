@@ -15,7 +15,7 @@ int WINAPI wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE, _In_ LPWSTR, _
     //game.MoveCamera(Vector3(0, 0, -XM_PI / 4));
     game.SetCameraFovY(XM_PI / 2);
     game.SetBackgroundColor(DirectX::Colors::PowderBlue);
-    Texture * earthTexture = game.CreateTexture(L"earth.dds");
+    Texture * earthTexture = game.CreateTexture(L"earth8k.dds");
     
 
     /*int bodyCount = 8;
@@ -42,8 +42,7 @@ int WINAPI wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE, _In_ LPWSTR, _
 
     auto camera = (std::static_pointer_cast<SphericalCamera>(game.GetCamera()));
 
-    auto mesh = new SphericalSphere(0.94f, 25, 25, earthTexture, SphericalRotationYW(3 * XM_PI / 2));
-    camera->SetParent(mesh);
+    auto mesh = new SphericalSphere(0.94f, 35, 35, earthTexture, SphericalRotationYW(3 * XM_PI / 2));
     game.AddMesh(mesh);
 
 
