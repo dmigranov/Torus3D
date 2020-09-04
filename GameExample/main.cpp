@@ -17,7 +17,9 @@ int WINAPI wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE, _In_ LPWSTR, _
     game.SetBackgroundColor(DirectX::Colors::PowderBlue);
     Texture * earthTexture = game.CreateTexture(L"earth8k.dds");
     Texture * sviborgTexture = game.CreateTexture(L"sviborg.dds");
-    Texture* fireTexture = game.CreateTexture(L"fire.dds");
+    Texture * fireTexture = game.CreateTexture(L"fire.dds");
+    Texture * moonTexture = game.CreateTexture(L"moon.dds");
+    Texture * asteroidTexture = game.CreateTexture(L"asteroid.dds");
 
 
     /*int bodyCount = 8;
@@ -43,8 +45,26 @@ int WINAPI wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE, _In_ LPWSTR, _
     }*/
 
 
-    auto earth = new SphericalSphere(0.94f, 35, 35, earthTexture, SphericalRotationYW(3 * XM_PI / 2));
+    auto earth = new SphericalSphere(0.92f, 35, 35, earthTexture, SphericalRotationYW(3 * XM_PI / 2));
     game.AddMesh(earth);
+
+    //auto moon = new SphericalSphere(0.3f, 20, 20, moonTexture, SphericalRotationXW(0.99f) * SphericalRotationZW(0.99f));
+    auto moon = new SphericalSphere(0.3f, 20, 20, moonTexture);
+    moon->AddUpdater(Mesh::MeshUpdater([](Matrix in, float delta) {
+        static double time = 0;
+        time += delta;
+        return SphericalRotationXZ(2 * time) * SphericalRotationXW(time / 2.) * SphericalRotationZW(XM_PI/2);
+    }));
+    game.AddMesh(moon);
+
+
+    auto asteroid = new SphericalSphere(0.12f, 20, 20, asteroidTexture, SphericalRotationZW(-0.6f));
+    asteroid->SetParent(moon);
+    asteroid->AddUpdater(Mesh::MeshUpdater([](Matrix in, float delta) {
+        return in * SphericalRotationXZ(delta);
+    }));
+    game.AddMesh(asteroid);
+
 
 
     auto head = new SphericalSphere(0.08f, 20, 20, sviborgTexture);

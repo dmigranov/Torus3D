@@ -7,6 +7,7 @@ using namespace DirectX::SimpleMath;
 //extern void ExitGame();
 
 const float MOVEMENT_GAIN = 0.3f;
+const float RUN_MOVEMENT_GAIN = 1.2f;
 const float ROTATION_GAIN = 1.3f;
 
 SimpleInputHandler::SimpleInputHandler(std::shared_ptr<Camera> camera, std::function<void(float deltaTime)> func, HWND window)
@@ -52,8 +53,10 @@ void SimpleInputHandler::HandleKeyboard(float deltaTime)
     if (kb.F)
         move.y -= deltaTime;
 
-
-    move *= MOVEMENT_GAIN;
+    if (kb.LeftShift || kb.RightShift)
+        move *= RUN_MOVEMENT_GAIN;
+    else
+        move *= MOVEMENT_GAIN;
     if(move != Vector3::Zero)
         m_camera->Move(move);
 
