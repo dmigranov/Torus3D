@@ -21,6 +21,8 @@ int WINAPI wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE, _In_ LPWSTR, _
     Texture * moonTexture = game.CreateTexture(L"moon.dds");
     Texture * asteroidTexture = game.CreateTexture(L"asteroid.dds");
 
+    auto camera =(std::static_pointer_cast<SphericalCamera>(game.GetCamera()));
+
 
     /*int bodyCount = 8;
     for (int i = 0; i < bodyCount; i++)
@@ -48,50 +50,52 @@ int WINAPI wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE, _In_ LPWSTR, _
     auto earth = new SphericalSphere(0.92f, 35, 35, earthTexture, SphericalRotationYW(3 * XM_PI / 2));
     game.AddMesh(earth);
 
-    //auto moon = new SphericalSphere(0.3f, 20, 20, moonTexture, SphericalRotationXW(0.99f) * SphericalRotationZW(0.99f));
-    auto moon = new SphericalSphere(0.3f, 20, 20, moonTexture);
-    moon->AddUpdater(Mesh::MeshUpdater([](Matrix in, float delta) {
-        static double time = 0;
-        time += delta;
-        return SphericalRotationXZ(2 * time) * SphericalRotationXW(time / 2.) * SphericalRotationZW(XM_PI/2);
+    /*auto moon = new SphericalSphere(0.3f, 20, 20, moonTexture, SphericalRotationXW(XM_PI / 2) * SphericalRotationYW(XM_PI / 2) );
+    moon->SetParent(earth);
+    moon->AddUpdater(Mesh::MeshUpdater([](Matrix in, float delta ) {
+        return in * SphericalRotationXZ(delta);
     }));
     game.AddMesh(moon);
 
 
-    auto asteroid = new SphericalSphere(0.12f, 20, 20, asteroidTexture, SphericalRotationZW(-0.6f));
+    auto asteroid = new SphericalSphere(0.06f, 20, 20, asteroidTexture, SphericalRotationZW(-0.6f));
     asteroid->SetParent(moon);
     asteroid->AddUpdater(Mesh::MeshUpdater([](Matrix in, float delta) {
         return in * SphericalRotationXZ(delta);
     }));
-    game.AddMesh(asteroid);
+    game.AddMesh(asteroid);*/
 
 
 
-    auto head = new SphericalSphere(0.08f, 20, 20, sviborgTexture);
-    head->AddUpdater(Mesh::MeshUpdater([](Matrix in, float delta) {
-        auto ks = Keyboard::Get().GetState();
-
-        static double time = 0;
-        if (!ks.Space)
-            time += delta;
-
-        return SphericalRotationYW(0) * SphericalRotationXZ(XM_PI / 2) * SphericalRotationZW(time / 5.) * SphericalRotationYW(0.1 * sin(time));
-
-    }));
-    game.AddMesh(head);
-
-    int sect = 8;
-    for (int i = 0; i < sect; i++)
     {
-        Mesh* mesh = new SphericalSphere(0.01f, 20, 20, fireTexture, SphericalRotationYW(-0.12f) * SphericalRotationYZ(i * XM_2PI / sect));
-        mesh->AddUpdater(SphericalMesh::MeshUpdater([i](Matrix in, float delta) {
-            return  in * SphericalRotationYZ(delta / 3.f);
+        auto head = new SphericalSphere(0.08f, 20, 20, sviborgTexture);
+        head->AddUpdater(Mesh::MeshUpdater([](Matrix in, float delta) {
+            auto ks = Keyboard::Get().GetState();
+
+            static double time = 0;
+            if (!ks.Space)
+                time += delta;
+
+            return SphericalRotationYW(0) * SphericalRotationXZ(XM_PI / 2) * SphericalRotationZW(time / 5.) * SphericalRotationYW(0.1 * sin(time));
+
         }));
-        mesh->SetParent(head);
-        game.AddMesh(mesh);
+        game.AddMesh(head);
+
+        int sect = 8;
+        for (int i = 0; i < sect; i++)
+        {
+            Mesh* mesh = new SphericalSphere(0.01f, 20, 20, fireTexture, SphericalRotationYW(-0.12f) * SphericalRotationYZ(i * XM_2PI / sect));
+            mesh->AddUpdater(SphericalMesh::MeshUpdater([i](Matrix in, float delta) {
+                return  in * SphericalRotationYZ(delta / 3.f);
+            }));
+            mesh->SetParent(head);
+            game.AddMesh(mesh);
+        }
     }
-
-
+    
+    auto cube = new SphericalCube(0.99);
+    cube->SetParent(camera);
+    game.AddMesh(cube);
     return game.StartGame();
 
 }
