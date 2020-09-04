@@ -16,7 +16,9 @@ int WINAPI wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE, _In_ LPWSTR, _
     game.SetCameraFovY(XM_PI / 2);
     game.SetBackgroundColor(DirectX::Colors::PowderBlue);
     Texture * earthTexture = game.CreateTexture(L"earth8k.dds");
-    
+    Texture * sviborgTexture = game.CreateTexture(L"sviborg.dds");
+    Texture* fireTexture = game.CreateTexture(L"fire.dds");
+
 
     /*int bodyCount = 8;
     for (int i = 0; i < bodyCount; i++)
@@ -40,15 +42,35 @@ int WINAPI wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE, _In_ LPWSTR, _
         game.AddMesh(mesh);
     }*/
 
-    auto camera = (std::static_pointer_cast<SphericalCamera>(game.GetCamera()));
 
-    auto mesh = new SphericalSphere(0.94f, 35, 35, earthTexture, SphericalRotationYW(3 * XM_PI / 2));
-    game.AddMesh(mesh);
+    auto earth = new SphericalSphere(0.94f, 35, 35, earthTexture, SphericalRotationYW(3 * XM_PI / 2));
+    game.AddMesh(earth);
 
 
-    
-    //auto mesh = new SphericalSphere(0.15f, 20, 20, earthTexture, SphericalRotationXZ(XM_PI / 4) * SphericalRotationZW(-0.6));
-    //game.AddMesh(mesh);
+    auto head = new SphericalSphere(0.08f, 20, 20, sviborgTexture);
+    head->AddUpdater(Mesh::MeshUpdater([](Matrix in, float delta) {
+        auto ks = Keyboard::Get().GetState();
+
+        static double time = 0;
+        if (!ks.Space)
+            time += delta;
+
+        return SphericalRotationYW(0) * SphericalRotationXZ(XM_PI / 2) * SphericalRotationZW(time / 5.) * SphericalRotationYW(0.1 * sin(time));
+
+    }));
+    game.AddMesh(head);
+
+    int sect = 8;
+    for (int i = 0; i < sect; i++)
+    {
+        Mesh* mesh = new SphericalSphere(0.01f, 20, 20, fireTexture, SphericalRotationYW(-0.12f) * SphericalRotationYZ(i * XM_2PI / sect));
+        mesh->AddUpdater(SphericalMesh::MeshUpdater([i](Matrix in, float delta) {
+            return  in * SphericalRotationYZ(delta / 3.f);
+        }));
+        mesh->SetParent(head);
+        game.AddMesh(mesh);
+    }
+
 
     return game.StartGame();
 
