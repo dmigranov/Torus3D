@@ -20,6 +20,7 @@ int WINAPI wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE, _In_ LPWSTR, _
     Texture * fireTexture = game.CreateTexture(L"fire.dds");
     Texture * moonTexture = game.CreateTexture(L"moon.dds");
     Texture * asteroidTexture = game.CreateTexture(L"asteroid.dds");
+    Texture * gunTexture = game.CreateTexture(L"gun.dds");
 
     auto camera =(std::static_pointer_cast<SphericalCamera>(game.GetCamera()));
 
@@ -73,7 +74,7 @@ int WINAPI wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE, _In_ LPWSTR, _
             auto ks = Keyboard::Get().GetState();
 
             static double time = 0;
-            if (!ks.Space)
+            if (!ks.LeftControl)
                 time += delta;
 
             return SphericalRotationYW(0) * SphericalRotationXZ(XM_PI / 2) * SphericalRotationZW(time / 5.) * SphericalRotationYW(0.1 * sin(time));
@@ -94,11 +95,17 @@ int WINAPI wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE, _In_ LPWSTR, _
     }
     
     //auto cube = new SphericalCube(0.99);
-    auto gun = new SphericalEllipsoid(0.05, 0.05, 0.12, 11, 3, asteroidTexture);
+    /*auto gun = new SphericalEllipsoid(0.05, 0.05, 0.15, 20, 20, gunTexture);
+    //auto bullet = new SphericalSphere(0.05, 5, 5, gunTexture);
+
     gun->AddUpdater(SphericalMesh::MeshUpdater([camera](Matrix, float) {
-        return SphericalRotationXW(0.2) * SphericalRotationYW(-0.2) * SphericalRotationZW(0.2) * ((Matrix)camera->GetView()).Transpose();
+        auto ms = Mouse::Get().GetState();
+        if (ms.rightButton)
+            std::cout << "hello";
+
+        return SphericalRotationXW(0.15) * SphericalRotationYW(-0.15) * SphericalRotationZW(0.2) * ((Matrix)camera->GetView()).Transpose();
     }));
-    game.AddMesh(gun);
+    game.AddMesh(gun);*/
 
 
     return game.StartGame();

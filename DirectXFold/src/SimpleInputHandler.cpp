@@ -47,11 +47,12 @@ void SimpleInputHandler::HandleKeyboard(float deltaTime)
     if (kb.Right || kb.D)
         move.x += deltaTime;
 
-    if (kb.R)
+    /*if (kb.R)
         move.y += deltaTime;
 
     if (kb.F)
-        move.y -= deltaTime;
+        move.y -= deltaTime;*/
+
 
     if (kb.LeftShift || kb.RightShift)
         move *= RUN_MOVEMENT_GAIN;
@@ -59,6 +60,7 @@ void SimpleInputHandler::HandleKeyboard(float deltaTime)
         move *= MOVEMENT_GAIN;
     if(move != Vector3::Zero)
         m_camera->Move(move);
+
 
     func(deltaTime);
 }

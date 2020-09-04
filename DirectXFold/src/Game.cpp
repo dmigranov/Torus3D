@@ -315,6 +315,30 @@ int Game::Initialize(HWND window, int width, int height)
         if (ks.IsKeyUp(Keyboard::Keys::LeftShift))
             xAngleProtractor = 0;
 
+
+        if (ks.Space)
+        {
+            int count = 200;
+            static int jumpCounter = 0;
+            static bool startedJumpUp = false;
+            if (m_camera->GetPosition().y == 0)
+            {
+                startedJumpUp = true;
+            }
+            if (startedJumpUp && jumpCounter < count)
+            {
+                m_camera->Move(Vector3(0, 0.25*deltaTime, 0));
+                jumpCounter++;
+            }
+            if (jumpCounter == count)
+            {
+                jumpCounter = 0;
+                startedJumpUp = false;
+            }
+
+
+        }
+
     }, m_hwnd);
 
     //Почему можно на стеке: When UpdateSubresource returns, the application is free to change or even free the data pointed to by pSrcData because the method has already copied/snapped away the original contents. 
