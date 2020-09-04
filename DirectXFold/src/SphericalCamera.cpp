@@ -121,7 +121,7 @@ Vector4 SphericalCamera::GetPosition()
 //v = dx dy dz (градусы)
 void SphericalCamera::Move(Vector3 v3)
 {
-	dV = v3;
+	dV += v3;
 
 	m_viewDirty = true;
 }
