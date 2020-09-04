@@ -22,7 +22,6 @@ public:
 	void Move(DirectX::SimpleMath::Vector3 v) override;
 	void ChangePitchYawRoll(double deltaPitch, double deltaYaw, double deltaRoll) override;
 
-	void SetParent(Mesh* pParentMesh);
 
 private:
 	DirectX::SimpleMath::Vector4 spherePos = DirectX::SimpleMath::Vector4(0, 0, 0, 1);
@@ -35,6 +34,5 @@ private:
 	DirectX::SimpleMath::Quaternion RotationQuaternion;
 	DirectX::XMFLOAT3 GetSphericalFromCartesian(float x4, float x3, float x2, float x1);
 
-	Mesh* m_pParentMesh;
 };
 

@@ -147,12 +147,6 @@ void SphericalCamera::ChangePitchYawRoll(double deltaPitch, double deltaYaw, dou
 
 }
 
-void SphericalCamera::SetParent(Mesh* pParentMesh)
-{
-	m_pParentMesh = pParentMesh;
-}
-
-
 //xyzw
 XMFLOAT3 SphericalCamera::GetSphericalFromCartesian(float x4, float x3, float x2, float x1)
 {
