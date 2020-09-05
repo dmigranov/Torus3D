@@ -59,8 +59,7 @@ void SimpleInputHandler::HandleKeyboard(float deltaTime)
     else
         move *= MOVEMENT_GAIN;
 
-    if (kb.Space)
-        std::cout << "h";
+
     if(move != Vector3::Zero)
         m_camera->Move(move);
 

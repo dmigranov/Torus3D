@@ -316,22 +316,22 @@ int Game::Initialize(HWND window, int width, int height)
             xAngleProtractor = 0;
 
 
-        int count = 300;
+        int count = 60;
         static int jumpCounter = 0;
-        static bool startedJumpUp = false;
-        auto y = m_camera->GetPosition().y;
+        static bool startedJumpUp = false, notInAir = true;
 
         if (ks.Space)
         {
-            if (abs(y) < 0.00000001)
+            if (notInAir)
             {
                 startedJumpUp = true;
+                notInAir = false;
             }
         }
 
         if (startedJumpUp && jumpCounter < count)
         {
-            m_camera->Move(Vector3(0, 0.00025, 0));
+            m_camera->Move(Vector3(0, 0.005, 0));
 
             jumpCounter++;
         }
@@ -341,15 +341,23 @@ int Game::Initialize(HWND window, int width, int height)
         }
         if (!startedJumpUp && jumpCounter > 0)
         {
-            m_camera->Move(Vector3(0, -0.00025, 0));
-
-            if(abs(y) < 0.001)
-                m_camera->Move(Vector3(0, -y, 0));
-
-
+            m_camera->Move(Vector3(0, -0.005, 0));
             jumpCounter--;
+            if (jumpCounter == 0)
+            {
+                std::cout << m_camera->GetPosition().y << std::endl;
+                m_camera->Move(Vector3(0, -(m_camera->GetPosition().y), 0));
+                std::cout << m_camera->GetPosition().y << std::endl;
+                notInAir = true;
+            }
+
         }
 
+        /*if (!startedJumpUp && abs(y) < 0.3)
+        {
+            m_camera->Move(Vector3(0, -y, 0));
+            jumpCounter = 0;
+        }*/
 
     }, m_hwnd);
 
@@ -566,12 +574,12 @@ void Game::Render()
     ss << "W: " << pos.w << std::endl;
     m_textDrawer->DrawTextDownLeftAlign(ss.str().c_str(), 20, m_outputHeight - 20);
 
-    if (Keyboard::Get().GetState().LeftShift)
+    /*if (Keyboard::Get().GetState().LeftShift)
     {
         ss.str(std::string());
         ss << xAngleProtractor / XM_PI * 180;
         m_textDrawer->DrawTextDownRightAlign(ss.str().c_str(), m_outputWidth - 20, m_outputHeight - 20);
-    }
+    }*/
     
     /*auto frameTime = fpsCounter.GetFrameTime();
     static double ftSum = 0;

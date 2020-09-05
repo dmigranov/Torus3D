@@ -15,44 +15,7 @@ const XMMATRIX& SphericalCamera::GetView()
 {
 	if (m_viewDirty)
 	{
-		//view - это обратная к cameraTransform.
-		//чтобы найти камераТрансформ, сначала поворачиваем камеру (слева), потом перемещаем (справа)
-		//но (ABC)-1 = C-1 B-1 A-1
-		//поэтому при нахождении view вращения камеры СПРАВА
-		//А обратная матрица - равна транспонированной!
-
-		//пич йоу:
-		//для нахождения камера трансформ сначала pitch, потом yaw. то есть там pitch левее
-		//но для view питч будет правее
-
-		//Matrix ROld = SphericalRotationXZ(m_yaw) * SphericalRotationYZ(m_pitch);
-		//T = T * R * SphericalRotationZW(m_position.z) * SphericalRotationYW(m_position.y) * SphericalRotationXW(m_position.x) * R.Invert();
-		//T = T * SphericalRotationZW(m_position.z) * SphericalRotationYW(m_position.y) * SphericalRotationXW(m_position.x) ;		
-		
-
-				/*Matrix cameraTransformation;
-		Matrix dT = SphericalRotationZW(-dV.z) * SphericalRotationYW(-dV.y) * SphericalRotationXW(-dV.x);
-		T = R.Transpose() * dT * R * T;	//движение в одной плоскости
-		cameraTransformation = R.Transpose() * T;
-
-
-		if (m_pParentMesh != nullptr)
-			cameraTransformation = cameraTransformation * ((Matrix)m_pParentMesh->GetWorldMatrix())
-
-		m_view = cameraTransformation.Transpose();
-		*/
-
-
-		Matrix dT = SphericalRotationXW(-dV.x) * SphericalRotationYW(-dV.y) * SphericalRotationZW(-dV.z);
-		//Matrix dT = SphericalRotationYW(dV.y) *  SphericalRotationXW(dV.x)  * SphericalRotationZW(dV.z);
-
-		//T = T * R * dT * R.Transpose();	//свободное движение с шутерной камерой
-		T = T * RYaw * dT * RYaw.Transpose();	//движение в одной плоскости
-		
-		m_view = T * R ;
-
-
-		dV = Vector3::Zero;
+		UpdateView();
 	}
 	return m_view;
 }
@@ -126,6 +89,8 @@ void SphericalCamera::Move(Vector3 v3)
 	dV = v3;
 
 	m_viewDirty = true;
+
+	UpdateView();
 }
 
 
@@ -153,6 +118,50 @@ void SphericalCamera::ChangePitchYawRoll(double deltaPitch, double deltaYaw, dou
 Mesh* SphericalCamera::GetCameraVirtualMesh()
 {
 	return new CameraMesh(this);
+}
+
+void SphericalCamera::UpdateView()
+{
+	//view - это обратная к cameraTransform.
+		//чтобы найти камераТрансформ, сначала поворачиваем камеру (слева), потом перемещаем (справа)
+		//но (ABC)-1 = C-1 B-1 A-1
+		//поэтому при нахождении view вращения камеры СПРАВА
+		//А обратная матрица - равна транспонированной!
+
+		//пич йоу:
+		//для нахождения камера трансформ сначала pitch, потом yaw. то есть там pitch левее
+		//но для view питч будет правее
+
+		//Matrix ROld = SphericalRotationXZ(m_yaw) * SphericalRotationYZ(m_pitch);
+		//T = T * R * SphericalRotationZW(m_position.z) * SphericalRotationYW(m_position.y) * SphericalRotationXW(m_position.x) * R.Invert();
+		//T = T * SphericalRotationZW(m_position.z) * SphericalRotationYW(m_position.y) * SphericalRotationXW(m_position.x) ;		
+
+
+				/*Matrix cameraTransformation;
+		Matrix dT = SphericalRotationZW(-dV.z) * SphericalRotationYW(-dV.y) * SphericalRotationXW(-dV.x);
+		T = R.Transpose() * dT * R * T;	//движение в одной плоскости
+		cameraTransformation = R.Transpose() * T;
+
+
+		if (m_pParentMesh != nullptr)
+			cameraTransformation = cameraTransformation * ((Matrix)m_pParentMesh->GetWorldMatrix())
+
+		m_view = cameraTransformation.Transpose();
+		*/
+
+
+	Matrix dT = SphericalRotationXW(-dV.x) * SphericalRotationYW(-dV.y) * SphericalRotationZW(-dV.z);
+	//Matrix dT = SphericalRotationYW(dV.y) *  SphericalRotationXW(dV.x)  * SphericalRotationZW(dV.z);
+
+	//T = T * R * dT * R.Transpose();	//свободное движение с шутерной камерой
+	T = T * RYaw * dT * RYaw.Transpose();	//движение в одной плоскости
+
+	m_view = T * R;
+
+
+	dV = Vector3::Zero;
+
+	m_viewDirty = false;
 }
 
 //xyzw

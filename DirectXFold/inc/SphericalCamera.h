@@ -24,6 +24,9 @@ public:
 
 	Mesh* GetCameraVirtualMesh();
 private:
+
+	void UpdateView();
+
 	DirectX::SimpleMath::Vector4 spherePos = DirectX::SimpleMath::Vector4(0, 0, 0, 1);
 	DirectX::SimpleMath::Vector3 dV = DirectX::SimpleMath::Vector3(0, 0, 0);
 	double pitchDelta = 0, yawDelta = 0;
