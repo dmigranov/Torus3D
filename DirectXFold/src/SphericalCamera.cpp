@@ -84,13 +84,12 @@ Vector4 SphericalCamera::GetPosition()
 //v = dx dy dz (градусы)
 void SphericalCamera::Move(Vector3 v3)
 {
-	//суть проблемы понятна, надо каждый раз в муве пересчитывать матрицы чтобы было движение в прыжжке
 
 	dV = v3;
 
 	m_viewDirty = true;
 
-	UpdateView();
+	//UpdateView();
 }
 
 
