@@ -345,9 +345,11 @@ int Game::Initialize(HWND window, int width, int height)
             jumpCounter--;
             if (jumpCounter == 0)
             {
-                std::cout << m_camera->GetPosition().y << std::endl;
-                m_camera->Move(Vector3(0, -(m_camera->GetPosition().y), 0));
-                std::cout << m_camera->GetPosition().y << std::endl;
+                auto pos = m_camera->GetPosition();
+                double angle = atan2(pos.y, pos.w);
+                std::cout << pos.y << std::endl;
+                m_camera->Move(Vector3(0, -angle, 0));
+                std::cout << pos.y << std::endl;
                 notInAir = true;
             }
 
