@@ -346,7 +346,7 @@ int Game::Initialize(HWND window, int width, int height)
             if (jumpCounter == 0)
             {
                 auto pos = m_camera->GetPosition();
-                double angle = atan2(pos.y, pos.w);
+                double angle = atan2(pos.y, abs(pos.w)); //todo: w = 0?
                 std::cout << pos.y << std::endl;
                 m_camera->Move(Vector3(0, -angle, 0));
                 std::cout << pos.y << std::endl;
