@@ -316,7 +316,7 @@ int Game::Initialize(HWND window, int width, int height)
             xAngleProtractor = 0;
 
 
-        int count = 60;
+        int count = 120;
         static int jumpCounter = 0;
         static bool startedJumpUp = false, notInAir = true;
 
@@ -331,7 +331,7 @@ int Game::Initialize(HWND window, int width, int height)
 
         if (startedJumpUp && jumpCounter < count)
         {
-            m_camera->Move(Vector3(0, 0.005, 0));
+            m_camera->Move(Vector3(0, 0.002, 0));
 
             jumpCounter++;
         }
@@ -341,7 +341,7 @@ int Game::Initialize(HWND window, int width, int height)
         }
         if (!startedJumpUp && jumpCounter > 0)
         {
-            m_camera->Move(Vector3(0, -0.005, 0));
+            m_camera->Move(Vector3(0, -0.002, 0));
             jumpCounter--;
             if (jumpCounter == 0)
             {
@@ -351,22 +351,15 @@ int Game::Initialize(HWND window, int width, int height)
                     auto pos = m_camera->GetPosition();
                     auto x = pos.x, y = pos.y, z = pos.z, w = pos.w;
                     double angle;
-                    if (abs(pos.w) > 0.001)
-                        angle = atan(pos.y / abs(pos.w)); //todo: y < 0?
+                    if (abs(w) > 0.001)
+                        angle = atan(y / abs(w)); //todo: y < 0?
                     else
                         angle = XM_PI / 2;
-                    //angle = acos((w*sqrt(x*x + z*z) - sqrt(w*w*y*y-x*x*y*y+y*y*y*y-y*y*z*z))/(w*w+y*y));
 
-
-                    auto v = m_camera->GetView();
-                    v.r[3].m128_f32[1] = 0;
-                    v.r[3].m128_f32[3] = sqrt(y*y + w*w);
-                    m_camera->SetView(v);
-                    //m_camera->Move(Vector3(0, -angle, 0));
-
+                    m_camera->Move(Vector3(0, -angle, 0));
                 }
 
-                std::cout << "D2: " << m_camera->GetPosition().y << " " << m_camera->GetPosition().w << std::endl;
+                //std::cout << "D2: " << m_camera->GetPosition().y << " " << m_camera->GetPosition().w << std::endl;
 
                 notInAir = true;
             }
