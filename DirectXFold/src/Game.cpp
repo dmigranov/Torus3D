@@ -349,11 +349,13 @@ int Game::Initialize(HWND window, int width, int height)
 
                 {
                     auto pos = m_camera->GetPosition();
+                    auto x = pos.x, y = pos.y, z = pos.z, w = pos.w;
                     double angle;
-                    if (abs(pos.w) > 0.001)
+                    /*if (abs(pos.w) > 0.001)
                         angle = atan(pos.y / abs(pos.w)); //todo: y < 0?
                     else
-                        angle = XM_PI / 2;
+                        angle = XM_PI / 2;*/
+                    angle = acos((w*sqrt(x*x + z*z) - sqrt(w*w*y*y-x*x*y*y+y*y*y*y-y*y*z*z))/(w*w+y*y));
 
 
                     m_camera->Move(Vector3(0, -angle, 0));

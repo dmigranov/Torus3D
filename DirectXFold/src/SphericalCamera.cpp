@@ -89,7 +89,7 @@ void SphericalCamera::Move(Vector3 v3)
 
 	m_viewDirty = true;
 
-	//UpdateView();
+	UpdateView();
 }
 
 
