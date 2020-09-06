@@ -137,3 +137,8 @@ void Camera::SetFarPlane(float farPlane)
 {
 	m_farPlane = farPlane;
 }
+
+void Camera::SetView(Matrix v)
+{
+	m_view = v;
+}

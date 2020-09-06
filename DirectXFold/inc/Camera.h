@@ -31,6 +31,8 @@ public:
 	// Установка дальней отсекающей плоскости
 	void SetFarPlane(float farPlane);
 
+	void SetView(DirectX::SimpleMath::Matrix v);
+
 	/**
 	* @brief Where on the screen is the camera rendered in normalized (!!!) coordinates
 	* http://www.gamedev.net/page/resources/_/technical/game-programming/a-room-with-a-view-r3901.
