@@ -25,6 +25,7 @@ SphericalCube::SphericalCube(double wSec, XMFLOAT4* colors) : SphericalCube(wSec
 SphericalCube::SphericalCube(double wSec, XMMATRIX world, XMFLOAT4* colors)
 {
     //fixed coord - всегда w!
+    m_sectionHeight = wSec;
 
     if (colors == nullptr)
     {
@@ -111,4 +112,23 @@ SphericalCube::SphericalCube(double wSec, XMMATRIX world, XMFLOAT4* colors)
     device->CreateBuffer(&indexBufferDesc, &resourceData, &g_d3dIndexBuffer);
 
     constantBuffer.m_world = world;
+}
+
+double SphericalCube::GetSectionHeight()
+{
+    return m_sectionHeight;
+}
+
+void SphericalCube::SetSectionHeight(double newSectionHeight)
+{
+    double sectionHeight = m_sectionHeight;
+    double multiplier = sqrt((1. - newSectionHeight * newSectionHeight) / (1. - sectionHeight * sectionHeight));;
+
+    Matrix m = Matrix(multiplier, 0, 0, 0,
+        0, multiplier, 0, 0,
+        0, 0, multiplier, 0,
+        0, 0, 0, newSectionHeight / sectionHeight);
+    constantBuffer.m_world = m * constantBuffer.m_world;
+
+    m_sectionHeight = newSectionHeight;
 }

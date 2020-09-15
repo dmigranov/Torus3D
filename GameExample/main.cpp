@@ -23,7 +23,7 @@ int WINAPI wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE, _In_ LPWSTR, _
     Texture * gunTexture = game.CreateTexture(L"gun.dds");
 
     auto camera =(std::static_pointer_cast<SphericalCamera>(game.GetCamera()));
-
+    camera->Move(Vector3(-0.5, 0, 0));
 
     /*int bodyCount = 8;
     for (int i = 0; i < bodyCount; i++)
@@ -106,7 +106,7 @@ int WINAPI wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE, _In_ LPWSTR, _
             if (!ks.LeftControl)
                 time += delta;
 
-            return SphericalRotationXZ(XM_PI / 2) * SphericalRotationZW(time / 5.) * SphericalRotationYW(0.1 * sin(time)) * SphericalRotationXZ(XM_PI / 2) * SphericalRotationZW(0.4);
+            return SphericalRotationXZ(XM_PI / 2) * SphericalRotationZW(time / 5.) * SphericalRotationYW(0.1 * sin(time)) * SphericalRotationXZ(XM_PI / 2 - 0.3) * SphericalRotationZW(0.4);
 
         }));
         game.AddMesh(head2);
@@ -125,8 +125,37 @@ int WINAPI wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE, _In_ LPWSTR, _
             game.AddMesh(mesh);
         }
     }
+
+
+    XMFLOAT4 colors[] = { XMFLOAT4(1, 1, 0, 1), XMFLOAT4(1, 1, 0, 1), XMFLOAT4(1, 1, 0, 1), XMFLOAT4(1, 1, 0, 1),
+                        XMFLOAT4(1, 0, 0, 1) , XMFLOAT4(1, 0, 0, 1) , XMFLOAT4(1, 0, 0, 1) , XMFLOAT4(1, 0, 0, 1) };
+    auto cube = new SphericalCube(0.96, SphericalRotationXW(0.3), colors);
+    cube->AddUpdater(SphericalMesh::MeshUpdater([cube](Matrix in, float delta) {
+        Keyboard::KeyboardStateTracker tracker;
+        auto state = Keyboard::Get().GetState();
+        tracker.Update(state);
+        if (tracker.pressed.T)
+        {
+
+            double newSectionHeight = 0.97;
+            cube->SetSectionHeight(newSectionHeight);
+            /*double sectionHeight = cube->GetSectionHeight();
+            double multiplier = sqrt((1. - newSectionHeight * newSectionHeight) / (1. - sectionHeight * sectionHeight));;
+
+            Matrix m = Matrix(multiplier, 0, 0, 0,
+                0, multiplier, 0, 0,
+                0, 0, multiplier, 0,
+                0, 0, 0, newSectionHeight / sectionHeight);
+            return m * in;*/
+            return (Matrix)cube->GetWorldMatrix();
+        }
+
+        return in;
+    }));
+    game.AddMesh(cube);
     
-    //auto cube = new SphericalCube(0.99);
+    
+    
     /*auto gun = new SphericalEllipsoid(0.05, 0.05, 0.15, 20, 20, gunTexture);
     //auto bullet = new SphericalSphere(0.05, 5, 5, gunTexture);
 
