@@ -69,18 +69,22 @@ int WINAPI wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE, _In_ LPWSTR, _
 
 
     {
-        auto head = new SphericalSphere(0.08f, 20, 20, sviborgTexture);
-        head->AddUpdater(Mesh::MeshUpdater([](Matrix in, float delta) {
+        auto head1 = new SphericalSphere(0.08f, 20, 20, sviborgTexture);
+        head1->AddUpdater(Mesh::MeshUpdater([](Matrix in, float delta) {
             auto ks = Keyboard::Get().GetState();
 
             static double time = 0;
             if (!ks.LeftControl)
                 time += delta;
 
-            return SphericalRotationYW(0) * SphericalRotationXZ(XM_PI / 2) * SphericalRotationZW(time / 5.) * SphericalRotationYW(0.1 * sin(time));
+            return SphericalRotationXZ(XM_PI / 2) * SphericalRotationZW(time / 5.) * SphericalRotationYW(0.1 * sin(time));
 
         }));
-        game.AddMesh(head);
+        game.AddMesh(head1);
+
+        auto tail1 = new SphericalSphere(0.08f, 20, 20, gunTexture, SphericalRotationXW(0.16));
+        tail1->SetParent(head1);
+        game.AddMesh(tail1);
 
         int sect = 8;
         for (int i = 0; i < sect; i++)
@@ -89,7 +93,35 @@ int WINAPI wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE, _In_ LPWSTR, _
             mesh->AddUpdater(SphericalMesh::MeshUpdater([i](Matrix in, float delta) {
                 return  in * SphericalRotationYZ(delta / 3.f);
             }));
-            mesh->SetParent(head);
+            mesh->SetParent(head1);
+            game.AddMesh(mesh);
+        }
+
+
+        auto head2 = new SphericalSphere(0.08f, 20, 20, sviborgTexture);
+        head2->AddUpdater(Mesh::MeshUpdater([](Matrix in, float delta) {
+            auto ks = Keyboard::Get().GetState();
+
+            static double time = 0;
+            if (!ks.LeftControl)
+                time += delta;
+
+            return SphericalRotationXZ(XM_PI / 2) * SphericalRotationZW(time / 5.) * SphericalRotationYW(0.1 * sin(time)) * SphericalRotationXZ(XM_PI / 2) * SphericalRotationZW(0.4);
+
+        }));
+        game.AddMesh(head2);
+
+        auto tail2 = new SphericalSphere(0.08f, 20, 20, gunTexture, SphericalRotationXW(0.16));
+        tail2->SetParent(head2);
+        game.AddMesh(tail2);
+
+        for (int i = 0; i < sect; i++)
+        {
+            Mesh* mesh = new SphericalSphere(0.01f, 20, 20, fireTexture, SphericalRotationYW(-0.12f) * SphericalRotationYZ(i * XM_2PI / sect));
+            mesh->AddUpdater(SphericalMesh::MeshUpdater([i](Matrix in, float delta) {
+                return  in * SphericalRotationYZ(delta / 3.f);
+            }));
+            mesh->SetParent(head2);
             game.AddMesh(mesh);
         }
     }
