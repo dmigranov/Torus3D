@@ -127,8 +127,8 @@ int WINAPI wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE, _In_ LPWSTR, _
     }
 
 
-    XMFLOAT4 colors[] = { XMFLOAT4(1, 1, 0, 1), XMFLOAT4(1, 1, 0, 1), XMFLOAT4(1, 0, 0, 1), XMFLOAT4(1, 0, 0, 1),
-                        XMFLOAT4(1, 1, 0, 1) , XMFLOAT4(1, 1, 0, 1) , XMFLOAT4(1, 0, 0, 1) , XMFLOAT4(1, 0, 0, 1) };
+    XMFLOAT4 colors[] = { XMFLOAT4(0, 1, 0, 1), XMFLOAT4(1, 1, 0, 1), XMFLOAT4(1, 0, 0, 1), XMFLOAT4(1, 0, 1, 1),
+                        XMFLOAT4(0, 1, 0, 1) , XMFLOAT4(1, 1, 0, 1) , XMFLOAT4(1, 0, 0, 1) , XMFLOAT4(1, 0, 1, 1) };
     auto cube = new SphericalCube(0.96, SphericalRotationXW(0.3), colors);
     cube->AddUpdater(SphericalMesh::MeshUpdater([cube](Matrix in, float delta) {        
         auto ks = Keyboard::Get().GetState();
