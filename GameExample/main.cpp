@@ -134,10 +134,10 @@ int WINAPI wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE, _In_ LPWSTR, _
         static double time = 0;
         time += delta;
 
-        double newSectionHeight = (sin(time) + 9)/10;
+        double newSectionHeight = (sin(3 * time) + 9)/10;
         cube->SetSectionHeight(newSectionHeight);
 
-        return (Matrix)cube->GetWorldMatrix();
+        return  SphericalRotationXZ(2 * delta ) * (Matrix)cube->GetWorldMatrix();
     }));
     game.AddMesh(cube);
     
