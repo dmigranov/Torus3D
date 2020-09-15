@@ -131,26 +131,13 @@ int WINAPI wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE, _In_ LPWSTR, _
                         XMFLOAT4(1, 0, 0, 1) , XMFLOAT4(1, 0, 0, 1) , XMFLOAT4(1, 0, 0, 1) , XMFLOAT4(1, 0, 0, 1) };
     auto cube = new SphericalCube(0.96, SphericalRotationXW(0.3), colors);
     cube->AddUpdater(SphericalMesh::MeshUpdater([cube](Matrix in, float delta) {
-        Keyboard::KeyboardStateTracker tracker;
-        auto state = Keyboard::Get().GetState();
-        tracker.Update(state);
-        if (tracker.pressed.T)
-        {
+        static double time = 0;
+        time += delta;
 
-            double newSectionHeight = 0.97;
-            cube->SetSectionHeight(newSectionHeight);
-            /*double sectionHeight = cube->GetSectionHeight();
-            double multiplier = sqrt((1. - newSectionHeight * newSectionHeight) / (1. - sectionHeight * sectionHeight));;
+        double newSectionHeight = (sin(time) + 9)/10;
+        cube->SetSectionHeight(newSectionHeight);
 
-            Matrix m = Matrix(multiplier, 0, 0, 0,
-                0, multiplier, 0, 0,
-                0, 0, multiplier, 0,
-                0, 0, 0, newSectionHeight / sectionHeight);
-            return m * in;*/
-            return (Matrix)cube->GetWorldMatrix();
-        }
-
-        return in;
+        return (Matrix)cube->GetWorldMatrix();
     }));
     game.AddMesh(cube);
     
