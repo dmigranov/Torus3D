@@ -127,21 +127,25 @@ int WINAPI wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE, _In_ LPWSTR, _
     }
 
 
-    XMFLOAT4 colors[] = { XMFLOAT4(1, 1, 0, 1), XMFLOAT4(1, 1, 0, 1), XMFLOAT4(1, 1, 0, 1), XMFLOAT4(1, 1, 0, 1),
-                        XMFLOAT4(1, 0, 0, 1) , XMFLOAT4(1, 0, 0, 1) , XMFLOAT4(1, 0, 0, 1) , XMFLOAT4(1, 0, 0, 1) };
+    XMFLOAT4 colors[] = { XMFLOAT4(1, 1, 0, 1), XMFLOAT4(1, 1, 0, 1), XMFLOAT4(1, 0, 0, 1), XMFLOAT4(1, 0, 0, 1),
+                        XMFLOAT4(1, 1, 0, 1) , XMFLOAT4(1, 1, 0, 1) , XMFLOAT4(1, 0, 0, 1) , XMFLOAT4(1, 0, 0, 1) };
     auto cube = new SphericalCube(0.96, SphericalRotationXW(0.3), colors);
-    cube->AddUpdater(SphericalMesh::MeshUpdater([cube](Matrix in, float delta) {
-        static double time = 0;
-        time += delta;
+    cube->AddUpdater(SphericalMesh::MeshUpdater([cube](Matrix in, float delta) {        
+        auto ks = Keyboard::Get().GetState();
 
-        double newSectionHeight = (sin(3 * time) + 9)/10;
+        static double time = 0;
+        if (!ks.LeftControl)
+            time += delta;
+        else
+            return (Matrix)in;
+
+        double newSectionHeight = (sin(3 * time) + 16)/17;
         cube->SetSectionHeight(newSectionHeight);
 
-        return  SphericalRotationXZ(2 * delta ) * (Matrix)cube->GetWorldMatrix();
+        return SphericalRotationXZ(2 * delta) * (Matrix)cube->GetWorldMatrix();
     }));
     game.AddMesh(cube);
-    
-    
+       
     
     /*auto gun = new SphericalEllipsoid(0.05, 0.05, 0.15, 20, 20, gunTexture);
     //auto bullet = new SphericalSphere(0.05, 5, 5, gunTexture);
