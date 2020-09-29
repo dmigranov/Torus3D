@@ -10,10 +10,13 @@ GameExample is an example project built with the library.
 
 <p align="center">
 <img src="/fig1.png">
+  
 <i>Demonstration of fog effect and geometrical and optical properties of the three-dimensional elliptic space; the eight objects pictured are actually same-sized, their apparent size changes differently compared to the ordinary Euclidean space.</i>
 </p>
 
+
 <p align="center">
 <img src="/rotating-object.gif">
-<i>The spectator is standing on the surface of the "Earth", but due to the geodesics forming the view cone t. A cube is rotating and changing in size. .</i>
+  
+<i>The spectator is standing on the surface of the "Earth", but due to the geodesics forming the view cone t. A cube is rotating and changing in size. </i>
 </p>
