@@ -25,48 +25,8 @@ int WINAPI wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE, _In_ LPWSTR, _
     auto camera =(std::static_pointer_cast<SphericalCamera>(game.GetCamera()));
     camera->Move(Vector3(-0.5, 0, 0));
 
-    /*int bodyCount = 8;
-    for (int i = 0; i < bodyCount; i++)
-    {
-        auto mesh = new SphericalSphere(0.03f, 19, 20, earthTexture, SphericalRotationXW(i * XM_PI /bodyCount));
-        mesh->AddUpdater(Mesh::MeshUpdater([&game, i](Matrix in, float delta) {
-            return SphericalRotationYW(0.001*sin(delta * i / 500)) * in;
-        }));
-        game.AddMesh(mesh);
-    }*/
-
-    
-
-    /*int bodyCount = 8;
-    for (int i = 0; i < bodyCount; i++)
-    {
-        auto mesh = new SphericalSphere(0.15f, 20, 20, earthTexture, SphericalRotationXW(i * XM_PI / bodyCount));
-        mesh->AddUpdater(Mesh::MeshUpdater([&game](Matrix in, float delta) {
-            return in * SphericalRotationXW(-delta/7);
-        }));
-        game.AddMesh(mesh);
-    }*/
-
-
     auto earth = new SphericalSphere(0.92f, 35, 35, earthTexture, SphericalRotationYW(3 * XM_PI / 2));
     game.AddMesh(earth);
-
-    /*auto moon = new SphericalSphere(0.3f, 20, 20, moonTexture, SphericalRotationXW(XM_PI / 2) * SphericalRotationYW(XM_PI / 2) );
-    moon->SetParent(earth);
-    moon->AddUpdater(Mesh::MeshUpdater([](Matrix in, float delta ) {
-        return in * SphericalRotationXZ(delta);
-    }));
-    game.AddMesh(moon);
-
-
-    auto asteroid = new SphericalSphere(0.06f, 20, 20, asteroidTexture, SphericalRotationZW(-0.6f));
-    asteroid->SetParent(moon);
-    asteroid->AddUpdater(Mesh::MeshUpdater([](Matrix in, float delta) {
-        return in * SphericalRotationXZ(delta);
-    }));
-    game.AddMesh(asteroid);*/
-
-
 
     {
         auto head1 = new SphericalSphere(0.08f, 20, 20, sviborgTexture);
@@ -146,19 +106,6 @@ int WINAPI wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE, _In_ LPWSTR, _
     }));
     game.AddMesh(cube);
        
-    
-    /*auto gun = new SphericalEllipsoid(0.05, 0.05, 0.15, 20, 20, gunTexture);
-    //auto bullet = new SphericalSphere(0.05, 5, 5, gunTexture);
-
-    gun->AddUpdater(SphericalMesh::MeshUpdater([camera](Matrix, float) {
-        auto ms = Mouse::Get().GetState();
-        if (ms.rightButton)
-            std::cout << "hello";
-
-        return SphericalRotationXW(0.15) * SphericalRotationYW(-0.15) * SphericalRotationZW(0.2) * ((Matrix)camera->GetView()).Transpose();
-    }));
-    game.AddMesh(gun);*/
-
 
     return game.StartGame();
 
