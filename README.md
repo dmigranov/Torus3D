@@ -14,6 +14,6 @@ GameExample is an example project built with the library.
 </p>
 
 <p align="center">
-<img src="/rotating-object.png">
+<img src="/rotating-object.gif">
 <i>The spectator is standing on the surface of the "Earth", but due to the geodesics forming the view cone t. A cube is rotating and changing in size. .</i>
 </p>
