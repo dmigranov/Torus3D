@@ -49,6 +49,6 @@ GameExample is an example project built with the library.
 <img src="/movement_ell.gif">
 </p>
 <p align="center">
-<i>Movement in elliptical space. The elliptical space can be seen as the spherical space with its antipodal points identified; thus, its volume is two times less. </i>
+<i>Movement in elliptical space. The elliptical space can be seen as the spherical space with its antipodal points identified; thus, its volume is two times less. That's the reason for the fog effect looking different compared to the spherical case.</i>
 </p>
 
