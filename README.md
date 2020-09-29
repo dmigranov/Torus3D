@@ -17,6 +17,6 @@ GameExample is an example project built with the library.
 <img src="/rotating-object.gif">
 </p>
 <p align="center">
-<i>The spectator is standing on the surface of the "Earth"; due to the behaviour of geodesics forming their "viewing cone" the viewer sees not only the points in the bottom part of the picture (like it would be in the Euclidean space) but also their antipodal counterparts in the top part of the picture, which are less contrast beacuse of the fog effect. A cube is rotating and changing in size. </i>
+<i>The spectator is standing on the surface of the "Earth"; due to the behaviour of geodesics forming their "viewing cone", the viewer sees not only the points in the bottom part of the picture (like it would be in the Euclidean space) but also their antipodal counterparts in the top part of the picture, which are less contrast because of the fog effect. A cube is rotating and changing in size. </i>
 </p>
 
