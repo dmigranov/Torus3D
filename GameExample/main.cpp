@@ -106,7 +106,6 @@ int WINAPI wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE, _In_ LPWSTR, _
     }));
     game.AddMesh(cube);
        
-
     return game.StartGame();
 
 }
