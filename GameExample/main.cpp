@@ -23,7 +23,7 @@ int WINAPI wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE, _In_ LPWSTR, _
     Texture * gunTexture = game.CreateTexture(L"gun.dds");
 
     auto camera =(std::static_pointer_cast<SphericalCamera>(game.GetCamera()));
-    camera->Move(Vector3(-0.5, 0, 0));
+    camera->Move(Vector3(0, 0, 0));
 
     auto earth = new SphericalSphere(0.92f, 35, 35, earthTexture, SphericalRotationYW(3 * XM_PI / 2));
     game.AddMesh(earth);
@@ -84,7 +84,7 @@ int WINAPI wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE, _In_ LPWSTR, _
             mesh->SetParent(head2);
             game.AddMesh(mesh);
         }
-    }*/
+    }
 
 
     XMFLOAT4 colors[] = { XMFLOAT4(0, 1, 0, 1), XMFLOAT4(1, 1, 0, 1), XMFLOAT4(1, 0, 0, 1), XMFLOAT4(1, 0, 1, 1),
@@ -105,7 +105,13 @@ int WINAPI wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE, _In_ LPWSTR, _
         return SphericalRotationXZ(2 * delta) * (Matrix)cube->GetWorldMatrix();
     }));
     game.AddMesh(cube);
+    */
        
+
+    auto head1 = new SphericalSphere(0.08f, 20, 20, earthTexture);
+
+    game.AddMesh(head1);
+
     return game.StartGame();
 
 }
