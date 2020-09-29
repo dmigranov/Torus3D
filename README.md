@@ -12,6 +12,7 @@ GameExample is an example project built with the library.
 <img src="/fig1.png">
 <i>Demonstration of fog effect and geometrical and optical properties of the three-dimensional elliptic space; the eight objects pictured are actually same-sized, their apparent size changes differently compared to the ordinary Euclidean space.</i>
 </p>
+<br/>
 
 
 <p align="center">
@@ -20,11 +21,21 @@ GameExample is an example project built with the library.
 <p align="center">
 <i>The spectator is standing on the surface of the "Earth"; due to the behaviour of geodesics forming their "viewing cone", the viewer sees not only the points in the bottom part of the picture (like it would be in the Euclidean space) but also ones in the top part of the picture (they are antipodes of the Earth's points that are visible in the bottom part), which are less contrast because of the fog effect. A cube is rotating and changing in size.</i>
 </p>
+<br/>
 
 
 <p align="center">
 <img src="/optics.gif">
 </p>
 <p align="center">
-<i>Another demonstration of optics in the spherical space: ... antipodal still see ... reflected horizontally and vertically (thus giving a rotation) </i>
+<i>Another demonstration of optics in the spherical space: first the small sphere is just in front of the camera; then it moves forward and now the small sphere is behind the camera, but the spectator still sees it, reflected horizontally and vertically (thus giving a rotation)!</i>
 </p>
+<br/>
+
+<p align="center">
+<img src="/optics_ell.gif">
+</p>
+<p align="center">
+<i>The elliptical space can be seen as the spherical space with its antipodal points identified; thus, its volume is two times less. </i>
+</p>
+
