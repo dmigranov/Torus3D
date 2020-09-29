@@ -28,5 +28,14 @@ GameExample is an example project built with the library.
 <img src="/optics.gif">
 </p>
 <p align="center">
-<i>Another demonstration of optics in the spherical space: first the small sphere is just in front of the camera; after it moves forward so that the small sphere is behind the camera, the spectator still sees it, reflected horizontally and vertically (thus giving a rotation)!</i>
+<i>Another demonstration of optics in the spherical space: first the small sphere is just in front of the camera; then it moves forward and now the small sphere is behind the camera, but the spectator still sees it, reflected horizontally and vertically (thus giving a rotation)!</i>
 </p>
+<br/>
+
+<p align="center">
+<img src="/optics_ell.gif">
+</p>
+<p align="center">
+<i>The elliptical space can be seen as the spherical space with its antipodal points identified; thus, its volume is two times less. </i>
+</p>
+
