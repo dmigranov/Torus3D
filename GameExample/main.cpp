@@ -28,7 +28,7 @@ int WINAPI wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE, _In_ LPWSTR, _
     auto earth = new SphericalSphere(0.92f, 35, 35, earthTexture, SphericalRotationYW(3 * XM_PI / 2));
     game.AddMesh(earth);
 
-    {
+    /*{
         auto head1 = new SphericalSphere(0.08f, 20, 20, sviborgTexture);
         head1->AddUpdater(Mesh::MeshUpdater([](Matrix in, float delta) {
             auto ks = Keyboard::Get().GetState();
@@ -84,12 +84,12 @@ int WINAPI wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE, _In_ LPWSTR, _
             mesh->SetParent(head2);
             game.AddMesh(mesh);
         }
-    }
+    }*/
 
 
     XMFLOAT4 colors[] = { XMFLOAT4(0, 1, 0, 1), XMFLOAT4(1, 1, 0, 1), XMFLOAT4(1, 0, 0, 1), XMFLOAT4(1, 0, 1, 1),
                         XMFLOAT4(0, 1, 0, 1) , XMFLOAT4(1, 1, 0, 1) , XMFLOAT4(1, 0, 0, 1) , XMFLOAT4(1, 0, 1, 1) };
-    auto cube = new SphericalCube(0.96, SphericalRotationXW(0.3), colors);
+    auto cube = new SphericalCube(0.96, SphericalRotationZW(XM_PIDIV2), colors);
     cube->AddUpdater(SphericalMesh::MeshUpdater([cube](Matrix in, float delta) {        
         auto ks = Keyboard::Get().GetState();
 
