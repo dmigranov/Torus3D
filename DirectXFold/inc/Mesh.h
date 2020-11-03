@@ -48,6 +48,7 @@ public:
     virtual void Render() = 0;
     virtual void Render(DirectX::XMMATRIX matrix) = 0;
 
+    void SetVisible(bool isVisible);
 
 protected:
     ID3D11Buffer* g_d3dVertexBuffer = nullptr;
@@ -67,5 +68,6 @@ protected:
 
     Texture* m_texture;
 
+    bool m_isVisible = true;
 };
 
