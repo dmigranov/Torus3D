@@ -88,6 +88,7 @@ int WINAPI wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE, _In_ LPWSTR, _
     
 
 
+    /*
     XMFLOAT4 colors[] = { XMFLOAT4(0, 1, 0, 1), XMFLOAT4(1, 1, 0, 1), XMFLOAT4(1, 0, 0, 1), XMFLOAT4(1, 0, 1, 1),
                         XMFLOAT4(0, 1, 0, 1) , XMFLOAT4(1, 1, 0, 1) , XMFLOAT4(1, 0, 0, 1) , XMFLOAT4(1, 0, 1, 1) };
     auto cube = new SphericalCube(0.96, SphericalRotationZW(XM_PIDIV2), colors);
@@ -107,7 +108,7 @@ int WINAPI wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE, _In_ LPWSTR, _
         return SphericalRotationXZ(2 * delta) * (Matrix)cube->GetWorldMatrix();
     }));
     game.AddMesh(cube);
-    
+    */
 
     SphericalSphere** smallEarthes = new SphericalSphere*[8];
 
@@ -122,7 +123,7 @@ int WINAPI wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE, _In_ LPWSTR, _
 
     auto controller = new SphericalCube(0.96);
     controller->SetVisible(false);
-    controller->AddUpdater(SphericalMesh::MeshUpdater([head1, head2, tail1, tail2, cube, smallEarthes, smallEarthesSect](Matrix in, float delta) {
+    controller->AddUpdater(SphericalMesh::MeshUpdater([head1, head2, tail1, tail2, smallEarthes, smallEarthesSect](Matrix in, float delta) {
         auto ks = Keyboard::Get().GetState();
 
         static int sceneNum = 0;
@@ -136,14 +137,9 @@ int WINAPI wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE, _In_ LPWSTR, _
         else if (ks.D9)
         {
             changed = true;
-            sceneNum = 1;
-        }
-        else if (ks.D8)
-        {
-            changed = true;
             sceneNum = 2;
         }
-        else if (ks.D7)
+        else if (ks.D8)
         {
             changed = true;
             sceneNum = 3;
@@ -159,21 +155,7 @@ int WINAPI wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE, _In_ LPWSTR, _
                 tail1->SetVisible(true);
                 tail2->SetVisible(true);
 
-                cube->SetVisible(false);
-
                 for(int i = 0; i < smallEarthesSect; i++)
-                    smallEarthes[i]->SetVisible(false);
-
-                break;
-            case 1:
-                head1->SetVisible(false);
-                head2->SetVisible(false);
-                tail1->SetVisible(false);
-                tail2->SetVisible(false);
-
-                cube->SetVisible(true);
-
-                for (int i = 0; i < smallEarthesSect; i++)
                     smallEarthes[i]->SetVisible(false);
 
                 break;
@@ -183,7 +165,6 @@ int WINAPI wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE, _In_ LPWSTR, _
                 tail1->SetVisible(false);
                 tail2->SetVisible(false);
 
-                cube->SetVisible(false);
 
                 smallEarthes[0]->SetVisible(true);
                 for (int i = 1; i < smallEarthesSect; i++)
@@ -195,8 +176,6 @@ int WINAPI wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE, _In_ LPWSTR, _
                 head2->SetVisible(false);
                 tail1->SetVisible(false);
                 tail2->SetVisible(false);
-
-                cube->SetVisible(false);
 
                 for (int i = 0; i < smallEarthesSect; i++)
                     smallEarthes[i]->SetVisible(true);
