@@ -345,7 +345,7 @@ int Game::Initialize(HWND window, int width, int height)
             jumpCounter--;
             if (jumpCounter == 0)
             {
-                std::cout << "D1: " << m_camera->GetPosition().y << " " << m_camera->GetPosition().w << std::endl;
+                //std::cout << "D1: " << m_camera->GetPosition().y << " " << m_camera->GetPosition().w << std::endl;
                 {
                     auto pos = m_camera->GetPosition();
                     auto x = pos.x, y = pos.y, z = pos.z, w = pos.w;

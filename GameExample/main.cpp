@@ -108,10 +108,21 @@ int WINAPI wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE, _In_ LPWSTR, _
     }));
     game.AddMesh(cube);
     
-     
+
+    SphericalSphere** smallEarthes = new SphericalSphere*[8];
+
+    int smallEarthesSect = 8;
+    for (int i = 0; i < smallEarthesSect; i++)
+    {
+        smallEarthes[i] = new SphericalSphere(0.15f, 20, 20, earthTexture, SphericalRotationZW(XM_PIDIV2) * SphericalRotationZW(i * XM_PI / smallEarthesSect));
+        smallEarthes[i]->SetVisible(false);
+        game.AddMesh(smallEarthes[i]);
+    }
+
+
     auto controller = new SphericalCube(0.96);
     controller->SetVisible(false);
-    controller->AddUpdater(SphericalMesh::MeshUpdater([head1, head2, tail1, tail2, cube](Matrix in, float delta) {
+    controller->AddUpdater(SphericalMesh::MeshUpdater([head1, head2, tail1, tail2, cube, smallEarthes, smallEarthesSect](Matrix in, float delta) {
         auto ks = Keyboard::Get().GetState();
 
         static int sceneNum = 0;
@@ -127,6 +138,16 @@ int WINAPI wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE, _In_ LPWSTR, _
             changed = true;
             sceneNum = 1;
         }
+        else if (ks.D8)
+        {
+            changed = true;
+            sceneNum = 2;
+        }
+        else if (ks.D7)
+        {
+            changed = true;
+            sceneNum = 3;
+        }
 
         if (changed)
         {
@@ -137,16 +158,52 @@ int WINAPI wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE, _In_ LPWSTR, _
                 head2->SetVisible(true);
                 tail1->SetVisible(true);
                 tail2->SetVisible(true);
+
                 cube->SetVisible(false);
+
+                for(int i = 0; i < smallEarthesSect; i++)
+                    smallEarthes[i]->SetVisible(false);
+
                 break;
             case 1:
                 head1->SetVisible(false);
                 head2->SetVisible(false);
                 tail1->SetVisible(false);
                 tail2->SetVisible(false);
+
                 cube->SetVisible(true);
+
+                for (int i = 0; i < smallEarthesSect; i++)
+                    smallEarthes[i]->SetVisible(false);
+
+                break;
+            case 2:
+                head1->SetVisible(false);
+                head2->SetVisible(false);
+                tail1->SetVisible(false);
+                tail2->SetVisible(false);
+
+                cube->SetVisible(false);
+
+                smallEarthes[0]->SetVisible(true);
+                for (int i = 1; i < smallEarthesSect; i++)
+                    smallEarthes[i]->SetVisible(false);
+
+                break;
+            case 3:
+                head1->SetVisible(false);
+                head2->SetVisible(false);
+                tail1->SetVisible(false);
+                tail2->SetVisible(false);
+
+                cube->SetVisible(false);
+
+                for (int i = 0; i < smallEarthesSect; i++)
+                    smallEarthes[i]->SetVisible(true);
+
                 break;
             }
+
             changed = false;
         }
 
