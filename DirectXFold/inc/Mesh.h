@@ -49,7 +49,7 @@ public:
     virtual void Render(DirectX::XMMATRIX matrix) = 0;
 
     void SetVisible(bool isVisible);
-
+    bool IsVisible();
 protected:
     ID3D11Buffer* g_d3dVertexBuffer = nullptr;
     ID3D11Buffer* g_d3dIndexBuffer = nullptr;

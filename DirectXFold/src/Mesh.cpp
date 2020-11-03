@@ -106,6 +106,11 @@ void Mesh::SetVisible(bool isVisible)
     m_isVisible = isVisible;
 }
 
+bool Mesh::IsVisible()
+{
+    return m_isVisible;
+}
+
 Mesh::MeshUpdater::MeshUpdater(std::function<DirectX::SimpleMath::Matrix(DirectX::SimpleMath::Matrix, float delta)> func)
 {
     m_func = func;

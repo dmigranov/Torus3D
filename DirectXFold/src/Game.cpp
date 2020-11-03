@@ -570,7 +570,8 @@ void Game::Render()
     PerFrameVSConstantBuffer buf = { viewFront , viewBack };
     g_d3dDeviceContext->UpdateSubresource(g_d3dVSConstantBuffers[CB_Frame], 0, nullptr, &buf, 0, 0);
     for (auto mesh : meshes)
-        mesh->Render();
+        if(mesh->IsVisible())
+            mesh->Render();
 
     g_d3dDeviceContext->GSSetShader(nullptr, nullptr, 0);
 

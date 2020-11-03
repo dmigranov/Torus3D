@@ -107,8 +107,8 @@ int WINAPI wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE, _In_ LPWSTR, _
     game.AddMesh(cube);
     
      
-    auto controller = new SphericalCube(0.96, SphericalRotationZW(XM_PIDIV2), colors);
-    controller->SetVisible(false);
+    /*auto controller = new SphericalCube(0.96, SphericalRotationZW(XM_PIDIV2), colors);
+    controller->SetVisible(true);
     controller->AddUpdater(SphericalMesh::MeshUpdater([cube](Matrix in, float delta) {
         auto ks = Keyboard::Get().GetState();
 
@@ -117,7 +117,7 @@ int WINAPI wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE, _In_ LPWSTR, _
         return Matrix();
     }));
 
-    game.AddMesh(controller);
+    game.AddMesh(controller);*/
 
 
     return game.StartGame();
