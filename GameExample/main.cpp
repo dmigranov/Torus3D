@@ -27,7 +27,6 @@ int WINAPI wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE, _In_ LPWSTR, _
 
     auto earth = new SphericalSphere(0.92f, 35, 35, earthTexture, SphericalRotationYW(3 * XM_PI / 2));
     game.AddMesh(earth);
-
     
         auto head1 = new SphericalSphere(0.08f, 20, 20, sviborgTexture);
         head1->AddUpdater(Mesh::MeshUpdater([](Matrix in, float delta) {
@@ -50,7 +49,8 @@ int WINAPI wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE, _In_ LPWSTR, _
         for (int i = 0; i < sect; i++)
         {
             Mesh* mesh = new SphericalSphere(0.01f, 20, 20, fireTexture, SphericalRotationYW(-0.12f) * SphericalRotationYZ(i * XM_2PI / sect));
-            mesh->AddUpdater(SphericalMesh::MeshUpdater([i](Matrix in, float delta) {
+            mesh->AddUpdater(SphericalMesh::MeshUpdater([i, head1, mesh](Matrix in, float delta) {
+                mesh->SetVisible(head1->IsVisible());
                 return  in * SphericalRotationYZ(delta / 3.f);
             }));
             mesh->SetParent(head1);
@@ -78,7 +78,8 @@ int WINAPI wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE, _In_ LPWSTR, _
         for (int i = 0; i < sect; i++)
         {
             Mesh* mesh = new SphericalSphere(0.01f, 20, 20, fireTexture, SphericalRotationYW(-0.12f) * SphericalRotationYZ(i * XM_2PI / sect));
-            mesh->AddUpdater(SphericalMesh::MeshUpdater([i](Matrix in, float delta) {
+            mesh->AddUpdater(SphericalMesh::MeshUpdater([i, head2, mesh](Matrix in, float delta) {
+                mesh->SetVisible(head2->IsVisible());
                 return  in * SphericalRotationYZ(delta / 3.f);
             }));
             mesh->SetParent(head2);
