@@ -28,7 +28,7 @@ int WINAPI wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE, _In_ LPWSTR, _
     auto earth = new SphericalSphere(0.92f, 35, 35, earthTexture, SphericalRotationYW(3 * XM_PI / 2));
     game.AddMesh(earth);
 
-    {
+    
         auto head1 = new SphericalSphere(0.08f, 20, 20, sviborgTexture);
         head1->AddUpdater(Mesh::MeshUpdater([](Matrix in, float delta) {
             auto ks = Keyboard::Get().GetState();
@@ -84,12 +84,13 @@ int WINAPI wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE, _In_ LPWSTR, _
             mesh->SetParent(head2);
             game.AddMesh(mesh);
         }
-    }
+    
 
 
     XMFLOAT4 colors[] = { XMFLOAT4(0, 1, 0, 1), XMFLOAT4(1, 1, 0, 1), XMFLOAT4(1, 0, 0, 1), XMFLOAT4(1, 0, 1, 1),
                         XMFLOAT4(0, 1, 0, 1) , XMFLOAT4(1, 1, 0, 1) , XMFLOAT4(1, 0, 0, 1) , XMFLOAT4(1, 0, 1, 1) };
     auto cube = new SphericalCube(0.96, SphericalRotationZW(XM_PIDIV2), colors);
+    cube->SetVisible(false);
     cube->AddUpdater(SphericalMesh::MeshUpdater([cube](Matrix in, float delta) {        
         auto ks = Keyboard::Get().GetState();
 
@@ -107,17 +108,52 @@ int WINAPI wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE, _In_ LPWSTR, _
     game.AddMesh(cube);
     
      
-    /*auto controller = new SphericalCube(0.96, SphericalRotationZW(XM_PIDIV2), colors);
-    controller->SetVisible(true);
-    controller->AddUpdater(SphericalMesh::MeshUpdater([cube](Matrix in, float delta) {
+    auto controller = new SphericalCube(0.96);
+    controller->SetVisible(false);
+    controller->AddUpdater(SphericalMesh::MeshUpdater([head1, head2, tail1, tail2, cube](Matrix in, float delta) {
         auto ks = Keyboard::Get().GetState();
 
-        
+        static int sceneNum = 0;
+        static bool changed = false;
+
+        if (ks.D0)
+        {
+            changed = true;
+            sceneNum = 0;
+        }
+        else if (ks.D9)
+        {
+            changed = true;
+            sceneNum = 1;
+        }
+
+        if (changed)
+        {
+            switch (sceneNum)
+            {
+            case 0:
+                head1->SetVisible(true);
+                head2->SetVisible(true);
+                tail1->SetVisible(true);
+                tail2->SetVisible(true);
+                cube->SetVisible(false);
+                break;
+            case 1:
+                head1->SetVisible(false);
+                head2->SetVisible(false);
+                tail1->SetVisible(false);
+                tail2->SetVisible(false);
+                cube->SetVisible(true);
+                break;
+            }
+            changed = false;
+        }
+
 
         return Matrix();
     }));
 
-    game.AddMesh(controller);*/
+    game.AddMesh(controller);
 
 
     return game.StartGame();
