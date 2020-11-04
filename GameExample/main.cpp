@@ -29,7 +29,7 @@ int WINAPI wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE, _In_ LPWSTR, _
     auto earth = new SphericalSphere(0.92f, 35, 35, earthTexture, SphericalRotationYW(3 * XM_PI / 2));
     game.AddMesh(earth);
     
-        auto head1 = new SphericalSphere(0.08f, 20, 20, sviborgTexture);
+        auto head1 = new SphericalSphere(0.08f, 20, 20, asteroidTexture);
         head1->AddUpdater(Mesh::MeshUpdater([](Matrix in, float delta) {
             auto ks = Keyboard::Get().GetState();
 
@@ -46,8 +46,31 @@ int WINAPI wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE, _In_ LPWSTR, _
 
         auto tail1 = new SphericalSphere(0.08f, 20, 20, asteroidTexture, SphericalRotationXW(0.16));
         tail1->SetParent(head1);
+        tail1->AddUpdater(Mesh::MeshUpdater([](Matrix in, float delta) {
+            auto ks = Keyboard::Get().GetState();
+
+            static double time = 0;
+            if (!ks.LeftControl)
+                time += delta;
+
+            return SphericalRotationXW(0.16) * SphericalRotationYW(0.02 * sin(time));
+        }));
         game.AddMesh(tail1);
         tail1->SetVisible(false);
+
+        auto tail2 = new SphericalSphere(0.08f, 20, 20, asteroidTexture, SphericalRotationXW(0.16));
+        tail2->SetParent(tail1);
+        tail2->AddUpdater(Mesh::MeshUpdater([](Matrix in, float delta) {
+            auto ks = Keyboard::Get().GetState();
+
+            static double time = 0;
+            if (!ks.LeftControl)
+                time += delta;
+
+            return SphericalRotationXW(0.16) * SphericalRotationYW(0.03 * sin(time));
+        }));
+        game.AddMesh(tail2);
+        tail2->SetVisible(false);
 
         int sect = 8;
         for (int i = 0; i < sect; i++)
@@ -101,7 +124,8 @@ int WINAPI wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE, _In_ LPWSTR, _
             if (!ks.LeftControl)
                 time += delta;
 
-            return SphericalRotationXZ(XM_PI / 2) * SphericalRotationZW(time / 5.) * SphericalRotationXZ(XM_PI / 2 - 0.3) * SphericalRotationZW(0.4);
+
+            return SphericalRotationXZ(-2 * time ) * SphericalRotationXZ(XM_PI / 2) * SphericalRotationZW(time / 5.) * SphericalRotationXZ(XM_PI / 2 - 0.3) * SphericalRotationZW(0.4) ;
         }));
         game.AddMesh(sun);
 
@@ -159,7 +183,7 @@ int WINAPI wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE, _In_ LPWSTR, _
 
     auto controller = new SphericalCube(0.96);
     controller->SetVisible(false);
-    controller->AddUpdater(SphericalMesh::MeshUpdater([earth, head1, tail1, sun, sunEarth, moon,
+    controller->AddUpdater(SphericalMesh::MeshUpdater([earth, head1, tail1, tail2, sun, sunEarth, moon,
         smallEarthes, smallEarthesSect](Matrix in, float delta) {
         auto ks = Keyboard::Get().GetState();
 
@@ -189,6 +213,7 @@ int WINAPI wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE, _In_ LPWSTR, _
             case 0:
                 head1->SetVisible(true);
                 tail1->SetVisible(true);
+                tail2->SetVisible(true);
                 sun->SetVisible(true);
                 sunEarth->SetVisible(true);
                 moon->SetVisible(true);
@@ -200,6 +225,7 @@ int WINAPI wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE, _In_ LPWSTR, _
             case 2:
                 head1->SetVisible(false);
                 tail1->SetVisible(false);
+                tail2->SetVisible(false);
                 sun->SetVisible(false);
                 sunEarth->SetVisible(false);
                 moon->SetVisible(false);
@@ -211,7 +237,8 @@ int WINAPI wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE, _In_ LPWSTR, _
                 break;
             case 3:
                 head1->SetVisible(false);
-                tail1->SetVisible(false);
+                tail1->SetVisible(false);           
+                tail2->SetVisible(false);
                 sun->SetVisible(false);
                 sunEarth->SetVisible(false);
                 moon->SetVisible(false);
