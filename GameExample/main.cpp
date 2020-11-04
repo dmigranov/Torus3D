@@ -20,7 +20,8 @@ int WINAPI wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE, _In_ LPWSTR, _
     Texture * fireTexture = game.CreateTexture(L"fire.dds");
     Texture * moonTexture = game.CreateTexture(L"moon.dds");
     Texture * asteroidTexture = game.CreateTexture(L"asteroid.dds");
-    Texture * gunTexture = game.CreateTexture(L"gun.dds");
+    Texture * sunTexture = game.CreateTexture(L"8k_sun.dds");
+
 
     auto camera =(std::static_pointer_cast<SphericalCamera>(game.GetCamera()));
     camera->Move(Vector3(-0.3, 0, 0));
@@ -43,7 +44,7 @@ int WINAPI wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE, _In_ LPWSTR, _
         head1->SetVisible(false);
 
 
-        auto tail1 = new SphericalSphere(0.08f, 20, 20, gunTexture, SphericalRotationXW(0.16));
+        auto tail1 = new SphericalSphere(0.08f, 20, 20, moonTexture, SphericalRotationXW(0.16));
         tail1->SetParent(head1);
         game.AddMesh(tail1);
         tail1->SetVisible(false);
@@ -61,7 +62,7 @@ int WINAPI wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE, _In_ LPWSTR, _
         }
 
 
-        auto head2 = new SphericalSphere(0.08f, 20, 20, sviborgTexture);
+        /*auto head2 = new SphericalSphere(0.08f, 20, 20, sviborgTexture);
         head2->AddUpdater(Mesh::MeshUpdater([](Matrix in, float delta) {
             auto ks = Keyboard::Get().GetState();
 
@@ -75,7 +76,7 @@ int WINAPI wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE, _In_ LPWSTR, _
         game.AddMesh(head2);
         head2->SetVisible(false);
 
-        auto tail2 = new SphericalSphere(0.08f, 20, 20, gunTexture, SphericalRotationXW(0.16));
+        auto tail2 = new SphericalSphere(0.08f, 20, 20, moonTexture, SphericalRotationXW(0.16));
         tail2->SetParent(head2);
         game.AddMesh(tail2);
         tail2->SetVisible(false);
@@ -89,8 +90,34 @@ int WINAPI wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE, _In_ LPWSTR, _
             }));
             mesh->SetParent(head2);
             game.AddMesh(mesh);
-        }
-    
+        }*/
+
+        auto sun = new SphericalSphere(0.18f, 20, 20, sunTexture);
+        sun->AddUpdater(Mesh::MeshUpdater([](Matrix in, float delta) {
+            auto ks = Keyboard::Get().GetState();
+
+            static double time = 0;
+            if (!ks.LeftControl)
+                time += delta;
+
+            return SphericalRotationXZ(XM_PI / 2) * SphericalRotationZW(time / 5.) * SphericalRotationXZ(XM_PI / 2 - 0.3) * SphericalRotationZW(0.4);
+        }));
+        game.AddMesh(sun);
+
+        auto sunEarth = new SphericalSphere(0.06f, 20, 20, earthTexture, SphericalRotationXY(-0.19f) * SphericalRotationXW(-0.31f) );
+        sunEarth->SetParent(sun);
+        sunEarth->AddUpdater(Mesh::MeshUpdater([](Matrix in, float delta) {
+            return  SphericalRotationXZ(3.f * delta ) * in * SphericalRotationXZ( delta / 2.f);
+        }));
+        game.AddMesh(sunEarth);
+
+        auto moon = new SphericalSphere(0.03f, 20, 20, moonTexture, SphericalRotationXW(-0.11f));
+        moon->SetParent(sunEarth);
+        moon->AddUpdater(Mesh::MeshUpdater([](Matrix in, float delta) {
+            return   SphericalRotationXZ(3.f * delta) * in * SphericalRotationXZ(delta / 2.f);
+        }));
+        game.AddMesh(moon);
+
 
 
     /*
@@ -129,7 +156,7 @@ int WINAPI wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE, _In_ LPWSTR, _
 
     auto controller = new SphericalCube(0.96);
     controller->SetVisible(false);
-    controller->AddUpdater(SphericalMesh::MeshUpdater([earth, head1, head2, tail1, tail2, smallEarthes, smallEarthesSect](Matrix in, float delta) {
+    controller->AddUpdater(SphericalMesh::MeshUpdater([earth, head1, tail1, smallEarthes, smallEarthesSect](Matrix in, float delta) {
         auto ks = Keyboard::Get().GetState();
 
         static int sceneNum = 0;
@@ -158,9 +185,9 @@ int WINAPI wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE, _In_ LPWSTR, _
             case 0:
                 //earth->SetVisible(true);
                 head1->SetVisible(true);
-                head2->SetVisible(true);
+                //head2->SetVisible(true);
                 tail1->SetVisible(true);
-                tail2->SetVisible(true);
+                //tail2->SetVisible(true);
 
                 for(int i = 0; i < smallEarthesSect; i++)
                     smallEarthes[i]->SetVisible(false);
@@ -170,9 +197,9 @@ int WINAPI wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE, _In_ LPWSTR, _
                 //earth->SetVisible(false);
 
                 head1->SetVisible(false);
-                head2->SetVisible(false);
+                //head2->SetVisible(false);
                 tail1->SetVisible(false);
-                tail2->SetVisible(false);
+                //tail2->SetVisible(false);
 
 
                 smallEarthes[0]->SetVisible(true);
@@ -184,9 +211,9 @@ int WINAPI wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE, _In_ LPWSTR, _
                 //earth->SetVisible(false);
 
                 head1->SetVisible(false);
-                head2->SetVisible(false);
+                //head2->SetVisible(false);
                 tail1->SetVisible(false);
-                tail2->SetVisible(false);
+                //tail2->SetVisible(false);
 
                 for (int i = 0; i < smallEarthesSect; i++)
                     smallEarthes[i]->SetVisible(true);
