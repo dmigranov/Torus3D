@@ -40,10 +40,13 @@ int WINAPI wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE, _In_ LPWSTR, _
 
         }));
         game.AddMesh(head1);
+        head1->SetVisible(false);
+
 
         auto tail1 = new SphericalSphere(0.08f, 20, 20, gunTexture, SphericalRotationXW(0.16));
         tail1->SetParent(head1);
         game.AddMesh(tail1);
+        tail1->SetVisible(false);
 
         int sect = 8;
         for (int i = 0; i < sect; i++)
@@ -70,10 +73,12 @@ int WINAPI wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE, _In_ LPWSTR, _
 
         }));
         game.AddMesh(head2);
+        head2->SetVisible(false);
 
         auto tail2 = new SphericalSphere(0.08f, 20, 20, gunTexture, SphericalRotationXW(0.16));
         tail2->SetParent(head2);
         game.AddMesh(tail2);
+        tail2->SetVisible(false);
 
         for (int i = 0; i < sect; i++)
         {
@@ -119,6 +124,7 @@ int WINAPI wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE, _In_ LPWSTR, _
         smallEarthes[i]->SetVisible(false);
         game.AddMesh(smallEarthes[i]);
     }
+    smallEarthes[0]->SetVisible(true);
 
 
     auto controller = new SphericalCube(0.96);
@@ -132,17 +138,17 @@ int WINAPI wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE, _In_ LPWSTR, _
         if (ks.D0)
         {
             changed = true;
-            sceneNum = 0;
+            sceneNum = 2;
         }
         else if (ks.D9)
         {
             changed = true;
-            sceneNum = 2;
+            sceneNum = 3;
         }
         else if (ks.D8)
         {
             changed = true;
-            sceneNum = 3;
+            sceneNum = 0;
         }
 
         if (changed)
