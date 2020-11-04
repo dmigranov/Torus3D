@@ -129,7 +129,7 @@ int WINAPI wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE, _In_ LPWSTR, _
 
     auto controller = new SphericalCube(0.96);
     controller->SetVisible(false);
-    controller->AddUpdater(SphericalMesh::MeshUpdater([head1, head2, tail1, tail2, smallEarthes, smallEarthesSect](Matrix in, float delta) {
+    controller->AddUpdater(SphericalMesh::MeshUpdater([earth, head1, head2, tail1, tail2, smallEarthes, smallEarthesSect](Matrix in, float delta) {
         auto ks = Keyboard::Get().GetState();
 
         static int sceneNum = 0;
@@ -156,6 +156,7 @@ int WINAPI wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE, _In_ LPWSTR, _
             switch (sceneNum)
             {
             case 0:
+                //earth->SetVisible(true);
                 head1->SetVisible(true);
                 head2->SetVisible(true);
                 tail1->SetVisible(true);
@@ -166,6 +167,8 @@ int WINAPI wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE, _In_ LPWSTR, _
 
                 break;
             case 2:
+                //earth->SetVisible(false);
+
                 head1->SetVisible(false);
                 head2->SetVisible(false);
                 tail1->SetVisible(false);
@@ -178,6 +181,8 @@ int WINAPI wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE, _In_ LPWSTR, _
 
                 break;
             case 3:
+                //earth->SetVisible(false);
+
                 head1->SetVisible(false);
                 head2->SetVisible(false);
                 tail1->SetVisible(false);
