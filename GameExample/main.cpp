@@ -111,30 +111,6 @@ int WINAPI wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE, _In_ LPWSTR, _
         }));
         game.AddMesh(moon);
 
-
-
-    /*
-    XMFLOAT4 colors[] = { XMFLOAT4(0, 1, 0, 1), XMFLOAT4(1, 1, 0, 1), XMFLOAT4(1, 0, 0, 1), XMFLOAT4(1, 0, 1, 1),
-                        XMFLOAT4(0, 1, 0, 1) , XMFLOAT4(1, 1, 0, 1) , XMFLOAT4(1, 0, 0, 1) , XMFLOAT4(1, 0, 1, 1) };
-    auto cube = new SphericalCube(0.96, SphericalRotationZW(XM_PIDIV2), colors);
-    cube->SetVisible(false);
-    cube->AddUpdater(SphericalMesh::MeshUpdater([cube](Matrix in, float delta) {        
-        auto ks = Keyboard::Get().GetState();
-
-        static double time = 0;
-        if (!ks.LeftControl)
-            time += delta;
-        else
-            return (Matrix)in;
-
-        double newSectionHeight = (sin(3 * time) + 16)/17;
-        cube->SetSectionHeight(newSectionHeight);
-
-        return SphericalRotationXZ(2 * delta) * (Matrix)cube->GetWorldMatrix();
-    }));
-    game.AddMesh(cube);
-    */
-
     SphericalSphere** smallEarthes = new SphericalSphere*[8];
 
     int smallEarthesSect = 8;
