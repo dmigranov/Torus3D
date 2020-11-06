@@ -16,7 +16,7 @@ int Game::StartGame()
     // it runs indefinitely, and then check for messages inside the while loop
     // the loop will keep running forever unless something interrupts the loop and causes it to exit
     // то есть даже если не рендерим, всё равно апдейтим
-    // поэтмоу жрёт столько когда свёрнута
+    // поэтому потребляет столько когда свёрнута
 
     MSG msg = {};
     while (WM_QUIT != msg.message)
