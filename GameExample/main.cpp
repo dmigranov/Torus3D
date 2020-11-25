@@ -22,7 +22,7 @@ int WINAPI wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE, _In_ LPWSTR, _
     Texture * asteroidTexture = game.CreateTexture(L"asteroid.dds");
     Texture * sunTexture = game.CreateTexture(L"8k_sun.dds");
 
-
+    /*
     auto earth = new SphericalSphere(0.92f, 35, 35, earthTexture, SphericalRotationYW(3 * XM_PI / 2));
     game.AddMesh(earth);
     
@@ -200,8 +200,21 @@ int WINAPI wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE, _In_ LPWSTR, _
 
     game.AddMesh(controller);
 
+    */
+
+
+    constexpr int smallEarthesSect = 64;
+
+    SphericalSphere** smallEarthes = new SphericalSphere * [smallEarthesSect];
+
+    for (int i = 0; i < smallEarthesSect; i++)
+    {
+        smallEarthes[i] = new SphericalSphere(0.03f, 20, 20, earthTexture, SphericalRotationZW(XM_PIDIV2) * SphericalRotationZW(i * XM_PI / smallEarthesSect));
+        game.AddMesh(smallEarthes[i]);
+    }
 
     return game.StartGame();
+
 
 }
     
