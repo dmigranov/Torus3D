@@ -72,29 +72,29 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>D:\Диплом\MY CODE\DirectXFold\DirectXFold\packages\directxtk_desktop_2015.2019.12.17.1\include;D:\Диплом\MY CODE\DirectXFold\DirectXFold\inc;$(IncludePath)</IncludePath>
-    <LibraryPath>D:\Диплом\MY CODE\DirectXFold\DirectXFold\packages\directxtk_desktop_2015.2019.12.17.1\lib\x64\Release;D:\Диплом\MY CODE\DirectXFold\DirectXFold\bin64;$(LibraryPath)</LibraryPath>
+    <IncludePath>..\DirectXFold\packages\directxtk_desktop_2015.2019.12.17.1\include;..\DirectXFold\inc;$(IncludePath)</IncludePath>
+    <LibraryPath>..\DirectXFold\packages\directxtk_desktop_2015.2019.12.17.1\lib\x64\Release;..\DirectXFold\bin64;$(LibraryPath)</LibraryPath>
     <OutDir>bin64\</OutDir>
     <TargetName>DXSphEll</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>D:\Диплом\MY CODE\DirectXFold\DirectXFold\packages\directxtk_desktop_2015.2019.12.17.1\include;D:\Диплом\MY CODE\DirectXFold\DirectXFold\inc;$(IncludePath)</IncludePath>
-    <LibraryPath>D:\Диплом\MY CODE\DirectXFold\DirectXFold\bin;$(LibraryPath)</LibraryPath>
+    <IncludePath>..\DirectXFold\packages\directxtk_desktop_2015.2019.12.17.1\include;..\DirectXFold\inc;$(IncludePath)</IncludePath>
+    <LibraryPath>..\DirectXFold\bin;$(LibraryPath)</LibraryPath>
     <OutDir>bin</OutDir>
     <TargetName>$(ProjectName)d</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>D:\Диплом\MY CODE\DirectXFold\DirectXFold\packages\directxtk_desktop_2015.2019.12.17.1\include;D:\Диплом\MY CODE\DirectXFold\DirectXFold\inc;$(IncludePath)</IncludePath>
-    <LibraryPath>D:\Диплом\MY CODE\DirectXFold\DirectXFold\packages\directxtk_desktop_2015.2019.12.17.1\lib\x64\Debug;D:\Диплом\MY CODE\DirectXFold\DirectXFold\bin64;$(LibraryPath)</LibraryPath>
+    <IncludePath>..\DirectXFold\packages\directxtk_desktop_2015.2019.12.17.1\include;..\DirectXFold\inc;$(IncludePath)</IncludePath>
+    <LibraryPath>..\DirectXFold\packages\directxtk_desktop_2015.2019.12.17.1\lib\x64\Debug;..\DirectXFold\bin64;$(LibraryPath)</LibraryPath>
     <OutDir>bin64\</OutDir>
     <TargetName>$(ProjectName)d</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>D:\Диплом\MY CODE\DirectXFold\DirectXFold\packages\directxtk_desktop_2015.2019.12.17.1\include;D:\Диплом\MY CODE\DirectXFold\DirectXFold\inc;$(IncludePath)</IncludePath>
-    <LibraryPath>D:\Диплом\MY CODE\DirectXFold\DirectXFold\packages\directxtk_desktop_2015.2019.12.17.1\lib\Win32\Release;D:\Диплом\MY CODE\DirectXFold\DirectXFold\bin;$(LibraryPath)</LibraryPath>
+    <IncludePath>..\DirectXFold\packages\directxtk_desktop_2015.2019.12.17.1\include;..\DirectXFold\inc;$(IncludePath)</IncludePath>
+    <LibraryPath>.\DirectXFold\packages\directxtk_desktop_2015.2019.12.17.1\lib\Win32\Release;..\DirectXFold\bin;$(LibraryPath)</LibraryPath>
     <OutDir>bin</OutDir>
     <TargetName>DXSphEll</TargetName>
   </PropertyGroup>
