@@ -132,7 +132,7 @@ private:
 
     // Shader data
     ID3D11VertexShader* g_d3dVertexShader = nullptr;
-    ID3D11VertexShader* g_d3dEllipticalVertexShader = nullptr;
+    ID3D11VertexShader* g_d3dToricVertexShader = nullptr;
 
     ID3D11GeometryShader* g_d3dGeometryShader = nullptr;
 
@@ -204,5 +204,5 @@ private:
     bool isInitialized = false;
     bool isSpherical = false;
 
-    DirectX::XMMATRIX commonProjectionMatrix;
+    DirectX::XMMATRIX m_projectionMatrix;
 };

@@ -368,14 +368,14 @@ void Game::CreateResources()
 
     auto density = perApplicationVSConstantBuffer.density;
 
-    perApplicationVSConstantBuffer = { commonProjectionMatrix, commonProjectionMatrix, density };
+    perApplicationVSConstantBuffer = { m_projectionMatrix, m_projectionMatrix, density };
     g_d3dDeviceContext->UpdateSubresource(g_d3dVSConstantBuffers[CB_Application], 0, nullptr, &perApplicationVSConstantBuffer, 0, 0);
 
 }
 
 void Game::RecalculateProjectionMatrices()
 {
-    commonProjectionMatrix = (std::static_pointer_cast<SphericalCamera>(m_camera))->GetEllipticalProj();
+    m_projectionMatrix = (std::static_pointer_cast<SphericalCamera>(m_camera))->GetEllipticalProj();
 }
 
 
@@ -546,13 +546,13 @@ bool Game::LoadContent()
         return false;
     }
 
-    hr = g_d3dDevice->CreateVertexShader(g_ellexp2vs, sizeof(g_ellexp2vs), nullptr, &g_d3dEllipticalVertexShader);
+    hr = g_d3dDevice->CreateVertexShader(g_ellexp2vs, sizeof(g_ellexp2vs), nullptr, &g_d3dToricVertexShader);
     if (FAILED(hr))
     {
         return false;
     }
 
-    g_d3dVertexShader = g_d3dEllipticalVertexShader;
+    g_d3dVertexShader = g_d3dToricVertexShader;
 
     hr = g_d3dDevice->CreateGeometryShader(g_gs, sizeof(g_gs), nullptr, &g_d3dGeometryShader);
     if (FAILED(hr))
@@ -597,7 +597,7 @@ void Game::UnloadContent()
     SafeRelease(g_d3dInputLayout);
 
     SafeRelease(g_d3dVertexShader);
-    SafeRelease(g_d3dEllipticalVertexShader);
+    SafeRelease(g_d3dToricVertexShader);
 
     SafeRelease(g_d3dGeometryShader);
 
