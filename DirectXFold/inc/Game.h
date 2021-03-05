@@ -7,12 +7,8 @@
 #include "VertexShader.h"
 #include "MorphingVertexShader.h"
 
-#include "SphLinVertexShader.h"
-#include "SphExpVertexShader.h"
-#include "SphExp2VertexShader.h"
 
-#include "EllExpVertexShader.h"
-#include "EllExp2VertexShader.h"
+#include "TorExpVertexShader.h"
 
 #include "GeometryShader.h"
 
@@ -178,7 +174,7 @@ private:
     struct PerApplicationVSConstantBuffer
     {
         DirectX::XMMATRIX proj;
-        DirectX::XMMATRIX proj_anti;
+        //DirectX::XMMATRIX proj_anti;
         float density = 0.2;
         //float fogStart;
         //float fogEnd;
@@ -188,7 +184,7 @@ private:
     struct PerFrameVSConstantBuffer
     {
         DirectX::XMMATRIX view;
-        DirectX::XMMATRIX view_anti;
+        //DirectX::XMMATRIX view_anti;
     };
 
     struct PerApplicationPSConstantBuffer

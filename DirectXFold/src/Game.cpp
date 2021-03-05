@@ -368,7 +368,7 @@ void Game::CreateResources()
 
     auto density = perApplicationVSConstantBuffer.density;
 
-    perApplicationVSConstantBuffer = { m_projectionMatrix, m_projectionMatrix, density };
+    perApplicationVSConstantBuffer = { m_projectionMatrix, density };
     g_d3dDeviceContext->UpdateSubresource(g_d3dVSConstantBuffers[CB_Application], 0, nullptr, &perApplicationVSConstantBuffer, 0, 0);
 
 }
@@ -428,7 +428,7 @@ void Game::Render()
 
     auto viewFront = m_camera->GetView();
     auto viewBack = (std::static_pointer_cast<SphericalCamera>(m_camera))->GetAntipodalView();
-    PerFrameVSConstantBuffer buf = { viewFront , viewBack };
+    PerFrameVSConstantBuffer buf = { viewFront };
     g_d3dDeviceContext->UpdateSubresource(g_d3dVSConstantBuffers[CB_Frame], 0, nullptr, &buf, 0, 0);
     for (auto mesh : meshes)
         if(mesh->IsVisible())
@@ -546,7 +546,7 @@ bool Game::LoadContent()
         return false;
     }
 
-    hr = g_d3dDevice->CreateVertexShader(g_ellexp2vs, sizeof(g_ellexp2vs), nullptr, &g_d3dToricVertexShader);
+    hr = g_d3dDevice->CreateVertexShader(g_torexpvs, sizeof(g_torexpvs), nullptr, &g_d3dToricVertexShader);
     if (FAILED(hr))
     {
         return false;
@@ -574,7 +574,7 @@ bool Game::LoadContent()
         { "TEXCOORD", 0, DXGI_FORMAT_R32G32_FLOAT, 0, D3D11_APPEND_ALIGNED_ELEMENT, D3D11_INPUT_PER_VERTEX_DATA, 0 },
     };
 
-    hr = g_d3dDevice->CreateInputLayout(vertexLayoutDesc, _countof(vertexLayoutDesc), g_sphexp2vs, sizeof(g_sphexp2vs), &g_d3dInputLayout);
+    hr = g_d3dDevice->CreateInputLayout(vertexLayoutDesc, _countof(vertexLayoutDesc), g_torexpvs, sizeof(g_torexpvs), &g_d3dInputLayout);
     if (FAILED(hr))
     {
         return false;
