@@ -9,7 +9,7 @@ public:
         DirectX::SimpleMath::Vector3 position;
     };
 
-    static unsigned int ReplicationCount;
+    static int ReplicationCount;
     static double TorX, TorY, TorZ; //все это будет в классе рендерера в общей реализации
 
     ToricMesh();

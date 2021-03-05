@@ -1,7 +1,7 @@
 #include "pch.h"
 #include "ToricMesh.h"
 
-unsigned int ToricMesh::ReplicationCount = 10;
+int ToricMesh::ReplicationCount = 10;
 double ToricMesh::TorX = 5.;
 double ToricMesh::TorY = 5.;
 double ToricMesh::TorZ = 5.;
@@ -29,24 +29,28 @@ void ToricMesh::Render()
         deviceContext->PSSetShaderResources(0, 1, &shaderResource);
     }
 
-    unsigned int instanceCount = (2 * ReplicationCount + 1);
-    instanceCount = instanceCount * instanceCount * instanceCount;
-    auto instances = new InstanceType[instanceCount];
-    if (!instances)
+    //todo: перенести в констуктор, чтобы не создавать каждый раз
     {
-        throw std::exception("Can't create instances array");
-    }
-
-    for (int X_i = -9; X_i <= 9; X_i += 2)
-    {
-        for (int Y_i = -9; Y_i <= 9; Y_i += 2)
+        int instanceCount = (2 * ReplicationCount + 1);
+        instanceCount = instanceCount * instanceCount * instanceCount;
+        auto instances = new InstanceType[instanceCount];
+        if (!instances)
         {
-            for (int Z_i = -9; Z_i < 9; Z_i += 2)
-            {
+            throw std::exception("Can't create instances array");
+        }
 
+        for (int X_i = -ReplicationCount; X_i <= ReplicationCount; X_i += 2)
+        {
+            for (int Y_i = -ReplicationCount; Y_i <= ReplicationCount; Y_i += 2)
+            {
+                for (int Z_i = -ReplicationCount; Z_i < ReplicationCount; Z_i += 2)
+                {
+
+                }
             }
         }
     }
+    
 
 
     MeshConstantBuffer constantBufferTemp = { constantBuffer.m_world };
