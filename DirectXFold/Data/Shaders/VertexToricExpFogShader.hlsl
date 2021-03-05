@@ -1,21 +1,19 @@
 cbuffer PerApplication : register(b0)
 {
-	matrix projectionMatrixFront;
-	matrix projectionMatrixBack;
+	matrix projectionMatrix;
 	float density;
 }
 
 cbuffer PerFrame : register(b1)
 {
-	matrix viewMatrixFront;
-	matrix viewMatrixBack;
+	matrix viewMatrix;
 }
 
 cbuffer PerObject : register(b2)
 {
 	matrix worldMatrix;
 }
-static float PI = 3.14159265;
+
 
 //POSITION and COLOR are semantics that are used to link vs variables to ps variables
 struct VertexShaderInput
@@ -38,32 +36,18 @@ VertexShaderOutput main(VertexShaderInput IN, uint instanceID : SV_InstanceID)
 {
 	VertexShaderOutput OUT;
  
-	matrix viewMatrix, projectionMatrix;
-
-
-	if (instanceID % 2 == 0)
-	{
-		projectionMatrix = projectionMatrixFront;
-		viewMatrix = viewMatrixFront;
-	}
-	else if (instanceID % 2 == 1)
-	{
-		projectionMatrix = projectionMatrixBack;
-		viewMatrix = viewMatrixBack;
-	}
 
 	matrix viewWorld;
 	viewWorld = mul(viewMatrix, worldMatrix);
 	
 	float4 cameraSpacePosition = mul(viewWorld, IN.position);
-	float chordLength = distance(float4(0, 0, 0, 1), cameraSpacePosition); //длина хорды
-	float distance = 2 * asin(chordLength / 2.);
+	float eucDistance = distance(float4(0, 0, 0, 1), cameraSpacePosition); //длина хорды
 	
 	OUT.color = IN.color;
 	OUT.position = mul(projectionMatrix, cameraSpacePosition);
 	OUT.tex = IN.tex;
 
-	OUT.fogFactor = saturate(exp(-density * distance));
+	OUT.fogFactor = saturate(exp(-density * eucDistance));
 	
 	return OUT;
 }
