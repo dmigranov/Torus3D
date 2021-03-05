@@ -239,49 +239,7 @@ int Game::Initialize(HWND window, int width, int height)
     m_inputHandler = std::make_unique<SimpleInputHandler>(m_camera, [this](float deltaTime) { 
         auto ks = Keyboard::Get().GetState();
 
-        float gain = 0.45f * deltaTime;
-        /*if (ks.Z)
-            static_cast<SphericalOctahedron*>(this->mesh1)->SetSectionHeight(static_cast<SphericalOctahedron*>(this->mesh1)->GetSectionHeight() + .0001);
-        if (ks.X)
-            static_cast<SphericalOctahedron*>(this->mesh1)->SetSectionHeight(static_cast<SphericalOctahedron*>(this->mesh1)->GetSectionHeight() - .0001);
-        */
-        if(ks.N)
-        {
-            if(perApplicationPSConstantBuffer.m_edgeThickness >= 0)
-                perApplicationPSConstantBuffer.m_edgeThickness -= 0.0002;
-            g_d3dDeviceContext->UpdateSubresource(g_d3dPSConstantBuffer, 0, nullptr, &perApplicationPSConstantBuffer, 0, 0);
-        }
-        if (ks.M)
-        {
-            perApplicationPSConstantBuffer.m_edgeThickness += 0.0002;
-            g_d3dDeviceContext->UpdateSubresource(g_d3dPSConstantBuffer, 0, nullptr, &perApplicationPSConstantBuffer, 0, 0);
-        }
-        float mouseLikeGain = 1.f * deltaTime;
-        if (ks.Q)
-        {
-            m_camera->ChangePitchYawRoll(0, -mouseLikeGain, 0);
-            if (ks.LeftShift)
-                xAngleProtractor -= mouseLikeGain;
-        }
-        if (ks.E)
-        {
-            m_camera->ChangePitchYawRoll(0, mouseLikeGain, 0);
-            if (ks.LeftShift)
-                xAngleProtractor += mouseLikeGain;
-        }
-        if(ks.O)
-        { 
-            perApplicationVSConstantBuffer.density += 0.005;
-            g_d3dDeviceContext->UpdateSubresource(g_d3dVSConstantBuffers[CB_Application], 0, nullptr, &perApplicationVSConstantBuffer, 0, 0);
-        }
-        if (ks.P)
-        {
-            if(perApplicationVSConstantBuffer.density >= 0.004)
-            { 
-                perApplicationVSConstantBuffer.density -= 0.005;
-                g_d3dDeviceContext->UpdateSubresource(g_d3dVSConstantBuffers[CB_Application], 0, nullptr, &perApplicationVSConstantBuffer, 0, 0);
-            }
-        }
+        
         if (ks.D1)
         {
             //spherical
@@ -301,75 +259,6 @@ int Game::Initialize(HWND window, int width, int height)
             perApplicationVSConstantBuffer = { commonProjectionMatrix, commonProjectionMatrix, density };
             g_d3dDeviceContext->UpdateSubresource(g_d3dVSConstantBuffers[CB_Application], 0, nullptr, &perApplicationVSConstantBuffer, 0, 0);
         }
-
-        if (ks.PageUp)
-        {
-            m_camera->ChangePitchYawRoll(0, 0, mouseLikeGain);
-        }
-        if (ks.Home)
-        {
-            m_camera->ChangePitchYawRoll(0, 0, -mouseLikeGain);
-        }
-
-
-        if (ks.IsKeyUp(Keyboard::Keys::LeftShift))
-            xAngleProtractor = 0;
-
-
-        int count = 120;
-        static int jumpCounter = 0;
-        static bool startedJumpUp = false, notInAir = true;
-
-        if (ks.Space)
-        {
-            if (notInAir)
-            {
-                startedJumpUp = true;
-                notInAir = false;
-            }
-        }
-
-        if (startedJumpUp && jumpCounter < count)
-        {
-            m_camera->Move(Vector3(0, 0.002, 0));
-
-            jumpCounter++;
-        }
-        if (jumpCounter == count)
-        {
-            startedJumpUp = false;
-        }
-        if (!startedJumpUp && jumpCounter > 0)
-        {
-            m_camera->Move(Vector3(0, -0.002, 0));
-            jumpCounter--;
-            if (jumpCounter == 0)
-            {
-                //std::cout << "D1: " << m_camera->GetPosition().y << " " << m_camera->GetPosition().w << std::endl;
-                {
-                    auto pos = m_camera->GetPosition();
-                    auto x = pos.x, y = pos.y, z = pos.z, w = pos.w;
-                    double angle;
-                    if (abs(w) > 0.001)
-                        angle = atan(y / abs(w)); //todo: y < 0?
-                    else
-                        angle = XM_PI / 2;
-
-                    m_camera->Move(Vector3(0, -angle, 0));
-                }
-
-                //std::cout << "D2: " << m_camera->GetPosition().y << " " << m_camera->GetPosition().w << std::endl;
-
-                notInAir = true;
-            }
-
-        }
-
-        /*if (!startedJumpUp && abs(y) < 0.3)
-        {
-            m_camera->Move(Vector3(0, -y, 0));
-            jumpCounter = 0;
-        }*/
 
     }, m_hwnd);
 
