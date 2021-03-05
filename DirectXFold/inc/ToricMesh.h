@@ -10,6 +10,7 @@ public:
     ToricMesh();
     ToricMesh(int nv, VertexPosColor* vertices, int ni, WORD* indices);
     ToricMesh(int nv, VertexPosColor* vertices, int ni, WORD* indices, DirectX::XMMATRIX world);
+    
     virtual void Render() override;
 
 private:
