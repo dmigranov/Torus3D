@@ -27,7 +27,6 @@
 #include "HyperbolicMesh.h"
 
 #include "SimpleInputHandler.h"
-#include "SphericalCamera.h"
 #include "TextDrawer.h"
 #include "Drawer2D.h"
 #include "Texture.h"
