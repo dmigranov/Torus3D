@@ -34,13 +34,18 @@ void ToricMesh::Render()
     auto instances = new InstanceType[instanceCount];
     if (!instances)
     {
-        //todo
-        return;
+        throw std::exception("Can't create instances array");
     }
 
-    for (;;)
+    for (int X_i = -9; X_i <= 9; X_i += 2)
     {
-        //заполнение массива instances
+        for (int Y_i = -9; Y_i <= 9; Y_i += 2)
+        {
+            for (int Z_i = -9; Z_i < 9; Z_i += 2)
+            {
+
+            }
+        }
     }
 
 
