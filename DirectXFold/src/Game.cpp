@@ -1,6 +1,7 @@
 ﻿#include <pch.h>
 #include "Game.h"
 
+
 using namespace DirectX;
 using namespace DirectX::SimpleMath;
 
@@ -426,6 +427,7 @@ void Game::Render()
     g_d3dDeviceContext->OMSetDepthStencilState(g_d3dDepthStencilState, 1); //1 is Reference value to perform against when doing a depth-stencil test.
     g_d3dDeviceContext->OMSetBlendState(g_d3dBlendState, 0, 0xffffffff);
 
+ 
     PerFrameVSConstantBuffer buf = { m_camera->GetView() };
     g_d3dDeviceContext->UpdateSubresource(g_d3dVSConstantBuffers[CB_Frame], 0, nullptr, &buf, 0, 0);
     for (auto mesh : meshes)

@@ -23,6 +23,7 @@
 #include "SphericalSphere.h"
 #include "SphericalAsteroid.h"
 #include "SphericalEllipsoid.h"
+#include "SphericalMath.h"
 
 #include "HyperbolicMesh.h"
 
