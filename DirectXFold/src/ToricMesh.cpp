@@ -31,6 +31,18 @@ void ToricMesh::Render()
 
     unsigned int instanceCount = (2 * ReplicationCount + 1);
     instanceCount = instanceCount * instanceCount * instanceCount;
+    auto instances = new InstanceType[instanceCount];
+    if (!instances)
+    {
+        //todo
+        return;
+    }
+
+    for (;;)
+    {
+        //заполнение массива instances
+    }
+
 
     MeshConstantBuffer constantBufferTemp = { constantBuffer.m_world };
     if (parentMesh != nullptr)

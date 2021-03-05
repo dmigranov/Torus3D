@@ -4,6 +4,11 @@
 class ToricMesh : public Mesh
 {
 public:
+    struct InstanceType
+    {
+        DirectX::SimpleMath::Vector3 position;
+    };
+
     static unsigned int ReplicationCount;
     static double TorX, TorY, TorZ; //все это будет в классе рендерера в общей реализации
 
