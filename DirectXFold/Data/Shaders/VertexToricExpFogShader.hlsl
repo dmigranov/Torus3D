@@ -42,7 +42,8 @@ VertexShaderOutput main(VertexShaderInput IN, uint instanceID : SV_InstanceID)
 	
 	float4 cameraSpacePosition = mul(viewWorld, IN.position);
 	float eucDistance = distance(float4(0, 0, 0, 1), cameraSpacePosition); //длина хорды
-	
+	//todo: надо считать умнее, учитывая инстансы...
+
 	OUT.color = IN.color;
 	OUT.position = mul(projectionMatrix, cameraSpacePosition);
 	OUT.tex = IN.tex;
