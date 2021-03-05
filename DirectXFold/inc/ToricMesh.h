@@ -4,7 +4,7 @@
 class ToricMesh : public Mesh
 {
 public:
-    static int ReplicationCount;
+    static unsigned int ReplicationCount;
     static double TorX, TorY, TorZ; //все это будет в классе рендерера в общей реализации
 
     ToricMesh();

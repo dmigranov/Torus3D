@@ -1,7 +1,7 @@
 #include "pch.h"
 #include "ToricMesh.h"
 
-int ToricMesh::ReplicationCount = 10;
+unsigned int ToricMesh::ReplicationCount = 10;
 double ToricMesh::TorX = 5.;
 double ToricMesh::TorY = 5.;
 double ToricMesh::TorZ = 5.;
@@ -28,6 +28,9 @@ void ToricMesh::Render()
         auto shaderResource = m_texture->GetTexture();
         deviceContext->PSSetShaderResources(0, 1, &shaderResource);
     }
+
+    unsigned int instanceCount = (2 * ReplicationCount + 1);
+    instanceCount = instanceCount * instanceCount * instanceCount;
 
     MeshConstantBuffer constantBufferTemp = { constantBuffer.m_world };
     if (parentMesh != nullptr)
