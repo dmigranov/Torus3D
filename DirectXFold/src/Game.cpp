@@ -440,12 +440,10 @@ void Game::Render()
     Vector4 pos = m_camera->GetPosition(); 
     if (pos.y < 0 && pos.y >= -0.001)
         pos.y = 0;
-    Vector3 sphPos = GetSphericalFromCartesian(pos.x, pos.y, pos.z, pos.w);
     ss << std::fixed << std::setprecision(2);
-    ss << "X: " << pos.x << (pos.x < 0 ? "" : " ") << " A1: " << sphPos.x << std::endl;
-    ss << "Y: " << pos.y << (pos.y < 0 ? "" : " ") << " A2: " << sphPos.y << std::endl;
-    ss << "Z: " << pos.z << (pos.z < 0 ? "" : " ") << " A3: " << sphPos.z << std::endl;
-    ss << "W: " << pos.w << std::endl;
+    ss << "X: " << pos.x << (pos.x < 0 ? "" : " ") << std::endl;
+    ss << "Y: " << pos.y << (pos.y < 0 ? "" : " ") << std::endl;
+    ss << "Z: " << pos.z << (pos.z < 0 ? "" : " ") << std::endl;
     m_textDrawer->DrawTextDownLeftAlign(ss.str().c_str(), 20, m_outputHeight - 20);
 
     /*if (Keyboard::Get().GetState().LeftShift)
@@ -651,40 +649,3 @@ DirectX::SimpleMath::Matrix Game::GetCameraTransformMatrix()
     return m_camera->GetCameraTransform();
 }
 
-XMFLOAT4 Game::GetCartesianFromSpherical(float a1, float a2, float a3)
-{
-    float sin3 = sinf(a3), cos3 = cosf(a3);
-    float sin2 = sinf(a2), cos2 = cosf(a2);
-    float sin1 = sinf(a1), cos1 = cosf(a3);
-    return XMFLOAT4(sin3*sin2*sin1, sin3*sin2*cos1, sin3*cos2, cos3);
-}
-
-//xyzw
-XMFLOAT3 Game::GetSphericalFromCartesian(float x4, float x3, float x2, float x1)
-{
-    float x42 = x4 * x4;
-    float x22 = x2 * x2;
-    float x32 = x3 * x3;
-
-    float a1 = acosf(x1);
-    if (x2 == 0 && x3 == 0 && x4 == 0)
-        if (x1 > 0)
-            return Vector3(a1, 0, 0);
-        else
-            return Vector3(a1, XM_PI, XM_PI);
-
-    float a2 = acosf(x2/sqrtf(x22 + x32 + x42));
-    if (x3 == 0 && x4 == 0)
-        if (x2 > 0)
-            return Vector3(a1, a2, 0);
-        else
-            return Vector3(a1, a2, XM_PI);
-
-    float a3;
-    if(x4 >= 0)
-        a3 = acosf(x3 / sqrtf(x32 + x42));
-    else 
-        a3 = XM_2PI - acosf(x3 / sqrtf(x32 + x42));
-
-    return XMFLOAT3(a1, a2, a3);
-}
