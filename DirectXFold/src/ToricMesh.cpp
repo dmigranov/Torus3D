@@ -39,13 +39,13 @@ void ToricMesh::Render()
             throw std::exception("Can't create instances array");
         }
 
-        for (int X_i = -ReplicationCount; X_i <= ReplicationCount; X_i++)
+        for (int Xi = -ReplicationCount; Xi <= ReplicationCount; Xi++)
         {
-            for (int Y_i = -ReplicationCount; Y_i <= ReplicationCount; Y_i++)
+            for (int Yi = -ReplicationCount; Yi <= ReplicationCount; Yi++)
             {
-                for (int Z_i = -ReplicationCount; Z_i < ReplicationCount; Z_i++)
+                for (int Zi = -ReplicationCount; Zi < ReplicationCount; Zi++)
                 {
-
+                    //instances[f(Xi,Yi,Zi)].position
                 }
             }
         }

@@ -46,6 +46,9 @@
     <Filter Include="Исходные файлы\Meshes\Spherical">
       <UniqueIdentifier>{ba669908-5fd2-497e-be17-d82fcb051298}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Data\Shaders\Toric">
+      <UniqueIdentifier>{189dc1bb-fbe9-4211-8d52-9cd211669be9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Game.cpp">
@@ -217,6 +220,7 @@
     <FxCompile Include="VertexEllipticalExpSqFogShader.hlsl">
       <Filter>Data\Shaders\Elliptical</Filter>
     </FxCompile>
+    <FxCompile Include="Data\Shaders\VertexToricExpFogShader.txt" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
