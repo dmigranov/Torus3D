@@ -46,6 +46,7 @@
     <ClCompile Include="src\SphericalSphere.cpp" />
     <ClCompile Include="src\TextDrawer.cpp" />
     <ClCompile Include="src\Texture.cpp" />
+    <ClCompile Include="src\ToricMesh.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="inc\Camera.h" />
@@ -70,6 +71,7 @@
     <ClInclude Include="inc\SphericalSphere.h" />
     <ClInclude Include="inc\TextDrawer.h" />
     <ClInclude Include="inc\Texture.h" />
+    <ClInclude Include="inc\ToricMesh.h" />
     <ClInclude Include="resource1.h" />
   </ItemGroup>
   <ItemGroup>

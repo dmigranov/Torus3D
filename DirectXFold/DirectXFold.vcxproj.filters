@@ -111,6 +111,9 @@
     <ClCompile Include="src\CameraMesh.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
+    <ClCompile Include="src\ToricMesh.cpp">
+      <Filter>Исходные файлы\Meshes</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="inc\Game.h">
@@ -181,6 +184,9 @@
     </ClInclude>
     <ClInclude Include="inc\CameraMesh.h">
       <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\ToricMesh.h">
+      <Filter>Файлы заголовков\Meshes</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
