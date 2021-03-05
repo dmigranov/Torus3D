@@ -239,26 +239,6 @@ int Game::Initialize(HWND window, int width, int height)
     m_inputHandler = std::make_unique<SimpleInputHandler>(m_camera, [this](float deltaTime) { 
         auto ks = Keyboard::Get().GetState();
 
-        
-        if (ks.D1)
-        {
-            //spherical
-            isSpherical = true;
-            g_d3dVertexShader = g_d3dSphericalVertexShader;
-            auto density = perApplicationVSConstantBuffer.density;
-            perApplicationVSConstantBuffer = { frontProjectionMatrix, backProjectionMatrix, density };
-            g_d3dDeviceContext->UpdateSubresource(g_d3dVSConstantBuffers[CB_Application], 0, nullptr, &perApplicationVSConstantBuffer, 0, 0);
-        }
-
-        if (ks.D2)
-        {
-            //elliptical 
-            isSpherical = false;
-            g_d3dVertexShader = g_d3dEllipticalVertexShader;
-            auto density = perApplicationVSConstantBuffer.density;
-            perApplicationVSConstantBuffer = { commonProjectionMatrix, commonProjectionMatrix, density };
-            g_d3dDeviceContext->UpdateSubresource(g_d3dVSConstantBuffers[CB_Application], 0, nullptr, &perApplicationVSConstantBuffer, 0, 0);
-        }
 
     }, m_hwnd);
 
