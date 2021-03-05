@@ -367,23 +367,15 @@ void Game::CreateResources()
 
 
     auto density = perApplicationVSConstantBuffer.density;
-    if(isSpherical)
-    {
-        perApplicationVSConstantBuffer = { frontProjectionMatrix, backProjectionMatrix, density };
-        g_d3dDeviceContext->UpdateSubresource(g_d3dVSConstantBuffers[CB_Application], 0, nullptr, &perApplicationVSConstantBuffer, 0, 0);
-    }
-    else
-    {
-        perApplicationVSConstantBuffer = { commonProjectionMatrix, commonProjectionMatrix, density };
-        g_d3dDeviceContext->UpdateSubresource(g_d3dVSConstantBuffers[CB_Application], 0, nullptr, &perApplicationVSConstantBuffer, 0, 0);
-    }
+
+    perApplicationVSConstantBuffer = { commonProjectionMatrix, commonProjectionMatrix, density };
+    g_d3dDeviceContext->UpdateSubresource(g_d3dVSConstantBuffers[CB_Application], 0, nullptr, &perApplicationVSConstantBuffer, 0, 0);
+
 }
 
 void Game::RecalculateProjectionMatrices()
 {
     commonProjectionMatrix = (std::static_pointer_cast<SphericalCamera>(m_camera))->GetEllipticalProj();
-    frontProjectionMatrix = (std::static_pointer_cast<SphericalCamera>(m_camera))->GetFrontProj();
-    backProjectionMatrix = (std::static_pointer_cast<SphericalCamera>(m_camera))->GetBackProj();
 }
 
 
@@ -554,20 +546,13 @@ bool Game::LoadContent()
         return false;
     }
 
-    //loading shaders from global variables 
-    hr = g_d3dDevice->CreateVertexShader(g_sphexp2vs, sizeof(g_sphexp2vs), nullptr, &g_d3dSphericalVertexShader);
-    if (FAILED(hr))
-    {
-        return false;
-    }
-
     hr = g_d3dDevice->CreateVertexShader(g_ellexp2vs, sizeof(g_ellexp2vs), nullptr, &g_d3dEllipticalVertexShader);
     if (FAILED(hr))
     {
         return false;
     }
 
-    g_d3dVertexShader = g_d3dSphericalVertexShader;
+    g_d3dVertexShader = g_d3dEllipticalVertexShader;
 
     hr = g_d3dDevice->CreateGeometryShader(g_gs, sizeof(g_gs), nullptr, &g_d3dGeometryShader);
     if (FAILED(hr))
@@ -613,7 +598,6 @@ void Game::UnloadContent()
 
     SafeRelease(g_d3dVertexShader);
     SafeRelease(g_d3dEllipticalVertexShader);
-    SafeRelease(g_d3dSphericalVertexShader);
 
     SafeRelease(g_d3dGeometryShader);
 
