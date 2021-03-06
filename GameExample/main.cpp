@@ -4,6 +4,7 @@
 #include <pch.h>
 #include "Game.h"
 
+
 using namespace DirectX;
 using namespace DirectX::SimpleMath;
 
@@ -24,12 +25,15 @@ int WINAPI wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE, _In_ LPWSTR, _
 
     
     //auto earth = new SphericalSphere(0.999999, 35, 35, earthTexture, SphericalRotationYW(3 * XM_PI / 2));
-    auto earth = new SphericalSphere(0.92f, 35, 35, earthTexture, SphericalRotationYW(3 * XM_PI / 2));
-    game.AddMesh(earth);
+    //auto earth = new SphericalSphere(0.92f, 35, 35, earthTexture, SphericalRotationYW(3 * XM_PI / 2));
+    //game.AddMesh(earth);
 
-    auto controller = new SphericalCube(0.96);
+    auto cube = new ToricCube(3);
+    game.AddMesh(cube);
+
+    auto controller = new ToricCube(0.5);
     controller->SetVisible(false);
-    controller->AddUpdater(SphericalMesh::MeshUpdater([](Matrix in, float delta) {
+    controller->AddUpdater(Mesh::MeshUpdater([](Matrix in, float delta) {
         auto ks = Keyboard::Get().GetState();
 
         static int sceneNum = 0;

@@ -1,7 +1,10 @@
 #include "pch.h"
 #include "ToricMesh.h"
 
-
+int ToricMesh::ReplicationCount = 10;
+double ToricMesh::TorX = 5.;
+double ToricMesh::TorY = 5.;
+double ToricMesh::TorZ = 5.;
 
 ToricMesh::ToricMesh() : Mesh()
 {}
@@ -58,4 +61,12 @@ void ToricMesh::Render()
     //DRAW
     deviceContext->DrawIndexedInstanced(indicesCount, 2, 0, 0, 0);
 
+}
+
+void ToricMesh::Render(std::list<DirectX::XMMATRIX> matrices)
+{
+}
+
+void ToricMesh::Render(DirectX::XMMATRIX matrix)
+{
 }

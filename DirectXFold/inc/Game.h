@@ -16,16 +16,10 @@
 
 #include "Mesh.h"
 
-#include "SphericalMesh.h"
-#include "SphericalOctahedron.h"
-#include "SphericalMeshLoader.h"
-#include "SphericalCube.h"
-#include "SphericalSphere.h"
-#include "SphericalAsteroid.h"
-#include "SphericalEllipsoid.h"
-#include "SphericalMath.h"
 
-#include "HyperbolicMesh.h"
+
+#include "ToricMesh.h"
+#include "ToricCube.h"
 
 #include "SimpleInputHandler.h"
 #include "TextDrawer.h"
@@ -75,6 +69,10 @@ private:
     friend class SphericalSphere;
     friend class SphericalAsteroid;
     friend class SphericalEllipsoid;
+
+    friend class ToricMesh;
+    friend class ToricCube;
+
 
     friend LRESULT CALLBACK WndProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam);
 

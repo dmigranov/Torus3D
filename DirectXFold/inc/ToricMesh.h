@@ -18,11 +18,10 @@ public:
     
     virtual void Render() override;
 
-private:
+    // Унаследовано через Mesh
+    virtual void Render(std::list<DirectX::XMMATRIX> matrices) override;
+
+    virtual void Render(DirectX::XMMATRIX matrix) override;
 
 };
 
-int ToricMesh::ReplicationCount = 10;
-double ToricMesh::TorX = 5.;
-double ToricMesh::TorY = 5.;
-double ToricMesh::TorZ = 5.;

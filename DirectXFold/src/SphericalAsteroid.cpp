@@ -1,7 +1,8 @@
 #include "pch.h"
 
-
 #include "SphericalAsteroid.h"
+#include "SphericalMath.h"
+
 #include "Game.h"
 
 using namespace DirectX;
