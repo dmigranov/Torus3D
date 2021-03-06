@@ -6,5 +6,7 @@
 class ToricCube :
     public ToricMesh
 {
+public:
+	ToricCube(double sideLength);
 };
 
