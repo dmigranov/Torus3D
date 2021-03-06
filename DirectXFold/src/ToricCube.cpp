@@ -15,22 +15,30 @@ ToricCube::ToricCube(double sideLength, DirectX::SimpleMath::Matrix world)
     auto cubeCoord = sideLength / 2;
     auto color = XMFLOAT4(0.5f, 0.5f, 0.5f, 1.f); //todo
     ToricMesh::VertexPosColor vertices[] = {
-        { XMFLOAT4(-cubeCoord,  -cubeCoord, -cubeCoord, 1), color }, // 0
-        { XMFLOAT4(-cubeCoord,  -cubeCoord, cubeCoord, 1), color  }, // 1
-        { XMFLOAT4(-cubeCoord,  cubeCoord, -cubeCoord, 1), color  }, // 2
-        { XMFLOAT4(-cubeCoord,  cubeCoord, cubeCoord, 1), color  }, // 3
-        { XMFLOAT4(cubeCoord,  -cubeCoord, -cubeCoord, 1), color  }, // 4
-        { XMFLOAT4(cubeCoord,  -cubeCoord, cubeCoord, 1), color  }, // 5
-        { XMFLOAT4(cubeCoord,  cubeCoord, -cubeCoord, 1), color  }, // 6
-        { XMFLOAT4(cubeCoord,  cubeCoord, cubeCoord, 1), color  }, // 7
+        //front:
+        { XMFLOAT4(-cubeCoord,  -cubeCoord, -cubeCoord, 1), color, XMFLOAT2(1.f/3, 1.f) }, // 0
+        { XMFLOAT4(-cubeCoord,  cubeCoord, -cubeCoord, 1), color, XMFLOAT2(1.f / 3, 0.5f)  }, // 2
+        { XMFLOAT4(cubeCoord,  -cubeCoord, -cubeCoord, 1), color, XMFLOAT2(2.f / 3, 1.f)   }, // 4
+        { XMFLOAT4(cubeCoord,  cubeCoord, -cubeCoord, 1), color, XMFLOAT2(2.f / 3, 0.5f)  }, // 6
+
+
+        { XMFLOAT4(-cubeCoord,  -cubeCoord, cubeCoord, 1), color, XMFLOAT2(1.f/3, 0.f)  }, // 1
+        { XMFLOAT4(-cubeCoord,  cubeCoord, -cubeCoord, 1), color, XMFLOAT2(2.f / 3, 0.f)  }, // 2
+        { XMFLOAT4(-cubeCoord,  cubeCoord, cubeCoord, 1), color, XMFLOAT2(1.f, 0.f)  }, // 3
+        { XMFLOAT4(cubeCoord,  -cubeCoord, -cubeCoord, 1), color, XMFLOAT2(0.f, 0.5f)  }, // 4
+        { XMFLOAT4(cubeCoord,  -cubeCoord, cubeCoord, 1), color, XMFLOAT2(1.f / 3, 0.5f)  }, // 5
+        { XMFLOAT4(cubeCoord,  cubeCoord, -cubeCoord, 1), color, XMFLOAT2(2.f / 3, 0.5f)  }, // 6
+        { XMFLOAT4(cubeCoord,  cubeCoord, cubeCoord, 1), color, XMFLOAT2(1.f, 0.5f)  }, // 7
     };
     g_Vertices = vertices;
     verticesCount = _countof(vertices);
 
 
     WORD indices[] = {
-            0, 2, 4,
-            4, 2, 6,
+            //0, 2, 4,
+            0, 1, 2,
+            //4, 2, 6,
+            2, 1, 3,
 
             0, 1, 2,
             3, 2, 1,
