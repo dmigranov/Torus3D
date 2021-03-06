@@ -59,7 +59,7 @@ void ToricMesh::Render()
     deviceContext->UpdateSubresource(d3dConstantBuffer, 0, nullptr, &constantBufferTemp, 0, 0);
 
     //DRAW
-    deviceContext->DrawIndexedInstanced(indicesCount, 2, 0, 0, 0);
+    deviceContext->DrawIndexedInstanced(indicesCount, 1, 0, 0, 0);
 
 }
 

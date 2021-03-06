@@ -232,7 +232,9 @@
     <FxCompile Include="VertexEllipticalExpSqFogShader.hlsl">
       <Filter>Data\Shaders\Elliptical</Filter>
     </FxCompile>
-    <FxCompile Include="Data\Shaders\VertexToricExpFogShader.hlsl" />
+    <FxCompile Include="Data\Shaders\VertexToricExpFogShader.hlsl">
+      <Filter>Data\Shaders\Toric</Filter>
+    </FxCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
