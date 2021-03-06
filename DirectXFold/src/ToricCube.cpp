@@ -39,22 +39,17 @@ ToricCube::ToricCube(double sideLength, DirectX::SimpleMath::Matrix world)
         { XMFLOAT4(cubeCoord,  cubeCoord, cubeCoord, 1), color, XMFLOAT2(1.f, 0.f)   }, // 14
         { XMFLOAT4(cubeCoord,  cubeCoord, -cubeCoord, 1), color, XMFLOAT2(1.f, 0.5f)  }, // 15
 
-        //bottom
+        //bottom:
         { XMFLOAT4(-cubeCoord,  -cubeCoord, cubeCoord, 1), color, XMFLOAT2(0.f, 1.f)   }, // 16
         { XMFLOAT4(-cubeCoord,  -cubeCoord, -cubeCoord, 1), color, XMFLOAT2(0.f, 0.5f) }, // 17
         { XMFLOAT4(cubeCoord,  -cubeCoord, -cubeCoord, 1), color, XMFLOAT2(1.f / 3, 0.5f) }, // 18
         { XMFLOAT4(cubeCoord,  -cubeCoord, cubeCoord, 1), color, XMFLOAT2(1.f / 3, 1.f)  }, // 19
 
-
-
-         { XMFLOAT4(-cubeCoord,  -cubeCoord, -cubeCoord, 1), color, XMFLOAT2(1.f / 3, 1.f) }, // 0
-        { XMFLOAT4(-cubeCoord,  -cubeCoord, cubeCoord, 1), color, XMFLOAT2(1.f/3, 0.f)  }, // 1
-        { XMFLOAT4(-cubeCoord,  cubeCoord, -cubeCoord, 1), color, XMFLOAT2(2.f / 3, 0.f)  }, // 2
-        { XMFLOAT4(-cubeCoord,  cubeCoord, cubeCoord, 1), color, XMFLOAT2(1.f, 0.f)  }, // 3
-        { XMFLOAT4(cubeCoord,  -cubeCoord, -cubeCoord, 1), color, XMFLOAT2(0.f, 0.5f)  }, // 4
-        { XMFLOAT4(cubeCoord,  -cubeCoord, cubeCoord, 1), color, XMFLOAT2(1.f / 3, 0.5f)  }, // 5
-        { XMFLOAT4(cubeCoord,  cubeCoord, -cubeCoord, 1), color, XMFLOAT2(2.f / 3, 0.5f)  }, // 6
-        { XMFLOAT4(cubeCoord,  cubeCoord, cubeCoord, 1), color, XMFLOAT2(1.f, 0.5f)  }, // 7
+        //back:
+        { XMFLOAT4(cubeCoord,  cubeCoord, cubeCoord, 1), color, XMFLOAT2(2.f / 3, 0.5f)  }, // 20
+        { XMFLOAT4(-cubeCoord,  cubeCoord, cubeCoord, 1), color, XMFLOAT2(1.f, 0.5f)  }, // 21
+        { XMFLOAT4(-cubeCoord,  -cubeCoord, cubeCoord, 1), color, XMFLOAT2(1.f, 1.f)  }, // 22
+        { XMFLOAT4(cubeCoord,  -cubeCoord, cubeCoord, 1), color, XMFLOAT2(2.f / 3, 1.f)   }, // 23
     };
     g_Vertices = vertices;
     verticesCount = _countof(vertices);
@@ -76,8 +71,8 @@ ToricCube::ToricCube(double sideLength, DirectX::SimpleMath::Matrix world)
             16, 17, 18,
             16, 18, 19, //new!
 
-            //7, 3, 1,
-            //5, 7, 1
+            20, 21, 22,
+            23, 20, 22 //new!
     };
 
 
