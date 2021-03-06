@@ -21,7 +21,7 @@ int WINAPI wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE, _In_ LPWSTR, _
     Texture * fireTexture = game.CreateTexture(L"fire.dds");
     Texture * moonTexture = game.CreateTexture(L"moon.dds");
     Texture * asteroidTexture = game.CreateTexture(L"asteroid.dds");
-    Texture * sunTexture = game.CreateTexture(L"8k_sun.dds");
+    Texture * cubeTexture = game.CreateTexture(L"cubemap.dds");
 
     
     //auto earth = new SphericalSphere(0.999999, 35, 35, earthTexture, SphericalRotationYW(3 * XM_PI / 2));
