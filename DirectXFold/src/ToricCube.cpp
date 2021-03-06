@@ -39,6 +39,13 @@ ToricCube::ToricCube(double sideLength, DirectX::SimpleMath::Matrix world)
         { XMFLOAT4(cubeCoord,  cubeCoord, cubeCoord, 1), color, XMFLOAT2(1.f, 0.f)   }, // 14
         { XMFLOAT4(cubeCoord,  cubeCoord, -cubeCoord, 1), color, XMFLOAT2(1.f, 0.5f)  }, // 15
 
+        //bottom
+        { XMFLOAT4(-cubeCoord,  -cubeCoord, cubeCoord, 1), color, XMFLOAT2(0.f, 1.f)   }, // 16
+        { XMFLOAT4(-cubeCoord,  -cubeCoord, -cubeCoord, 1), color, XMFLOAT2(0.f, 0.5f) }, // 17
+        { XMFLOAT4(cubeCoord,  -cubeCoord, -cubeCoord, 1), color, XMFLOAT2(1.f / 3, 0.5f) }, // 18
+        { XMFLOAT4(cubeCoord,  -cubeCoord, cubeCoord, 1), color, XMFLOAT2(1.f / 3, 1.f)  }, // 19
+
+
 
          { XMFLOAT4(-cubeCoord,  -cubeCoord, -cubeCoord, 1), color, XMFLOAT2(1.f / 3, 1.f) }, // 0
         { XMFLOAT4(-cubeCoord,  -cubeCoord, cubeCoord, 1), color, XMFLOAT2(1.f/3, 0.f)  }, // 1
@@ -66,8 +73,8 @@ ToricCube::ToricCube(double sideLength, DirectX::SimpleMath::Matrix world)
             12, 13, 14,
             12, 14, 15, //new!
 
-            //1, 0, 4,
-            //1, 4, 5,
+            16, 17, 18,
+            16, 18, 19, //new!
 
             //7, 3, 1,
             //5, 7, 1
