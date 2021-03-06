@@ -27,6 +27,13 @@ ToricCube::ToricCube(double sideLength, DirectX::SimpleMath::Matrix world)
         { XMFLOAT4(-cubeCoord,  cubeCoord, -cubeCoord, 1), color, XMFLOAT2(2.f / 3, 0.f)}, // 6
         { XMFLOAT4(-cubeCoord,  cubeCoord, cubeCoord, 1), color, XMFLOAT2(1.f / 3, 0.f)  }, // 7
 
+        //right:
+        { XMFLOAT4(cubeCoord,  -cubeCoord, -cubeCoord, 1), color, XMFLOAT2(0.f, 0.5f)   }, // 8
+        { XMFLOAT4(cubeCoord,  cubeCoord, cubeCoord, 1), color, XMFLOAT2(1.f / 3, 0.f)   }, // 9
+        { XMFLOAT4(cubeCoord,  -cubeCoord, cubeCoord, 1), color, XMFLOAT2(1.f / 3, 0.5f)  }, // 10
+        { XMFLOAT4(cubeCoord,  cubeCoord, -cubeCoord, 1), color, XMFLOAT2(0.f, 0.f)  }, // 11
+
+
 
          { XMFLOAT4(-cubeCoord,  -cubeCoord, -cubeCoord, 1), color, XMFLOAT2(1.f / 3, 1.f) }, // 0
         { XMFLOAT4(-cubeCoord,  -cubeCoord, cubeCoord, 1), color, XMFLOAT2(1.f/3, 0.f)  }, // 1
@@ -43,13 +50,13 @@ ToricCube::ToricCube(double sideLength, DirectX::SimpleMath::Matrix world)
 
     WORD indices[] = {
             0, 1, 2,
-            2, 1, 3, //new
+            2, 1, 3, //new!
 
             4, 5, 6,
-            7, 6, 5,
+            7, 6, 5, //new!
 
-            4, 7, 5,
-            4, 6, 7,
+            8, 9, 10,
+            8, 11, 9, //new!
 
             2, 3, 7,
             2, 7, 6,
