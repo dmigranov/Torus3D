@@ -50,7 +50,6 @@ void ToricMesh::Render()
             }
         }
     }
-    
 
 
     MeshConstantBuffer constantBufferTemp = { constantBuffer.m_world };
@@ -65,8 +64,10 @@ void ToricMesh::Render()
 
 void ToricMesh::Render(std::list<DirectX::XMMATRIX> matrices)
 {
+    //todo
 }
 
 void ToricMesh::Render(DirectX::XMMATRIX matrix)
 {
+    //todo
 }
