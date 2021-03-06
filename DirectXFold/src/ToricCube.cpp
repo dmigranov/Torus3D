@@ -17,11 +17,18 @@ ToricCube::ToricCube(double sideLength, DirectX::SimpleMath::Matrix world)
     ToricMesh::VertexPosColor vertices[] = {
         //front:
         { XMFLOAT4(-cubeCoord,  -cubeCoord, -cubeCoord, 1), color, XMFLOAT2(1.f/3, 1.f) }, // 0
-        { XMFLOAT4(-cubeCoord,  cubeCoord, -cubeCoord, 1), color, XMFLOAT2(1.f / 3, 0.5f)  }, // 2
-        { XMFLOAT4(cubeCoord,  -cubeCoord, -cubeCoord, 1), color, XMFLOAT2(2.f / 3, 1.f)   }, // 4
-        { XMFLOAT4(cubeCoord,  cubeCoord, -cubeCoord, 1), color, XMFLOAT2(2.f / 3, 0.5f)  }, // 6
+        { XMFLOAT4(-cubeCoord,  cubeCoord, -cubeCoord, 1), color, XMFLOAT2(1.f / 3, 0.5f)  }, // 1
+        { XMFLOAT4(cubeCoord,  -cubeCoord, -cubeCoord, 1), color, XMFLOAT2(2.f / 3, 1.f)   }, // 2
+        { XMFLOAT4(cubeCoord,  cubeCoord, -cubeCoord, 1), color, XMFLOAT2(2.f / 3, 0.5f)  }, // 3
+
+        //left:
+        { XMFLOAT4(-cubeCoord,  -cubeCoord, -cubeCoord, 1), color, XMFLOAT2(2.f / 3, 0.5f) }, // 4
+        { XMFLOAT4(-cubeCoord,  -cubeCoord, cubeCoord, 1), color,  XMFLOAT2(1.f / 3, 0.5f) }, // 5
+        { XMFLOAT4(-cubeCoord,  cubeCoord, -cubeCoord, 1), color, XMFLOAT2(2.f / 3, 0.f)}, // 6
+        { XMFLOAT4(-cubeCoord,  cubeCoord, cubeCoord, 1), color, XMFLOAT2(1.f / 3, 0.f)  }, // 7
 
 
+         { XMFLOAT4(-cubeCoord,  -cubeCoord, -cubeCoord, 1), color, XMFLOAT2(1.f / 3, 1.f) }, // 0
         { XMFLOAT4(-cubeCoord,  -cubeCoord, cubeCoord, 1), color, XMFLOAT2(1.f/3, 0.f)  }, // 1
         { XMFLOAT4(-cubeCoord,  cubeCoord, -cubeCoord, 1), color, XMFLOAT2(2.f / 3, 0.f)  }, // 2
         { XMFLOAT4(-cubeCoord,  cubeCoord, cubeCoord, 1), color, XMFLOAT2(1.f, 0.f)  }, // 3
@@ -35,13 +42,11 @@ ToricCube::ToricCube(double sideLength, DirectX::SimpleMath::Matrix world)
 
 
     WORD indices[] = {
-            //0, 2, 4,
             0, 1, 2,
-            //4, 2, 6,
-            2, 1, 3,
+            2, 1, 3, //new
 
-            0, 1, 2,
-            3, 2, 1,
+            4, 5, 6,
+            7, 6, 5,
 
             4, 7, 5,
             4, 6, 7,
