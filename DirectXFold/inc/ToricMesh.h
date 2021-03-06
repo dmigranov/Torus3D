@@ -21,3 +21,8 @@ public:
 private:
 
 };
+
+int ToricMesh::ReplicationCount = 10;
+double ToricMesh::TorX = 5.;
+double ToricMesh::TorY = 5.;
+double ToricMesh::TorZ = 5.;

@@ -1,6 +1,11 @@
 #include "pch.h"
 #include "ToricCube.h"
 
-ToricCube::ToricCube(double sideLength)
+using namespace DirectX::SimpleMath;
+
+ToricCube::ToricCube(double sideLength) : ToricCube::ToricCube(sideLength, Matrix::Identity)
+{ }
+
+ToricCube::ToricCube(double sideLength, DirectX::SimpleMath::Matrix world)
 {
 }

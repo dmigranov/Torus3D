@@ -8,5 +8,8 @@ class ToricCube :
 {
 public:
 	ToricCube(double sideLength);
+	ToricCube(double sideLength, DirectX::SimpleMath::Matrix world);
+
+
 };
 
