@@ -87,3 +87,11 @@ ToricCube::ToricCube(double sideLength, DirectX::SimpleMath::Matrix world)
 
     constantBuffer.m_world = world;
 }
+
+ToricCube::ToricCube(double sideLength, Texture* texture) : ToricCube(sideLength, Matrix::Identity, texture)
+{ }
+
+ToricCube::ToricCube(double sideLength, Matrix world, Texture* texture) : ToricCube(sideLength, world)
+{
+    m_texture = texture;
+}
