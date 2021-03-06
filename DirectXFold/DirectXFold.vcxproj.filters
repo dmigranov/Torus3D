@@ -49,6 +49,12 @@
     <Filter Include="Data\Shaders\Toric">
       <UniqueIdentifier>{189dc1bb-fbe9-4211-8d52-9cd211669be9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Файлы заголовков\Meshes\Toric">
+      <UniqueIdentifier>{807de4b6-6620-4070-ad51-83565c783fec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Meshes\Toric">
+      <UniqueIdentifier>{5fb9b967-f296-42fe-b948-830a192c4257}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Game.cpp">
@@ -115,7 +121,10 @@
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="src\ToricMesh.cpp">
-      <Filter>Исходные файлы\Meshes</Filter>
+      <Filter>Исходные файлы\Meshes\Toric</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ToricCube.cpp">
+      <Filter>Исходные файлы\Meshes\Toric</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -189,7 +198,10 @@
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="inc\ToricMesh.h">
-      <Filter>Файлы заголовков\Meshes</Filter>
+      <Filter>Файлы заголовков\Meshes\Toric</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\ToricCube.h">
+      <Filter>Файлы заголовков\Meshes\Toric</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -220,7 +232,7 @@
     <FxCompile Include="VertexEllipticalExpSqFogShader.hlsl">
       <Filter>Data\Shaders\Elliptical</Filter>
     </FxCompile>
-    <FxCompile Include="Data\Shaders\VertexToricExpFogShader.txt" />
+    <FxCompile Include="Data\Shaders\VertexToricExpFogShader.hlsl" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
