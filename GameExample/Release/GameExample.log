@@ -1,0 +1,6 @@
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(477,5): warning MSB8004: каталог Output заканчивается не косой чертой.  Этот экземпляр сборки добавит косую черту, поскольку она необходима для правильного определения каталога Output.
+  main.cpp
+C:\DENIS\repos\Torus3D\DirectXFold\inc\Game.h(176,23): warning C4305: инициализация: усечение из "double" в "float"
+C:\DENIS\repos\Torus3D\GameExample\main.cpp(31,70): warning C4316: "ToricCube": объект, размещенный в куче, может не быть выровнен 16
+C:\DENIS\repos\Torus3D\GameExample\main.cpp(34,41): warning C4316: "ToricCube": объект, размещенный в куче, может не быть выровнен 16
+LINK : fatal error LNK1181: не удается открыть входной файл "DirectXFold.lib"

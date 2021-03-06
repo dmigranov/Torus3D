@@ -1,266 +1,322 @@
-﻿D:\������\MY CODE\DirectXFold\DirectXFold\VertexEllipticalExpSqFogShader.hlsl(53,2): warning X4000: use of potentially uninitialized variable (viewMatrix)
-D:\������\MY CODE\DirectXFold\DirectXFold\VertexEllipticalExpSqFogShader.hlsl(53,2): warning X4000: use of potentially uninitialized variable (projectionMatrix)
+﻿  compilation header save succeeded; see C:\DENIS\repos\Torus3D\DirectXFold\inc\PixelShader.h
+  compilation object save succeeded; see C:\DENIS\repos\Torus3D\DirectXFold\bin\BasicPixelShader.cso
+C:\DENIS\repos\Torus3D\DirectXFold\Data\Shaders\BasicVertexShader.hlsl(49,2): warning X4000: use of potentially uninitialized variable (viewMatrix)
+C:\DENIS\repos\Torus3D\DirectXFold\Data\Shaders\BasicVertexShader.hlsl(49,2): warning X4000: use of potentially uninitialized variable (projectionMatrix)
   
-  compilation header save succeeded; see D:\Диплом\MY CODE\DirectXFold\DirectXFold\inc\EllExp2VertexShader.h
-  compilation object save succeeded; see D:\Диплом\MY CODE\DirectXFold\DirectXFold\bin\VertexEllipticalExpSqFogShader.cso
+  compilation header save succeeded; see C:\DENIS\repos\Torus3D\DirectXFold\inc\VertexShader.h
+  compilation object save succeeded; see C:\DENIS\repos\Torus3D\DirectXFold\bin\BasicVertexShader.cso
+C:\DENIS\repos\Torus3D\DirectXFold\Data\Shaders\MorphingVertexShader.hlsl(36,9-24): warning X3206: implicit truncation of vector type
+  
+  compilation header save succeeded; see C:\DENIS\repos\Torus3D\DirectXFold\inc\MorphingVertexShader.h
+  compilation object save succeeded; see C:\DENIS\repos\Torus3D\DirectXFold\bin\MorphingVertexShader.cso
+C:\DENIS\repos\Torus3D\DirectXFold\Data\Shaders\VertexEllipticalExpFogShader.hlsl(53,2): warning X4000: use of potentially uninitialized variable (viewMatrix)
+C:\DENIS\repos\Torus3D\DirectXFold\Data\Shaders\VertexEllipticalExpFogShader.hlsl(53,2): warning X4000: use of potentially uninitialized variable (projectionMatrix)
+  
+  compilation header save succeeded; see C:\DENIS\repos\Torus3D\DirectXFold\inc\EllExpVertexShader.h
+  compilation object save succeeded; see C:\DENIS\repos\Torus3D\DirectXFold\bin\VertexEllipticalExpFogShader.cso
+  compilation header save succeeded; see C:\DENIS\repos\Torus3D\DirectXFold\inc\TorExpVertexShader.h
+  compilation object save succeeded; see C:\DENIS\repos\Torus3D\DirectXFold\bin\VertexToricExpFogShader.cso
+C:\DENIS\repos\Torus3D\DirectXFold\VertexEllipticalExpSqFogShader.hlsl(53,2): warning X4000: use of potentially uninitialized variable (viewMatrix)
+C:\DENIS\repos\Torus3D\DirectXFold\VertexEllipticalExpSqFogShader.hlsl(53,2): warning X4000: use of potentially uninitialized variable (projectionMatrix)
+  
+  compilation header save succeeded; see C:\DENIS\repos\Torus3D\DirectXFold\inc\EllExp2VertexShader.h
+  compilation object save succeeded; see C:\DENIS\repos\Torus3D\DirectXFold\bin\VertexEllipticalExpSqFogShader.cso
+C:\DENIS\repos\Torus3D\DirectXFold\VertexSphericalExpFogShader.hlsl(49,2): warning X4000: use of potentially uninitialized variable (viewMatrix)
+C:\DENIS\repos\Torus3D\DirectXFold\VertexSphericalExpFogShader.hlsl(49,2): warning X4000: use of potentially uninitialized variable (projectionMatrix)
+  
+  compilation header save succeeded; see C:\DENIS\repos\Torus3D\DirectXFold\inc\SphExpVertexShader.h
+  compilation object save succeeded; see C:\DENIS\repos\Torus3D\DirectXFold\bin\VertexSphericalExpFogShader.cso
+C:\DENIS\repos\Torus3D\DirectXFold\VertexSphericalExpSqFogShader.hlsl(49,2): warning X4000: use of potentially uninitialized variable (viewMatrix)
+C:\DENIS\repos\Torus3D\DirectXFold\VertexSphericalExpSqFogShader.hlsl(49,2): warning X4000: use of potentially uninitialized variable (projectionMatrix)
+  
+  compilation header save succeeded; see C:\DENIS\repos\Torus3D\DirectXFold\inc\SphExp2VertexShader.h
+  compilation object save succeeded; see C:\DENIS\repos\Torus3D\DirectXFold\bin\VertexSphericalExpSqFogShader.cso
+C:\DENIS\repos\Torus3D\DirectXFold\VertexSphericalLinearFogShader.hlsl(50,2): warning X4000: use of potentially uninitialized variable (viewMatrix)
+C:\DENIS\repos\Torus3D\DirectXFold\VertexSphericalLinearFogShader.hlsl(50,2): warning X4000: use of potentially uninitialized variable (projectionMatrix)
+  
+  compilation header save succeeded; see C:\DENIS\repos\Torus3D\DirectXFold\inc\SphLinVertexShader.h
+  compilation object save succeeded; see C:\DENIS\repos\Torus3D\DirectXFold\bin\VertexSphericalLinearFogShader.cso
+  compilation header save succeeded; see C:\DENIS\repos\Torus3D\DirectXFold\inc\GeometryShader.h
+  compilation object save succeeded; see C:\DENIS\repos\Torus3D\DirectXFold\bin\GeometryShader.cso
   pch.cpp
+  GameWindows.cpp
+C:\DENIS\repos\Torus3D\DirectXFold\inc\Game.h(176,23): warning C4305: инициализация: усечение из "double" в "float"
+  SphericalEllipsoid.cpp
+C:\DENIS\repos\Torus3D\DirectXFold\inc\Game.h(176,23): warning C4305: инициализация: усечение из "double" в "float"
+C:\DENIS\repos\Torus3D\DirectXFold\SphericalEllipsoid.cpp(71,46): warning C4267: инициализация: преобразование из "size_t" в "WORD"; возможна потеря данных
   SphericalMath.cpp
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\SphericalMath.cpp(14,16): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\SphericalMath.cpp(19,32): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\SphericalMath.cpp(20,14): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\SphericalMath.cpp(24,17): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\SphericalMath.cpp(32,17): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\SphericalMath.cpp(37,33): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\SphericalMath.cpp(38,14): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\SphericalMath.cpp(42,17): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\SphericalMath.cpp(50,17): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\SphericalMath.cpp(55,33): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\SphericalMath.cpp(56,14): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\SphericalMath.cpp(60,17): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\DENIS\repos\Torus3D\DirectXFold\SphericalMath.cpp(14,16): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\SphericalMath.cpp(19,32): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\SphericalMath.cpp(20,14): warning C4244: инициализация: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\SphericalMath.cpp(24,17): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\SphericalMath.cpp(32,17): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\SphericalMath.cpp(37,33): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\SphericalMath.cpp(38,14): warning C4244: инициализация: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\SphericalMath.cpp(42,17): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\SphericalMath.cpp(50,17): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\SphericalMath.cpp(55,33): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\SphericalMath.cpp(56,14): warning C4244: инициализация: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\SphericalMath.cpp(60,17): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
   Camera.cpp
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\Camera.cpp(29,18): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\Camera.cpp(30,18): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\Camera.cpp(31,22): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\Camera.cpp(32,22): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\Camera.cpp(62,29): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\Camera.cpp(62,26): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\Camera.cpp(62,23): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\Camera.cpp(80,59): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\Camera.cpp(80,52): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\DENIS\repos\Torus3D\DirectXFold\src\Camera.cpp(29,18): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\Camera.cpp(30,18): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\Camera.cpp(31,22): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\Camera.cpp(32,22): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\Camera.cpp(68,29): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\Camera.cpp(68,26): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\Camera.cpp(68,23): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\Camera.cpp(86,59): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\Camera.cpp(86,52): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+  CameraMesh.cpp
   Drawer2D.cpp
+  FPSCounter.cpp
   Game.cpp
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\Game.cpp(33,15): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\Game.cpp(262,1): warning C4305: '-=': truncation from 'double' to 'float'
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\Game.cpp(267,1): warning C4305: '+=': truncation from 'double' to 'float'
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\Game.cpp(285,1): warning C4305: '+=': truncation from 'double' to 'float'
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\Game.cpp(292,1): warning C4305: '-=': truncation from 'double' to 'float'
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\Game.cpp(507,72): warning C4316: 'SphericalMesh': object allocated on the heap may not be aligned 16
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\Game.cpp(511,101): warning C4316: 'SphericalMesh': object allocated on the heap may not be aligned 16
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\Game.cpp(516,64): warning C4316: 'SphericalSphere': object allocated on the heap may not be aligned 16
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\Game.cpp(527,122): warning C4316: 'SphericalAsteroid': object allocated on the heap may not be aligned 16
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\Game.cpp(535,96): warning C4316: 'SphericalSphere': object allocated on the heap may not be aligned 16
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\Game.cpp(609,78): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\Game.cpp(615,99): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\Game.cpp(615,78): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.25.28610\include\memory(1583,59): warning C4316: 'std::_Ref_count_obj2<_Ty>': object allocated on the heap may not be aligned 16
+C:\DENIS\repos\Torus3D\DirectXFold\inc\Game.h(176,23): warning C4305: инициализация: усечение из "double" в "float"
+C:\DENIS\repos\Torus3D\DirectXFold\src\Game.cpp(34,15): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\Game.cpp(246,1): warning C4305: -=: усечение из "double" в "float"
+C:\DENIS\repos\Torus3D\DirectXFold\src\Game.cpp(251,1): warning C4305: +=: усечение из "double" в "float"
+C:\DENIS\repos\Torus3D\DirectXFold\src\Game.cpp(457,78): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\Game.cpp(472,99): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\memory(2207,1): warning C4316: "std::_Ref_count_obj2<_Ty>": объект, размещенный в куче, может не быть выровнен 16
           with
           [
-              _Ty=SphericalCamera
+              _Ty=Camera
           ]
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\Game.cpp(12): message : see reference to function template instantiation 'std::shared_ptr<SphericalCamera> std::make_shared<SphericalCamera,>(void)' being compiled
+C:\DENIS\repos\Torus3D\DirectXFold\src\Game.cpp(13): message : выполняется компиляция ссылки на экземпляр шаблон функции "std::shared_ptr<Camera> std::make_shared<Camera,>(void)"
   HyperbolicMath.cpp
-  HyperbolicMesh.cpp
   Mesh.cpp
+C:\DENIS\repos\Torus3D\DirectXFold\inc\Game.h(176,23): warning C4305: инициализация: усечение из "double" в "float"
   SphericalAsteroid.cpp
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalAsteroid.cpp(16,15): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalAsteroid.cpp(45,118): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalAsteroid.cpp(45,177): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalAsteroid.cpp(45,213): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalAsteroid.cpp(81,46): warning C4267: 'initializing': conversion from 'size_t' to 'WORD', possible loss of data
+C:\DENIS\repos\Torus3D\DirectXFold\inc\Game.h(176,23): warning C4305: инициализация: усечение из "double" в "float"
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalAsteroid.cpp(17,15): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalAsteroid.cpp(46,118): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalAsteroid.cpp(46,177): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalAsteroid.cpp(46,213): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalAsteroid.cpp(82,46): warning C4267: инициализация: преобразование из "size_t" в "WORD"; возможна потеря данных
   SphericalCube.cpp
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalCube.cpp(38,57): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalCube.cpp(38,45): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalCube.cpp(38,33): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalCube.cpp(38,20): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalCube.cpp(39,56): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalCube.cpp(39,45): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalCube.cpp(39,33): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalCube.cpp(39,20): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalCube.cpp(40,56): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalCube.cpp(40,44): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalCube.cpp(40,33): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalCube.cpp(40,20): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalCube.cpp(41,55): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalCube.cpp(41,44): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalCube.cpp(41,33): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalCube.cpp(41,20): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalCube.cpp(42,56): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalCube.cpp(42,44): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalCube.cpp(42,32): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalCube.cpp(42,20): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalCube.cpp(43,55): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalCube.cpp(43,44): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalCube.cpp(43,32): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalCube.cpp(43,20): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalCube.cpp(44,55): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalCube.cpp(44,43): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalCube.cpp(44,32): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalCube.cpp(44,20): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalCube.cpp(45,54): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalCube.cpp(45,43): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalCube.cpp(45,32): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalCube.cpp(45,20): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\DENIS\repos\Torus3D\DirectXFold\inc\Game.h(176,23): warning C4305: инициализация: усечение из "double" в "float"
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalCube.cpp(39,57): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalCube.cpp(39,45): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalCube.cpp(39,33): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalCube.cpp(39,20): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalCube.cpp(40,56): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalCube.cpp(40,45): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalCube.cpp(40,33): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalCube.cpp(40,20): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalCube.cpp(41,56): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalCube.cpp(41,44): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalCube.cpp(41,33): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalCube.cpp(41,20): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalCube.cpp(42,55): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalCube.cpp(42,44): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalCube.cpp(42,33): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalCube.cpp(42,20): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalCube.cpp(43,56): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalCube.cpp(43,44): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalCube.cpp(43,32): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalCube.cpp(43,20): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalCube.cpp(44,55): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalCube.cpp(44,44): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalCube.cpp(44,32): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalCube.cpp(44,20): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalCube.cpp(45,55): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalCube.cpp(45,43): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalCube.cpp(45,32): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalCube.cpp(45,20): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalCube.cpp(46,54): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalCube.cpp(46,43): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalCube.cpp(46,32): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalCube.cpp(46,20): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalCube.cpp(130,35): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalCube.cpp(129,15): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalCube.cpp(128,12): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalCube.cpp(127,23): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
   SphericalOctahedron.cpp
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalOctahedron.cpp(34,37): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalOctahedron.cpp(34,31): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalOctahedron.cpp(35,36): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalOctahedron.cpp(35,31): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalOctahedron.cpp(36,36): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalOctahedron.cpp(36,25): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalOctahedron.cpp(37,36): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalOctahedron.cpp(37,26): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalOctahedron.cpp(38,37): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalOctahedron.cpp(38,20): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalOctahedron.cpp(39,36): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalOctahedron.cpp(39,20): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalOctahedron.cpp(53,40): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalOctahedron.cpp(53,31): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalOctahedron.cpp(54,40): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalOctahedron.cpp(54,31): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalOctahedron.cpp(55,31): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalOctahedron.cpp(55,25): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalOctahedron.cpp(56,31): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalOctahedron.cpp(56,26): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalOctahedron.cpp(57,32): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalOctahedron.cpp(57,20): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalOctahedron.cpp(58,31): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalOctahedron.cpp(58,20): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalOctahedron.cpp(66,39): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalOctahedron.cpp(66,25): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalOctahedron.cpp(67,39): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalOctahedron.cpp(67,25): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalOctahedron.cpp(68,34): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalOctahedron.cpp(68,25): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalOctahedron.cpp(69,34): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalOctahedron.cpp(69,25): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalOctahedron.cpp(70,26): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalOctahedron.cpp(70,20): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalOctahedron.cpp(71,25): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalOctahedron.cpp(71,20): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalOctahedron.cpp(79,39): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalOctahedron.cpp(79,20): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalOctahedron.cpp(80,39): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalOctahedron.cpp(80,20): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalOctahedron.cpp(81,34): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalOctahedron.cpp(81,20): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalOctahedron.cpp(82,34): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalOctahedron.cpp(82,20): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalOctahedron.cpp(83,29): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalOctahedron.cpp(83,20): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalOctahedron.cpp(84,29): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalOctahedron.cpp(84,20): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalOctahedron.cpp(152,37): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalOctahedron.cpp(152,31): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalOctahedron.cpp(153,36): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalOctahedron.cpp(153,31): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalOctahedron.cpp(154,36): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalOctahedron.cpp(154,25): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalOctahedron.cpp(155,36): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalOctahedron.cpp(155,26): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalOctahedron.cpp(156,37): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalOctahedron.cpp(156,20): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalOctahedron.cpp(157,36): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalOctahedron.cpp(157,20): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalOctahedron.cpp(171,40): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalOctahedron.cpp(171,31): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalOctahedron.cpp(172,40): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalOctahedron.cpp(172,31): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalOctahedron.cpp(173,31): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalOctahedron.cpp(173,25): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalOctahedron.cpp(174,31): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalOctahedron.cpp(174,26): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalOctahedron.cpp(175,32): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalOctahedron.cpp(175,20): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalOctahedron.cpp(176,31): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalOctahedron.cpp(176,20): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalOctahedron.cpp(184,39): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalOctahedron.cpp(184,25): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalOctahedron.cpp(185,39): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalOctahedron.cpp(185,25): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalOctahedron.cpp(186,34): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalOctahedron.cpp(186,25): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalOctahedron.cpp(187,34): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalOctahedron.cpp(187,25): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalOctahedron.cpp(188,26): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalOctahedron.cpp(188,20): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalOctahedron.cpp(189,25): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalOctahedron.cpp(189,20): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalOctahedron.cpp(197,39): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalOctahedron.cpp(197,20): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalOctahedron.cpp(198,39): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalOctahedron.cpp(198,20): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalOctahedron.cpp(199,34): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalOctahedron.cpp(199,20): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalOctahedron.cpp(200,34): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalOctahedron.cpp(200,20): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalOctahedron.cpp(201,29): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalOctahedron.cpp(201,20): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalOctahedron.cpp(202,29): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalOctahedron.cpp(202,20): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalOctahedron.cpp(270,22): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalOctahedron.cpp(269,19): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalOctahedron.cpp(268,16): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalOctahedron.cpp(267,58): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalOctahedron.cpp(276,22): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalOctahedron.cpp(275,19): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalOctahedron.cpp(274,33): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalOctahedron.cpp(273,41): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalOctahedron.cpp(282,22): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalOctahedron.cpp(281,36): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalOctahedron.cpp(280,16): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalOctahedron.cpp(279,41): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalOctahedron.cpp(288,39): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalOctahedron.cpp(287,19): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalOctahedron.cpp(286,16): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalOctahedron.cpp(285,41): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-  main.cpp
+C:\DENIS\repos\Torus3D\DirectXFold\inc\Game.h(176,23): warning C4305: инициализация: усечение из "double" в "float"
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalOctahedron.cpp(34,37): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalOctahedron.cpp(34,31): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalOctahedron.cpp(35,36): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalOctahedron.cpp(35,31): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalOctahedron.cpp(36,36): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalOctahedron.cpp(36,25): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalOctahedron.cpp(37,36): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalOctahedron.cpp(37,26): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalOctahedron.cpp(38,37): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalOctahedron.cpp(38,20): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalOctahedron.cpp(39,36): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalOctahedron.cpp(39,20): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalOctahedron.cpp(53,40): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalOctahedron.cpp(53,31): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalOctahedron.cpp(54,40): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalOctahedron.cpp(54,31): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalOctahedron.cpp(55,31): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalOctahedron.cpp(55,25): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalOctahedron.cpp(56,31): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalOctahedron.cpp(56,26): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalOctahedron.cpp(57,32): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalOctahedron.cpp(57,20): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalOctahedron.cpp(58,31): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalOctahedron.cpp(58,20): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalOctahedron.cpp(66,39): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalOctahedron.cpp(66,25): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalOctahedron.cpp(67,39): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalOctahedron.cpp(67,25): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalOctahedron.cpp(68,34): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalOctahedron.cpp(68,25): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalOctahedron.cpp(69,34): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalOctahedron.cpp(69,25): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalOctahedron.cpp(70,26): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalOctahedron.cpp(70,20): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalOctahedron.cpp(71,25): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalOctahedron.cpp(71,20): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalOctahedron.cpp(79,39): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalOctahedron.cpp(79,20): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalOctahedron.cpp(80,39): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalOctahedron.cpp(80,20): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalOctahedron.cpp(81,34): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalOctahedron.cpp(81,20): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalOctahedron.cpp(82,34): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalOctahedron.cpp(82,20): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalOctahedron.cpp(83,29): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalOctahedron.cpp(83,20): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalOctahedron.cpp(84,29): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalOctahedron.cpp(84,20): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalOctahedron.cpp(152,37): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalOctahedron.cpp(152,31): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalOctahedron.cpp(153,36): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalOctahedron.cpp(153,31): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalOctahedron.cpp(154,36): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalOctahedron.cpp(154,25): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalOctahedron.cpp(155,36): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalOctahedron.cpp(155,26): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalOctahedron.cpp(156,37): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalOctahedron.cpp(156,20): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalOctahedron.cpp(157,36): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalOctahedron.cpp(157,20): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalOctahedron.cpp(171,40): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalOctahedron.cpp(171,31): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalOctahedron.cpp(172,40): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalOctahedron.cpp(172,31): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalOctahedron.cpp(173,31): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalOctahedron.cpp(173,25): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalOctahedron.cpp(174,31): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalOctahedron.cpp(174,26): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalOctahedron.cpp(175,32): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalOctahedron.cpp(175,20): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalOctahedron.cpp(176,31): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalOctahedron.cpp(176,20): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalOctahedron.cpp(184,39): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalOctahedron.cpp(184,25): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalOctahedron.cpp(185,39): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalOctahedron.cpp(185,25): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalOctahedron.cpp(186,34): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalOctahedron.cpp(186,25): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalOctahedron.cpp(187,34): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalOctahedron.cpp(187,25): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalOctahedron.cpp(188,26): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalOctahedron.cpp(188,20): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalOctahedron.cpp(189,25): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalOctahedron.cpp(189,20): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalOctahedron.cpp(197,39): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalOctahedron.cpp(197,20): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalOctahedron.cpp(198,39): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalOctahedron.cpp(198,20): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalOctahedron.cpp(199,34): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalOctahedron.cpp(199,20): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalOctahedron.cpp(200,34): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalOctahedron.cpp(200,20): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalOctahedron.cpp(201,29): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalOctahedron.cpp(201,20): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalOctahedron.cpp(202,29): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalOctahedron.cpp(202,20): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalOctahedron.cpp(270,22): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalOctahedron.cpp(269,19): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalOctahedron.cpp(268,16): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalOctahedron.cpp(267,58): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalOctahedron.cpp(276,22): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalOctahedron.cpp(275,19): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalOctahedron.cpp(274,33): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalOctahedron.cpp(273,41): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalOctahedron.cpp(282,22): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalOctahedron.cpp(281,36): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalOctahedron.cpp(280,16): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalOctahedron.cpp(279,41): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalOctahedron.cpp(288,39): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalOctahedron.cpp(287,19): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalOctahedron.cpp(286,16): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalOctahedron.cpp(285,41): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
   SphericalMesh.cpp
-  Shader.cpp
   SimpleInputHandler.cpp
   SphericalCamera.cpp
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalCamera.cpp(114,29): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalCamera.cpp(115,31): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalCamera.cpp(117,29): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalCamera.cpp(117,61): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalCamera.cpp(102,29): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalCamera.cpp(103,31): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalCamera.cpp(105,29): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalCamera.cpp(105,60): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalCamera.cpp(119,29): warning C4316: "CameraMesh": объект, размещенный в куче, может не быть выровнен 16
   SphericalMeshLoader.cpp
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalMeshLoader.cpp(32,75): warning C4244: 'argument': conversion from '_Ty' to 'float', possible loss of data
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalMeshLoader.cpp(38,74): warning C4244: аргумент: преобразование "_Ty" в "float", возможна потеря данных
           with
           [
               _Ty=double
           ]
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalMeshLoader.cpp(32,64): warning C4244: 'argument': conversion from '_Ty' to 'float', possible loss of data
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalMeshLoader.cpp(38,63): warning C4244: аргумент: преобразование "_Ty" в "float", возможна потеря данных
           with
           [
               _Ty=double
           ]
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalMeshLoader.cpp(32,53): warning C4244: 'argument': conversion from '_Ty' to 'float', possible loss of data
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalMeshLoader.cpp(38,52): warning C4244: аргумент: преобразование "_Ty" в "float", возможна потеря данных
           with
           [
               _Ty=double
           ]
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalMeshLoader.cpp(32,42): warning C4244: 'argument': conversion from '_Ty' to 'float', possible loss of data
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalMeshLoader.cpp(38,41): warning C4244: аргумент: преобразование "_Ty" в "float", возможна потеря данных
           with
           [
               _Ty=double
           ]
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalMeshLoader.cpp(32,118): warning C4244: 'argument': conversion from '_Ty' to 'float', possible loss of data
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalMeshLoader.cpp(45,46): warning C4244: аргумент: преобразование "_Ty" в "float", возможна потеря данных
           with
           [
               _Ty=double
           ]
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalMeshLoader.cpp(32,107): warning C4244: 'argument': conversion from '_Ty' to 'float', possible loss of data
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalMeshLoader.cpp(45,35): warning C4244: аргумент: преобразование "_Ty" в "float", возможна потеря данных
           with
           [
               _Ty=double
           ]
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalMeshLoader.cpp(32,96): warning C4244: 'argument': conversion from '_Ty' to 'float', possible loss of data
-          with
-          [
-              _Ty=double
-          ]
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalMeshLoader.cpp(45,98): warning C4316: 'SphericalMesh': object allocated on the heap may not be aligned 16
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalMeshLoader.cpp(50,28): warning C4316: 'SphericalMesh': object allocated on the heap may not be aligned 16
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalMeshLoader.cpp(83,20): warning C4018: <: несоответствие типов со знаком и без знака
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalMeshLoader.cpp(93,98): warning C4316: "SphericalMesh": объект, размещенный в куче, может не быть выровнен 16
   SphericalSphere.cpp
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalSphere.cpp(63,46): warning C4267: 'initializing': conversion from 'size_t' to 'WORD', possible loss of data
+C:\DENIS\repos\Torus3D\DirectXFold\inc\Game.h(176,23): warning C4305: инициализация: усечение из "double" в "float"
+C:\DENIS\repos\Torus3D\DirectXFold\src\SphericalSphere.cpp(69,46): warning C4267: инициализация: преобразование из "size_t" в "WORD"; возможна потеря данных
   TextDrawer.cpp
   Texture.cpp
-     Creating library bin\DirectXFold.lib and object bin\DirectXFold.exp
-  Generating code
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalCamera.cpp(78): warning C4172: returning address of local variable or temporary
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalCamera.cpp(91): warning C4172: returning address of local variable or temporary
-D:\Диплом\MY CODE\DirectXFold\DirectXFold\src\SphericalCamera.cpp(65): warning C4172: returning address of local variable or temporary
-  539 of 1001 functions (53.8%) were compiled, the rest were copied from previous compilation.
-    251 functions were new in current compilation
-    42 functions had inline decision re-evaluated but remain unchanged
-  Finished generating code
-  DirectXFold.vcxproj -> D:\Диплом\MY CODE\DirectXFold\DirectXFold\bin\DirectXFold.exe
+  Компиляция...
+  ToricCube.cpp
+C:\DENIS\repos\Torus3D\DirectXFold\inc\Game.h(176,23): warning C4305: инициализация: усечение из "double" в "float"
+C:\DENIS\repos\Torus3D\DirectXFold\src\ToricCube.cpp(18,45): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\ToricCube.cpp(18,33): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\ToricCube.cpp(18,20): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\ToricCube.cpp(19,45): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\ToricCube.cpp(19,33): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\ToricCube.cpp(19,20): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\ToricCube.cpp(20,44): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\ToricCube.cpp(20,33): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\ToricCube.cpp(20,20): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\ToricCube.cpp(21,44): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\ToricCube.cpp(21,33): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\ToricCube.cpp(21,20): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\ToricCube.cpp(22,44): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\ToricCube.cpp(22,32): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\ToricCube.cpp(22,20): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\ToricCube.cpp(23,44): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\ToricCube.cpp(23,32): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\ToricCube.cpp(23,20): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\ToricCube.cpp(24,43): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\ToricCube.cpp(24,32): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\ToricCube.cpp(24,20): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\ToricCube.cpp(25,43): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\ToricCube.cpp(25,32): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\DENIS\repos\Torus3D\DirectXFold\src\ToricCube.cpp(25,20): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+  ToricMesh.cpp
+LINK : fatal error LNK1181: не удается открыть входной файл "DirectXTK.lib"

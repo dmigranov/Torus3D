@@ -1,58 +1,54 @@
-d:\диплом\my code\directxfold\directxfold\release\vc142.pdb
-d:\диплом\my code\directxfold\directxfold\release\main.obj
-d:\диплом\my code\directxfold\directxfold\release\textdrawer.obj
-d:\диплом\my code\directxfold\directxfold\release\sphericalcamera.obj
-d:\диплом\my code\directxfold\directxfold\release\simpleinputhandler.obj
-d:\диплом\my code\directxfold\directxfold\release\shader.obj
-d:\диплом\my code\directxfold\directxfold\release\octahedron.obj
-d:\диплом\my code\directxfold\directxfold\release\mesh.obj
-d:\диплом\my code\directxfold\directxfold\release\line.obj
-d:\диплом\my code\directxfold\directxfold\release\game.obj
-d:\диплом\my code\directxfold\directxfold\release\camera.obj
-d:\диплом\my code\directxfold\directxfold\release\sphericalmath.obj
-d:\диплом\my code\directxfold\directxfold\release\sphericalmeshloader.obj
-d:\диплом\my code\directxfold\directxfold\release\directxfold.pch
-d:\диплом\my code\directxfold\directxfold\release\pch.obj
-d:\диплом\my code\directxfold\directxfold\release\sphericaldodecahedron.obj
-d:\диплом\my code\directxfold\directxfold\release\sphericalmesh.obj
-d:\диплом\my code\directxfold\directxfold\release\sphericaloctahedron.obj
-d:\диплом\my code\directxfold\directxfold\release\sphericalcube.obj
-d:\диплом\my code\directxfold\directxfold\release\hyperbolicmesh.obj
-d:\диплом\my code\directxfold\directxfold\release\hyperbolicmath.obj
-d:\диплом\my code\directxfold\directxfold\bin\mesh1.sph
-d:\диплом\my code\directxfold\directxfold\bin\directxfold.lib
-d:\диплом\my code\directxfold\directxfold\bin\directxfold.exp
-d:\диплом\my code\directxfold\directxfold\bin\directxfold.ipdb
-d:\диплом\my code\directxfold\directxfold\bin\directxfold.iobj
-d:\диплом\my code\directxfold\directxfold\inc\morphingvertexshader.h
-d:\диплом\my code\directxfold\directxfold\bin\morphingvertexshader.cso
-d:\диплом\my code\directxfold\directxfold\inc\pixelshader.h
-d:\диплом\my code\directxfold\directxfold\bin\basicpixelshader.cso
-d:\диплом\my code\directxfold\directxfold\inc\geometryshader.h
-d:\диплом\my code\directxfold\directxfold\bin\geometryshader.cso
-d:\диплом\my code\directxfold\directxfold\inc\vertexshader.h
-d:\диплом\my code\directxfold\directxfold\bin\basicvertexshader.cso
-d:\диплом\my code\directxfold\directxfold\inc\ellexpvertexshader.h
-d:\диплом\my code\directxfold\directxfold\bin\vertexellipticalexpfogshader.cso
-d:\диплом\my code\directxfold\directxfold\inc\sphexpvertexshader.h
-d:\диплом\my code\directxfold\directxfold\bin\vertexsphericalexpfogshader.cso
-d:\диплом\my code\directxfold\directxfold\inc\sphexp2vertexshader.h
-d:\диплом\my code\directxfold\directxfold\bin\vertexsphericalexpsqfogshader.cso
-d:\диплом\my code\directxfold\directxfold\inc\sphlinvertexshader.h
-d:\диплом\my code\directxfold\directxfold\bin\vertexsphericallinearfogshader.cso
-d:\диплом\my code\directxfold\directxfold\bin\directxfold.exe
-d:\диплом\my code\directxfold\directxfold\bin\directxfold.pdb
-d:\диплом\my code\directxfold\directxfold\release\directxfold.tlog\cl.command.1.tlog
-d:\диплом\my code\directxfold\directxfold\release\directxfold.tlog\cl.read.1.tlog
-d:\диплом\my code\directxfold\directxfold\release\directxfold.tlog\cl.write.1.tlog
-d:\диплом\my code\directxfold\directxfold\release\directxfold.tlog\copyfile.command.1.tlog
-d:\диплом\my code\directxfold\directxfold\release\directxfold.tlog\copyfile.read.1.tlog
-d:\диплом\my code\directxfold\directxfold\release\directxfold.tlog\copyfile.write.1.tlog
-d:\диплом\my code\directxfold\directxfold\release\directxfold.tlog\directxfold.write.1u.tlog
-d:\диплом\my code\directxfold\directxfold\release\directxfold.tlog\fxc.command.1.tlog
-d:\диплом\my code\directxfold\directxfold\release\directxfold.tlog\fxc.read.1.tlog
-d:\диплом\my code\directxfold\directxfold\release\directxfold.tlog\fxc.write.1.tlog
-d:\диплом\my code\directxfold\directxfold\release\directxfold.tlog\link.command.1.tlog
-d:\диплом\my code\directxfold\directxfold\release\directxfold.tlog\link.delete.1.tlog
-d:\диплом\my code\directxfold\directxfold\release\directxfold.tlog\link.read.1.tlog
-d:\диплом\my code\directxfold\directxfold\release\directxfold.tlog\link.write.1.tlog
+c:\denis\repos\torus3d\directxfold\release\directxfold.pch
+c:\denis\repos\torus3d\directxfold\release\directxfold.pdb
+c:\denis\repos\torus3d\directxfold\release\pch.obj
+c:\denis\repos\torus3d\directxfold\release\texture.obj
+c:\denis\repos\torus3d\directxfold\release\textdrawer.obj
+c:\denis\repos\torus3d\directxfold\release\sphericalsphere.obj
+c:\denis\repos\torus3d\directxfold\release\sphericalmeshloader.obj
+c:\denis\repos\torus3d\directxfold\release\sphericalcamera.obj
+c:\denis\repos\torus3d\directxfold\release\simpleinputhandler.obj
+c:\denis\repos\torus3d\directxfold\release\sphericalmesh.obj
+c:\denis\repos\torus3d\directxfold\release\sphericaloctahedron.obj
+c:\denis\repos\torus3d\directxfold\release\sphericalcube.obj
+c:\denis\repos\torus3d\directxfold\release\sphericalasteroid.obj
+c:\denis\repos\torus3d\directxfold\release\mesh.obj
+c:\denis\repos\torus3d\directxfold\release\hyperbolicmath.obj
+c:\denis\repos\torus3d\directxfold\release\game.obj
+c:\denis\repos\torus3d\directxfold\release\fpscounter.obj
+c:\denis\repos\torus3d\directxfold\release\drawer2d.obj
+c:\denis\repos\torus3d\directxfold\release\cameramesh.obj
+c:\denis\repos\torus3d\directxfold\release\camera.obj
+c:\denis\repos\torus3d\directxfold\release\sphericalmath.obj
+c:\denis\repos\torus3d\directxfold\release\sphericalellipsoid.obj
+c:\denis\repos\torus3d\directxfold\release\gamewindows.obj
+c:\denis\repos\torus3d\directxfold\release\toricmesh.obj
+c:\denis\repos\torus3d\directxfold\release\toriccube.obj
+c:\denis\repos\torus3d\directxfold\inc\pixelshader.h
+c:\denis\repos\torus3d\directxfold\bin\basicpixelshader.cso
+c:\denis\repos\torus3d\directxfold\inc\vertexshader.h
+c:\denis\repos\torus3d\directxfold\bin\basicvertexshader.cso
+c:\denis\repos\torus3d\directxfold\inc\morphingvertexshader.h
+c:\denis\repos\torus3d\directxfold\bin\morphingvertexshader.cso
+c:\denis\repos\torus3d\directxfold\inc\ellexpvertexshader.h
+c:\denis\repos\torus3d\directxfold\bin\vertexellipticalexpfogshader.cso
+c:\denis\repos\torus3d\directxfold\inc\torexpvertexshader.h
+c:\denis\repos\torus3d\directxfold\bin\vertextoricexpfogshader.cso
+c:\denis\repos\torus3d\directxfold\inc\ellexp2vertexshader.h
+c:\denis\repos\torus3d\directxfold\bin\vertexellipticalexpsqfogshader.cso
+c:\denis\repos\torus3d\directxfold\inc\sphexpvertexshader.h
+c:\denis\repos\torus3d\directxfold\bin\vertexsphericalexpfogshader.cso
+c:\denis\repos\torus3d\directxfold\inc\sphexp2vertexshader.h
+c:\denis\repos\torus3d\directxfold\bin\vertexsphericalexpsqfogshader.cso
+c:\denis\repos\torus3d\directxfold\inc\sphlinvertexshader.h
+c:\denis\repos\torus3d\directxfold\bin\vertexsphericallinearfogshader.cso
+c:\denis\repos\torus3d\directxfold\inc\geometryshader.h
+c:\denis\repos\torus3d\directxfold\bin\geometryshader.cso
+c:\denis\repos\torus3d\directxfold\release\directxfold.tlog\cl.command.1.tlog
+c:\denis\repos\torus3d\directxfold\release\directxfold.tlog\cl.read.1.tlog
+c:\denis\repos\torus3d\directxfold\release\directxfold.tlog\cl.write.1.tlog
+c:\denis\repos\torus3d\directxfold\release\directxfold.tlog\fxc.command.1.tlog
+c:\denis\repos\torus3d\directxfold\release\directxfold.tlog\fxc.read.1.tlog
+c:\denis\repos\torus3d\directxfold\release\directxfold.tlog\fxc.write.1.tlog
+c:\denis\repos\torus3d\directxfold\release\directxfold.tlog\lib-link.read.1.tlog
+c:\denis\repos\torus3d\directxfold\release\directxfold.tlog\lib-link.write.1.tlog
+c:\denis\repos\torus3d\directxfold\release\directxfold.tlog\lib.command.1.tlog

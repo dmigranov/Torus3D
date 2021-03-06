@@ -28,7 +28,7 @@ int WINAPI wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE, _In_ LPWSTR, _
     //auto earth = new SphericalSphere(0.92f, 35, 35, earthTexture, SphericalRotationYW(3 * XM_PI / 2));
     //game.AddMesh(earth);
 
-    auto cube = new ToricCube(3);
+    auto cube = new ToricCube(1., Matrix::CreateTranslation(0, 0, 2));
     game.AddMesh(cube);
 
     auto controller = new ToricCube(0.5);
