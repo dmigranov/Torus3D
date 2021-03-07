@@ -10,7 +10,7 @@ using namespace DirectX;
 ToricCube::ToricCube(double sideLength) : ToricCube::ToricCube(sideLength, Matrix::Identity)
 { }
 
-ToricCube::ToricCube(double sideLength, DirectX::SimpleMath::Matrix world)
+ToricCube::ToricCube(double sideLength, DirectX::SimpleMath::Matrix world) : ToricMesh()
 {
     auto cubeCoord = sideLength / 2;
     auto color = XMFLOAT4(0.5f, 0.5f, 0.5f, 1.f); //todo

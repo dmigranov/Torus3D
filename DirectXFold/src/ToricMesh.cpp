@@ -9,13 +9,46 @@ double ToricMesh::TorZ = 5.;
 using namespace DirectX::SimpleMath;
 
 ToricMesh::ToricMesh() : Mesh()
-{}
+{
+    D3D11_BUFFER_DESC instanceBufferDesc;
+    D3D11_SUBRESOURCE_DATA instanceData;
+    HRESULT result;
+
+    int instanceCountPerDimension = (2 * ReplicationCount + 1);
+    int instanceCount = instanceCountPerDimension * instanceCountPerDimension * instanceCountPerDimension;
+    auto instances = new InstanceType[instanceCount];
+    if (!instances)
+    {
+        throw std::exception("Can't create instances array");
+    }
+
+    for (int Xi = -ReplicationCount; Xi <= ReplicationCount; Xi++)
+    {
+        double x = Xi * TorX;
+        for (int Yi = -ReplicationCount; Yi <= ReplicationCount; Yi++)
+        {
+            double y = Yi * TorY;
+            for (int Zi = -ReplicationCount; Zi < ReplicationCount; Zi++)
+            {
+                double z = Zi * TorZ;
+
+                instances[(Zi + ReplicationCount) * instanceCountPerDimension * instanceCountPerDimension +
+                    (Yi + ReplicationCount) * instanceCountPerDimension +
+                    (Xi + ReplicationCount)].position = Vector3(x, y, z);
+            }
+        }
+    }
+}
 
 ToricMesh::ToricMesh(int nv, VertexPosColor* vertices, int ni, WORD* indices) : Mesh(nv, vertices, ni, indices)
-{ }
+{
+    //todo
+}
 
 ToricMesh::ToricMesh(int nv, VertexPosColor* vertices, int ni, WORD* indices, DirectX::XMMATRIX world) : Mesh(nv, vertices, ni, indices, world)
-{ }
+{ 
+    //todo
+}
 
 void ToricMesh::Render()
 {
@@ -29,34 +62,6 @@ void ToricMesh::Render()
     {     //Pixel Shader Stafe - unique 4 every stage
         auto shaderResource = m_texture->GetTexture();
         deviceContext->PSSetShaderResources(0, 1, &shaderResource);
-    }
-
-    //todo: перенести в констуктор, чтобы не создавать каждый раз
-    {
-        int instanceCountPerDimension = (2 * ReplicationCount + 1);
-        int instanceCount = instanceCountPerDimension * instanceCountPerDimension * instanceCountPerDimension;
-        auto instances = new InstanceType[instanceCount];
-        if (!instances)
-        {
-            throw std::exception("Can't create instances array");
-        }
-
-        for (int Xi = -ReplicationCount; Xi <= ReplicationCount; Xi++)
-        {
-            double x = Xi * TorX;
-            for (int Yi = -ReplicationCount; Yi <= ReplicationCount; Yi++)
-            {
-                double y = Yi * TorY;
-                for (int Zi = -ReplicationCount; Zi < ReplicationCount; Zi++)
-                {
-                    double z = Zi * TorZ;
-
-                    instances[  (Zi + ReplicationCount) * instanceCountPerDimension * instanceCountPerDimension +
-                                (Yi + ReplicationCount) * instanceCountPerDimension +
-                                (Xi + ReplicationCount)].position = Vector3(x, y, z);
-                }
-            }
-        }
     }
 
 
