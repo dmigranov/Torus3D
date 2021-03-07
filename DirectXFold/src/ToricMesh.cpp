@@ -1,6 +1,8 @@
 #include "pch.h"
 #include "ToricMesh.h"
 
+#include "Game.h"
+
 int ToricMesh::ReplicationCount = 10;
 double ToricMesh::TorX = 5.;
 double ToricMesh::TorY = 5.;
@@ -13,6 +15,12 @@ ToricMesh::ToricMesh() : Mesh()
     D3D11_BUFFER_DESC instanceBufferDesc;
     D3D11_SUBRESOURCE_DATA instanceData;
     HRESULT result;
+
+    auto& game = Game::GetInstance();
+    auto device = game.g_d3dDevice;
+    deviceContext = game.g_d3dDeviceContext;
+    d3dConstantBuffer = game.g_d3dVSConstantBuffers[2];
+
 
     int instanceCountPerDimension = (2 * ReplicationCount + 1);
     int instanceCount = instanceCountPerDimension * instanceCountPerDimension * instanceCountPerDimension;
@@ -47,6 +55,25 @@ ToricMesh::ToricMesh() : Mesh()
     instanceBufferDesc.MiscFlags = 0;
     instanceBufferDesc.StructureByteStride = 0;
 
+    // Give the subresource structure a pointer to the instance data.
+    instanceData.pSysMem = instances;
+    instanceData.SysMemPitch = 0;
+    instanceData.SysMemSlicePitch = 0;
+
+
+
+
+    // Create the instance buffer.
+    result = device->CreateBuffer(&instanceBufferDesc, &instanceData, &g_d3dInstanceBuffer);
+    if (FAILED(result))
+    {
+        //todo: ошибка...
+        return;
+    }
+
+    // Release the instance array now that the instance buffer has been created and loaded.
+    delete[] instances;
+    instances = 0;
 
 
 }
