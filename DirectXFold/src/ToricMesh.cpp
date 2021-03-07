@@ -91,6 +91,36 @@ ToricMesh::ToricMesh(int nv, VertexPosColor* vertices, int ni, WORD* indices, Di
 
 void ToricMesh::Render()
 {
+    //динамический маппинг
+    //чтобы пространство было бесконечным
+    auto instances = new InstanceType[m_instanceCount];
+    if (!instances)
+    {
+        throw std::exception("Can't create instances array");
+    }
+
+    for (int Xi = -ReplicationCount; Xi <= ReplicationCount; Xi++)
+    {
+        double x = Xi * TorX;
+        for (int Yi = -ReplicationCount; Yi <= ReplicationCount; Yi++)
+        {
+            double y = Yi * TorY;
+            for (int Zi = -ReplicationCount; Zi <= ReplicationCount; Zi++)
+            {
+                double z = Zi * TorZ;
+
+                instances[(Zi + ReplicationCount) * m_instanceCountPerDimension * m_instanceCountPerDimension +
+                    (Yi + ReplicationCount) * m_instanceCountPerDimension +
+                    (Xi + ReplicationCount)].position = Vector3(x, y, z);
+            }
+        }
+    }
+    D3D11_MAPPED_SUBRESOURCE resource;
+    deviceContext->Map(g_d3dInstanceBuffer, 0, D3D11_MAP_WRITE_DISCARD, 0, &resource);
+    memcpy(resource.pData, instances, sizeof(InstanceType) * m_instanceCount);
+    deviceContext->Unmap(g_d3dInstanceBuffer, 0);
+
+
     //The instance buffer is just a second vertex buffer containing different   
     //information so it is set on the device at the same time /using the same call
     //as the vertex buffer. So instead of how we previously sent in a single stride, 
@@ -102,6 +132,9 @@ void ToricMesh::Render()
     //unsigned int offsets[2];
     const unsigned int offsets[2] = { 0, 0 };
     ID3D11Buffer* bufferPointers[2] = { g_d3dVertexBuffer, g_d3dInstanceBuffer };
+
+
+
 
 
     const UINT offset = 0;
