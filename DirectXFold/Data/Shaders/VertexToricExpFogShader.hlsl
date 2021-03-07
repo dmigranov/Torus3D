@@ -45,7 +45,7 @@ float4x4 translate(float4x4 m, float3 v)
 }
 
 //entry point
-VertexShaderOutput main(VertexShaderInput IN/*, uint instanceID : SV_InstanceID*/)
+VertexShaderOutput main(VertexShaderInput IN)
 {
 	VertexShaderOutput OUT;
 
