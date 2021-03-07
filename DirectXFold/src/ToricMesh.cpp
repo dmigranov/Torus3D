@@ -90,7 +90,19 @@ ToricMesh::ToricMesh(int nv, VertexPosColor* vertices, int ni, WORD* indices, Di
 
 void ToricMesh::Render()
 {
-    const UINT vertexStride = sizeof(VertexPosColor);   //Each stride is the size (in bytes) of the elements that are to be used from that vertex buffer.
+    //The instance buffer is just a second vertex buffer containing different   
+    //information so it is set on the device at the same time /using the same call
+    //as the vertex buffer. So instead of how we previously sent in a single stride, 
+    //offset, and buffer we now send an array of strides, offsets, and buffers 
+    //to the IASetVertexBuffers call. 
+
+    //const UINT vertexStride = sizeof(VertexPosColor);   //Each stride is the size (in bytes) of the elements that are to be used from that vertex buffer.
+    const unsigned int vertexStrides[2] = { sizeof(VertexPosColor), sizeof(InstanceType)};
+    //unsigned int offsets[2];
+    const unsigned int offsets[2] = { 0, 0 };
+    const ID3D11Buffer* bufferPointers[2] = { g_d3dVertexBuffer, g_d3dInstanceBuffer };
+
+
     const UINT offset = 0;
     deviceContext->IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
     deviceContext->IASetVertexBuffers(0, 1, &g_d3dVertexBuffer, &vertexStride, &offset);
