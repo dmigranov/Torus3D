@@ -24,5 +24,6 @@ public:
     virtual void Render(DirectX::XMMATRIX matrix) override;
 private:
     ID3D11Buffer* g_d3dInstanceBuffer = nullptr;
+    int m_instanceCount;
     
 };

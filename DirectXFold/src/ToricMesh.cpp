@@ -23,8 +23,8 @@ ToricMesh::ToricMesh() : Mesh()
 
 
     int instanceCountPerDimension = (2 * ReplicationCount + 1);
-    int instanceCount = instanceCountPerDimension * instanceCountPerDimension * instanceCountPerDimension;
-    auto instances = new InstanceType[instanceCount];
+    m_instanceCount = instanceCountPerDimension * instanceCountPerDimension * instanceCountPerDimension;
+    auto instances = new InstanceType[m_instanceCount];
     if (!instances)
     {
         throw std::exception("Can't create instances array");
@@ -49,7 +49,7 @@ ToricMesh::ToricMesh() : Mesh()
 
 
     instanceBufferDesc.Usage = D3D11_USAGE_DEFAULT;
-    instanceBufferDesc.ByteWidth = sizeof(InstanceType) * instanceCount;
+    instanceBufferDesc.ByteWidth = sizeof(InstanceType) * m_instanceCount;
     instanceBufferDesc.BindFlags = D3D11_BIND_VERTEX_BUFFER;
     instanceBufferDesc.CPUAccessFlags = 0;
     instanceBufferDesc.MiscFlags = 0;
@@ -122,7 +122,7 @@ void ToricMesh::Render()
     deviceContext->UpdateSubresource(d3dConstantBuffer, 0, nullptr, &constantBufferTemp, 0, 0);
 
     //DRAW
-    deviceContext->DrawIndexedInstanced(indicesCount, 1, 0, 0, 0);
+    deviceContext->DrawIndexedInstanced(indicesCount, m_instanceCount, 0, 0, 0);
 
 }
 

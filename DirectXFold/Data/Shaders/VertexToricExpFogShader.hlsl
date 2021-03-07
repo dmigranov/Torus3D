@@ -21,7 +21,7 @@ struct VertexShaderInput
 	float4 position : POSITION;
 	float4 color : COLOR;
 	float2 tex : TEXCOORD0;
-	//float3 instancePosition : TEXCOORD1; //TEXCOORD1 - просто семантика, ничего не занчит
+	float3 instancePosition : TEXCOORD1; //TEXCOORD1 - просто семантика, ничего не занчит
 };
 
 struct VertexShaderOutput
