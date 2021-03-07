@@ -62,8 +62,7 @@ VertexShaderOutput main(VertexShaderInput IN/*, uint instanceID : SV_InstanceID*
 	OUT.position = mul(projectionMatrix, cameraSpacePosition);;
 	OUT.tex = IN.tex;
 
-	//OUT.fogFactor = saturate(exp(-density * eucDistance));
-	OUT.fogFactor = 1;
+	OUT.fogFactor = saturate(exp(-density * eucDistance));
 	
 	return OUT;
 }

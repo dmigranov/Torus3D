@@ -251,6 +251,21 @@ int Game::Initialize(HWND window, int width, int height)
             perApplicationPSConstantBuffer.m_edgeThickness += 0.0002;
             g_d3dDeviceContext->UpdateSubresource(g_d3dPSConstantBuffer, 0, nullptr, &perApplicationPSConstantBuffer, 0, 0);
         }
+
+        if (ks.O)
+        {
+            perApplicationVSConstantBuffer.density += 0.001;
+            g_d3dDeviceContext->UpdateSubresource(g_d3dVSConstantBuffers[CB_Application], 0, nullptr, &perApplicationVSConstantBuffer, 0, 0);
+        }
+        if (ks.P)
+        {
+            if (perApplicationVSConstantBuffer.density >= 0.004)
+            {
+                perApplicationVSConstantBuffer.density -= 0.001;
+                g_d3dDeviceContext->UpdateSubresource(g_d3dVSConstantBuffers[CB_Application], 0, nullptr, &perApplicationVSConstantBuffer, 0, 0);
+            }
+        }
+
     }, m_hwnd);
 
     //Почему можно на стеке: When UpdateSubresource returns, the application is free to change or even free the data pointed to by pSrcData because the method has already copied/snapped away the original contents. 
