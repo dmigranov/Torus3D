@@ -22,8 +22,6 @@ public:
     virtual void Render(std::list<DirectX::XMMATRIX> matrices) override;
 
     virtual void Render(DirectX::XMMATRIX matrix) override;
-
+private:
+    ID3D11Buffer* g_d3dInstanceBuffer = nullptr;
 };
-
-
-
