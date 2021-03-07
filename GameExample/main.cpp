@@ -76,7 +76,7 @@ int WINAPI wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE, _In_ LPWSTR, _
         return Matrix();
     }));
 
-    game.AddMesh(controller);
+    //game.AddMesh(controller);
 
 
     return game.StartGame();
