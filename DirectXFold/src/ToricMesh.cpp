@@ -53,9 +53,11 @@ ToricMesh::ToricMesh() : Mesh()
 
 
     instanceBufferDesc.Usage = D3D11_USAGE_DEFAULT;
+   // instanceBufferDesc.Usage = D3D11_USAGE_DYNAMIC;
     instanceBufferDesc.ByteWidth = sizeof(InstanceType) * m_instanceCount;
     instanceBufferDesc.BindFlags = D3D11_BIND_VERTEX_BUFFER;
     instanceBufferDesc.CPUAccessFlags = 0;
+    //instanceBufferDesc.CPUAccessFlags = D3D11_CPU_ACCESS_WRITE;
     instanceBufferDesc.MiscFlags = 0;
     instanceBufferDesc.StructureByteStride = 0;
 
