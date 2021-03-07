@@ -25,5 +25,6 @@ public:
 private:
     ID3D11Buffer* g_d3dInstanceBuffer = nullptr;
     int m_instanceCount;
+    int m_instanceCountPerDimension;
     
 };

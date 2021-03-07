@@ -22,8 +22,8 @@ ToricMesh::ToricMesh() : Mesh()
     d3dConstantBuffer = game.g_d3dVSConstantBuffers[2];
 
 
-    int instanceCountPerDimension = (2 * ReplicationCount + 1);
-    m_instanceCount = instanceCountPerDimension * instanceCountPerDimension * instanceCountPerDimension;
+    m_instanceCountPerDimension = (2 * ReplicationCount + 1);
+    m_instanceCount = m_instanceCountPerDimension * m_instanceCountPerDimension * m_instanceCountPerDimension;
     
     auto instances = new InstanceType[m_instanceCount];
     if (!instances)
@@ -41,23 +41,20 @@ ToricMesh::ToricMesh() : Mesh()
             {
                 double z = Zi * TorZ;
 
-                instances[(Zi + ReplicationCount) * instanceCountPerDimension * instanceCountPerDimension +
-                    (Yi + ReplicationCount) * instanceCountPerDimension +
+                instances[(Zi + ReplicationCount) * m_instanceCountPerDimension * m_instanceCountPerDimension +
+                    (Yi + ReplicationCount) * m_instanceCountPerDimension +
                     (Xi + ReplicationCount)].position = Vector3(x, y, z);
-                //std::cout << (Zi + ReplicationCount) * instanceCountPerDimension * instanceCountPerDimension +
-                //    (Yi + ReplicationCount) * instanceCountPerDimension +
-                //    (Xi + ReplicationCount) << "   " << y << std::endl;
             }
         }
     }
 
 
-    instanceBufferDesc.Usage = D3D11_USAGE_DEFAULT;
-   // instanceBufferDesc.Usage = D3D11_USAGE_DYNAMIC;
+    //instanceBufferDesc.Usage = D3D11_USAGE_DEFAULT;
+    instanceBufferDesc.Usage = D3D11_USAGE_DYNAMIC;
     instanceBufferDesc.ByteWidth = sizeof(InstanceType) * m_instanceCount;
     instanceBufferDesc.BindFlags = D3D11_BIND_VERTEX_BUFFER;
-    instanceBufferDesc.CPUAccessFlags = 0;
-    //instanceBufferDesc.CPUAccessFlags = D3D11_CPU_ACCESS_WRITE;
+    //instanceBufferDesc.CPUAccessFlags = 0;
+    instanceBufferDesc.CPUAccessFlags = D3D11_CPU_ACCESS_WRITE;
     instanceBufferDesc.MiscFlags = 0;
     instanceBufferDesc.StructureByteStride = 0;
 
