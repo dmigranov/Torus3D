@@ -38,6 +38,7 @@ int WINAPI wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE, _In_ LPWSTR, _
     //наблюдатель перестает перемещаться
     //проверка на то, есть ли у обхекта родаки?
     //если нет, то только тогда проделывать штуку
+    //хотя нет, это вообще надо проделывать только для ОДНОГО объекта
 
     auto controller = new ToricCube(0.5);
     controller->SetVisible(false);
