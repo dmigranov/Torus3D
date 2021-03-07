@@ -3,7 +3,7 @@
 
 #include "Game.h"
 
-int ToricMesh::ReplicationCount = 1;
+int ToricMesh::ReplicationCount = 12;
 double ToricMesh::TorX = 20.;
 double ToricMesh::TorY = 20.;
 double ToricMesh::TorZ = 20.;
@@ -93,12 +93,23 @@ void ToricMesh::Render()
 {
     //чтобы пространство было бесконечным,
     //но это не поможет, если двигаться будут объекты
+    //потому надо ещё учитывать мировую матрицу объекта - 
+    //то есть матрица "центрового" объекта
     auto camera = Game::GetInstance().m_camera;
-    Vector4 pos = camera->GetPosition();
-    double x = pos.x, z = pos.z, y = pos.y;
-    double xm = std::fmodl(x, TorX), zm = std::fmodl(z, TorY), ym = std::fmodl(y, TorZ);
+    Vector4 cameraPos = camera->GetPosition();
+    double x = cameraPos.x, z = cameraPos.z, y = cameraPos.y;
+    double xm = std::fmodl(x, TorX), zm = std::fmodl(z, TorZ), ym = std::fmodl(y, TorY);
 
-    camera->SetPosition(xm, ym, zm);
+    auto meshWorld = constantBuffer.m_world;
+    Vector4 worldPos = Vector4::Transform(Vector4(0, 0, 0, 1), meshWorld);
+    double wx = worldPos.x, wz = worldPos.z, wy = worldPos.y;
+
+    int wxm, wym, wzm; 
+    std::remquol(wx, TorX, &wxm);
+    std::remquol(wz, TorZ, &wzm);
+    std::remquol(wy, TorY, &wym);
+
+    camera->SetPosition(xm + wxm * TorX, ym + wym * TorY, zm + wzm * TorZ);
 
 
     //The instance buffer is just a second vertex buffer containing different   
