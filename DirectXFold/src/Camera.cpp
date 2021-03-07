@@ -8,7 +8,7 @@ m_pitch(0.f), m_yaw(0.f), m_roll(0.f),
 m_lookAt(Vector3(0, 0, 0)),
 m_viewDirty(true),
 m_fovY(XM_PIDIV2),
-m_nearPlane(0.1f), m_farPlane(100.f)
+m_nearPlane(0.1f), m_farPlane(1000.f)
 {}
 //todo: добавитт false
 

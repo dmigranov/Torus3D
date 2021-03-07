@@ -3,10 +3,10 @@
 
 #include "Game.h"
 
-int ToricMesh::ReplicationCount = 1;
-double ToricMesh::TorX = 4.;
-double ToricMesh::TorY = 4.;
-double ToricMesh::TorZ = 4.;
+int ToricMesh::ReplicationCount = 10;
+double ToricMesh::TorX = 10.;
+double ToricMesh::TorY = 10.;
+double ToricMesh::TorZ = 10.;
 
 using namespace DirectX::SimpleMath;
 
@@ -25,7 +25,6 @@ ToricMesh::ToricMesh() : Mesh()
     int instanceCountPerDimension = (2 * ReplicationCount + 1);
     m_instanceCount = instanceCountPerDimension * instanceCountPerDimension * instanceCountPerDimension;
     
-    std::cout << m_instanceCount << std::endl;
     auto instances = new InstanceType[m_instanceCount];
     if (!instances)
     {
