@@ -45,14 +45,14 @@ float4x4 translate(float4x4 m, float3 v)
 }
 
 //entry point
-VertexShaderOutput main(VertexShaderInput IN, uint instanceID : SV_InstanceID)
+VertexShaderOutput main(VertexShaderInput IN/*, uint instanceID : SV_InstanceID*/)
 {
 	VertexShaderOutput OUT;
 
 	matrix viewWorld;
 
 	matrix instanceTranslation = translate(IDENTITY_MATRIX, IN.instancePosition);
-	matrix resWorld =  instanceTranslation * worldMatrix;
+	matrix resWorld =  mul(worldMatrix, instanceTranslation);
 	viewWorld = mul(viewMatrix, resWorld);
 	
 	float4 cameraSpacePosition = mul(viewWorld, IN.position);

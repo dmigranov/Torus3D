@@ -38,7 +38,7 @@ ToricMesh::ToricMesh() : Mesh()
         for (int Yi = -ReplicationCount; Yi <= ReplicationCount; Yi++)
         {
             double y = Yi * TorY;
-            for (int Zi = -ReplicationCount; Zi < ReplicationCount; Zi++)
+            for (int Zi = -ReplicationCount; Zi <= ReplicationCount; Zi++)
             {
                 double z = Zi * TorZ;
 
