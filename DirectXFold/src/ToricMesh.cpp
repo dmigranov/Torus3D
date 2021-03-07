@@ -38,6 +38,17 @@ ToricMesh::ToricMesh() : Mesh()
             }
         }
     }
+
+
+    instanceBufferDesc.Usage = D3D11_USAGE_DEFAULT;
+    instanceBufferDesc.ByteWidth = sizeof(InstanceType) * instanceCount;
+    instanceBufferDesc.BindFlags = D3D11_BIND_VERTEX_BUFFER;
+    instanceBufferDesc.CPUAccessFlags = 0;
+    instanceBufferDesc.MiscFlags = 0;
+    instanceBufferDesc.StructureByteStride = 0;
+
+
+
 }
 
 ToricMesh::ToricMesh(int nv, VertexPosColor* vertices, int ni, WORD* indices) : Mesh(nv, vertices, ni, indices)
