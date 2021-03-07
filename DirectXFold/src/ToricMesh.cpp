@@ -100,12 +100,13 @@ void ToricMesh::Render()
     const unsigned int vertexStrides[2] = { sizeof(VertexPosColor), sizeof(InstanceType)};
     //unsigned int offsets[2];
     const unsigned int offsets[2] = { 0, 0 };
-    const ID3D11Buffer* bufferPointers[2] = { g_d3dVertexBuffer, g_d3dInstanceBuffer };
+    ID3D11Buffer* bufferPointers[2] = { g_d3dVertexBuffer, g_d3dInstanceBuffer };
 
 
     const UINT offset = 0;
     deviceContext->IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
-    deviceContext->IASetVertexBuffers(0, 1, &g_d3dVertexBuffer, &vertexStride, &offset);
+    //deviceContext->IASetVertexBuffers(0, 1, &g_d3dVertexBuffer, &vertexStride, &offset);
+    deviceContext->IASetVertexBuffers(0, 2, bufferPointers, vertexStrides, offsets);
     deviceContext->IASetIndexBuffer(g_d3dIndexBuffer, DXGI_FORMAT_R16_UINT, 0);
 
     if (m_texture != nullptr)
