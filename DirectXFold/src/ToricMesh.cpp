@@ -51,7 +51,9 @@ void ToricMesh::Render()
                 {
                     double z = Zi * TorZ;
 
-                    instances[0].position = Vector3(x, y, z);
+                    instances[  (Zi + ReplicationCount) * instanceCountPerDimension * instanceCountPerDimension +
+                                (Yi + ReplicationCount) * instanceCountPerDimension +
+                                (Xi + ReplicationCount)].position = Vector3(x, y, z);
                 }
             }
         }
