@@ -6,6 +6,8 @@ double ToricMesh::TorX = 5.;
 double ToricMesh::TorY = 5.;
 double ToricMesh::TorZ = 5.;
 
+using namespace DirectX::SimpleMath;
+
 ToricMesh::ToricMesh() : Mesh()
 {}
 
@@ -31,8 +33,8 @@ void ToricMesh::Render()
 
     //todo: перенести в констуктор, чтобы не создавать каждый раз
     {
-        int instanceCount = (2 * ReplicationCount + 1);
-        instanceCount = instanceCount * instanceCount * instanceCount;
+        int instanceCountPerDimension = (2 * ReplicationCount + 1);
+        int instanceCount = instanceCountPerDimension * instanceCountPerDimension * instanceCountPerDimension;
         auto instances = new InstanceType[instanceCount];
         if (!instances)
         {
@@ -41,11 +43,15 @@ void ToricMesh::Render()
 
         for (int Xi = -ReplicationCount; Xi <= ReplicationCount; Xi++)
         {
+            double x = Xi * TorX;
             for (int Yi = -ReplicationCount; Yi <= ReplicationCount; Yi++)
             {
+                double y = Yi * TorY;
                 for (int Zi = -ReplicationCount; Zi < ReplicationCount; Zi++)
                 {
-                    //instances[f(Xi,Yi,Zi)].position
+                    double z = Zi * TorZ;
+
+                    instances[0].position = Vector3(x, y, z);
                 }
             }
         }
