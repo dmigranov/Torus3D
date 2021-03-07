@@ -31,7 +31,7 @@ int WINAPI wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE, _In_ LPWSTR, _
     auto cube = new ToricCube(1., Matrix::CreateTranslation(0, 0, 2), cubeTexture);
     game.AddMesh(cube);
     cube->AddUpdater(Mesh::MeshUpdater([](Matrix in, float delta) {
-        return Matrix::CreateRotationY(delta) * Matrix::CreateTranslation(0, delta * 50, 0) * in;
+        return Matrix::CreateRotationY(delta) * in;
     }));
 
 

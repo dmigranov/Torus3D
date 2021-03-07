@@ -3,7 +3,7 @@
 
 #include "Game.h"
 
-int ToricMesh::ReplicationCount = 12;
+int ToricMesh::ReplicationCount = 1;
 double ToricMesh::TorX = 20.;
 double ToricMesh::TorY = 20.;
 double ToricMesh::TorZ = 20.;
@@ -49,12 +49,12 @@ ToricMesh::ToricMesh() : Mesh()
     }
 
 
-    //instanceBufferDesc.Usage = D3D11_USAGE_DEFAULT;
-    instanceBufferDesc.Usage = D3D11_USAGE_DYNAMIC;
+    instanceBufferDesc.Usage = D3D11_USAGE_DEFAULT;
+    //instanceBufferDesc.Usage = D3D11_USAGE_DYNAMIC;
     instanceBufferDesc.ByteWidth = sizeof(InstanceType) * m_instanceCount;
     instanceBufferDesc.BindFlags = D3D11_BIND_VERTEX_BUFFER;
-    //instanceBufferDesc.CPUAccessFlags = 0;
-    instanceBufferDesc.CPUAccessFlags = D3D11_CPU_ACCESS_WRITE;
+    instanceBufferDesc.CPUAccessFlags = 0;
+    //instanceBufferDesc.CPUAccessFlags = D3D11_CPU_ACCESS_WRITE;
     instanceBufferDesc.MiscFlags = 0;
     instanceBufferDesc.StructureByteStride = 0;
 
@@ -91,34 +91,14 @@ ToricMesh::ToricMesh(int nv, VertexPosColor* vertices, int ni, WORD* indices, Di
 
 void ToricMesh::Render()
 {
-    //динамический маппинг
-    //чтобы пространство было бесконечным
-    auto instances = new InstanceType[m_instanceCount];
-    if (!instances)
-    {
-        throw std::exception("Can't create instances array");
-    }
+    //чтобы пространство было бесконечным,
+    //но это не поможет, если двигаться будут объекты
+    auto camera = Game::GetInstance().m_camera;
+    Vector4 pos = camera->GetPosition();
+    double x = pos.x, z = pos.z, y = pos.y;
+    double xm = std::fmodl(x, TorX), zm = std::fmodl(z, TorY), ym = std::fmodl(y, TorZ);
 
-    for (int Xi = -ReplicationCount; Xi <= ReplicationCount; Xi++)
-    {
-        double x = Xi * TorX;
-        for (int Yi = -ReplicationCount; Yi <= ReplicationCount; Yi++)
-        {
-            double y = Yi * TorY;
-            for (int Zi = -ReplicationCount; Zi <= ReplicationCount; Zi++)
-            {
-                double z = Zi * TorZ;
-
-                instances[(Zi + ReplicationCount) * m_instanceCountPerDimension * m_instanceCountPerDimension +
-                    (Yi + ReplicationCount) * m_instanceCountPerDimension +
-                    (Xi + ReplicationCount)].position = Vector3(x, y, z);
-            }
-        }
-    }
-    D3D11_MAPPED_SUBRESOURCE resource;
-    deviceContext->Map(g_d3dInstanceBuffer, 0, D3D11_MAP_WRITE_DISCARD, 0, &resource);
-    memcpy(resource.pData, instances, sizeof(InstanceType) * m_instanceCount);
-    deviceContext->Unmap(g_d3dInstanceBuffer, 0);
+    camera->SetPosition(xm, ym, zm);
 
 
     //The instance buffer is just a second vertex buffer containing different   
