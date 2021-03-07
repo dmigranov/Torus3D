@@ -52,7 +52,7 @@ VertexShaderOutput main(VertexShaderInput IN/*, uint instanceID : SV_InstanceID*
 	matrix viewWorld;
 
 	matrix instanceTranslation = translate(IDENTITY_MATRIX, IN.instancePosition);
-	matrix resWorld =  mul(worldMatrix, instanceTranslation);
+	matrix resWorld =  mul(instanceTranslation, worldMatrix);
 	viewWorld = mul(viewMatrix, resWorld);
 	
 	float4 cameraSpacePosition = mul(viewWorld, IN.position);

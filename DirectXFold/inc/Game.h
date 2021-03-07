@@ -173,7 +173,7 @@ private:
     {
         DirectX::XMMATRIX proj;
         //DirectX::XMMATRIX proj_anti;
-        float density = 0.2;
+        float density = 0.008;
         //float fogStart;
         //float fogEnd;
     };

@@ -4,9 +4,9 @@
 #include "Game.h"
 
 int ToricMesh::ReplicationCount = 12;
-double ToricMesh::TorX = 15.;
-double ToricMesh::TorY = 15.;
-double ToricMesh::TorZ = 15.;
+double ToricMesh::TorX = 20.;
+double ToricMesh::TorY = 20.;
+double ToricMesh::TorZ = 20.;
 
 using namespace DirectX::SimpleMath;
 
