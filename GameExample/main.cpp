@@ -28,10 +28,21 @@ int WINAPI wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE, _In_ LPWSTR, _
     //auto earth = new SphericalSphere(0.92f, 35, 35, earthTexture, SphericalRotationYW(3 * XM_PI / 2));
     //game.AddMesh(earth);
 
-    auto cube = new ToricCube(1., Matrix::CreateTranslation(0, 0, 2), cubeTexture);
+    auto cube = new ToricCube(5., Matrix::CreateTranslation(0, 0, 6), cubeTexture);
     game.AddMesh(cube);
     cube->AddUpdater(Mesh::MeshUpdater([](Matrix in, float delta) {
-        return Matrix::CreateRotationY(delta) * Matrix::CreateTranslation(0, delta * 30, 0) * in;
+        auto ks = Keyboard::Get().GetState();
+        
+        Matrix M = Matrix::Identity;
+        //M = Matrix::CreateTranslation(0, delta * 30, 0);
+        if (ks.Q)
+        {
+            M = Matrix::CreateTranslation(0, delta * 50, 0);
+        }
+
+        return Matrix::CreateRotationY(delta) 
+            * M
+            * in;
     }));
 
     //todo: наличие объектов детей все ломает:

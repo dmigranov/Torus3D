@@ -3,10 +3,10 @@
 
 #include "Game.h"
 
-int ToricMesh::ReplicationCount = 12;
-double ToricMesh::TorX = 20.;
-double ToricMesh::TorY = 20.;
-double ToricMesh::TorZ = 20.;
+int ToricMesh::ReplicationCount = 14;
+double ToricMesh::TorX = 40.;
+double ToricMesh::TorY = 40.;
+double ToricMesh::TorZ = 40.;
 
 using namespace DirectX::SimpleMath;
 
