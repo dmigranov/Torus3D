@@ -4,9 +4,9 @@
 #include "Game.h"
 
 int ToricMesh::ReplicationCount = 14;
-double ToricMesh::TorX = 40.;
-double ToricMesh::TorY = 40.;
-double ToricMesh::TorZ = 40.;
+double ToricMesh::TorX = 50.;
+double ToricMesh::TorY = 50.;
+double ToricMesh::TorZ = 50.;
 
 using namespace DirectX::SimpleMath;
 
@@ -58,13 +58,12 @@ ToricMesh::ToricMesh() : Mesh()
     instanceBufferDesc.MiscFlags = 0;
     instanceBufferDesc.StructureByteStride = 0;
 
-    // Give the subresource structure a pointer to the instance data.
     instanceData.pSysMem = instances;
     instanceData.SysMemPitch = 0;
     instanceData.SysMemSlicePitch = 0;
 
 
-    // Create the instance buffer.
+    //Create the instance buffer.
     result = device->CreateBuffer(&instanceBufferDesc, &instanceData, &g_d3dInstanceBuffer);
     if (FAILED(result))
     {
@@ -72,7 +71,7 @@ ToricMesh::ToricMesh() : Mesh()
         return;
     }
 
-    // Release the instance array now that the instance buffer has been created and loaded.
+    //Можно удалить - см. документацию CreateBuffer
     delete[] instances;
     instances = 0;
 
@@ -92,9 +91,10 @@ ToricMesh::ToricMesh(int nv, VertexPosColor* vertices, int ni, WORD* indices, Di
 void ToricMesh::Render()
 {
     //чтобы пространство было бесконечным,
-    //но это не поможет, если двигаться будут объекты
-    //потому надо ещё учитывать мировую матрицу объекта - 
+    //надо ещё учитывать положение камеры (вид.матрицы) 
+    //и положенение текущего объекты (мировую матрицу) - 
     //то есть матрица "центрового" объекта
+    //и модифицировать либо view либо world
     auto camera = Game::GetInstance().m_camera;
     Vector4 cameraPos = camera->GetPosition();
     double x = cameraPos.x, z = cameraPos.z, y = cameraPos.y;
@@ -124,10 +124,6 @@ void ToricMesh::Render()
     const unsigned int offsets[2] = { 0, 0 };
     ID3D11Buffer* bufferPointers[2] = { g_d3dVertexBuffer, g_d3dInstanceBuffer };
 
-
-
-
-
     const UINT offset = 0;
     deviceContext->IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
     //deviceContext->IASetVertexBuffers(0, 1, &g_d3dVertexBuffer, &vertexStride, &offset);
@@ -135,7 +131,7 @@ void ToricMesh::Render()
     deviceContext->IASetIndexBuffer(g_d3dIndexBuffer, DXGI_FORMAT_R16_UINT, 0);
 
     if (m_texture != nullptr)
-    {     //Pixel Shader Stafe - unique 4 every stage
+    {   //Pixel Shader Stafe - unique 4 every stage
         auto shaderResource = m_texture->GetTexture();
         deviceContext->PSSetShaderResources(0, 1, &shaderResource);
     }
@@ -146,7 +142,7 @@ void ToricMesh::Render()
         constantBufferTemp.m_world = constantBufferTemp.m_world * parentMesh->GetWorldMatrix(); //это правильный порядок
     deviceContext->UpdateSubresource(d3dConstantBuffer, 0, nullptr, &constantBufferTemp, 0, 0);
 
-    //DRAW
+    //DRAW! 
     deviceContext->DrawIndexedInstanced(indicesCount, m_instanceCount, 0, 0, 0);
 
 }

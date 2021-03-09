@@ -16,19 +16,14 @@ int WINAPI wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE, _In_ LPWSTR, _
     //game.MoveCamera(Vector3(0, 0, -XM_PI / 4));
     game.SetCameraFovY(XM_PI / 2);
     game.SetBackgroundColor(DirectX::Colors::PowderBlue);
-    Texture * earthTexture = game.CreateTexture(L"earth8k.dds");
-    Texture * sviborgTexture = game.CreateTexture(L"sviborg.dds");
-    Texture * fireTexture = game.CreateTexture(L"fire.dds");
-    Texture * moonTexture = game.CreateTexture(L"moon.dds");
-    Texture * asteroidTexture = game.CreateTexture(L"asteroid.dds");
+    
     Texture * cubeTexture = game.CreateTexture(L"cubemap.dds");
 
     
-    //auto earth = new SphericalSphere(0.999999, 35, 35, earthTexture, SphericalRotationYW(3 * XM_PI / 2));
-    //auto earth = new SphericalSphere(0.92f, 35, 35, earthTexture, SphericalRotationYW(3 * XM_PI / 2));
-    //game.AddMesh(earth);
+    //auto cube2 = new ToricCube(6., Matrix::CreateTranslation(0, 0, 24), cubeTexture);
+    //game.AddMesh(cube2);
 
-    auto cube = new ToricCube(5., Matrix::CreateTranslation(0, 0, 6), cubeTexture);
+    auto cube = new ToricCube(10., Matrix::CreateTranslation(0, 0, 11), cubeTexture);
     game.AddMesh(cube);
     cube->AddUpdater(Mesh::MeshUpdater([](Matrix in, float delta) {
         auto ks = Keyboard::Get().GetState();
@@ -44,6 +39,26 @@ int WINAPI wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE, _In_ LPWSTR, _
             * M
             * in;
     }));
+
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     //todo: наличие объектов детей все ломает:
     //наблюдатель перестает перемещаться
