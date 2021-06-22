@@ -35,7 +35,7 @@ int WINAPI wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE, _In_ LPWSTR, _
             M = Matrix::CreateTranslation(0, delta * 50, 0);
         }
 
-        return Matrix::CreateRotationY(delta) 
+        return Matrix::CreateRotationY(delta/2.) 
             * M
             * in;
     }));

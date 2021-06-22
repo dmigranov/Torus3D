@@ -3,7 +3,7 @@
 
 #include "Game.h"
 
-int ToricMesh::ReplicationCount = 14;
+int ToricMesh::ReplicationCount = 18;
 double ToricMesh::TorX = 50.;
 double ToricMesh::TorY = 50.;
 double ToricMesh::TorZ = 50.;

@@ -259,7 +259,7 @@ int Game::Initialize(HWND window, int width, int height)
         }
         if (ks.P)
         {
-            if (perApplicationVSConstantBuffer.density >= 0.005)
+            if (perApplicationVSConstantBuffer.density >= 0.001)
             {
                 perApplicationVSConstantBuffer.density -= 0.0001;
                 g_d3dDeviceContext->UpdateSubresource(g_d3dVSConstantBuffers[CB_Application], 0, nullptr, &perApplicationVSConstantBuffer, 0, 0);
